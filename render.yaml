@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: sangwari_maa
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: REFRESH_SECRET_KEY
+        sync: false
+      - key: DEBUG
+        value: true
+      - key: BPCR_ALERT_THRESHOLD
+        value: 3
+      - key: ANC_OVERDUE_DAYS
+        value: 14
+      - key: ALERT_SLA_HOURS
+        value: 2
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 60
+      - key: REFRESH_TOKEN_EXPIRE_DAYS
+        value: 7
+      - key: OTP_EXPIRE_MINUTES
+        value: 5
+      - key: OTP_MAX_ATTEMPTS
+        value: 3
+      - key: MSG91_API_KEY
+        sync: false
+      - key: MSG91_SENDER_ID
+        value: SNGWRI
+      - key: MSG91_TEMPLATE_ID
+        sync: false
+      - key: FCM_SERVER_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: '["*"]'
