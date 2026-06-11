@@ -1,0 +1,17 @@
+.env
+.env.production
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.xlsx
+*.csv
+.DS_Store
+seed_facilities.py
+.vscode/
+health_facility_model.py
+audit_log_model.py
+facilities_route_update.py
+admin_facilities_routes.py
+*.http
+.vscode/

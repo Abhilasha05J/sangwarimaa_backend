@@ -1,0 +1,44 @@
+# Web Framework
+fastapi==0.115.0 #create REST APIs quickly
+uvicorn[standard]==0.30.6 #runs fastapi application
+
+# Database
+sqlalchemy==2.0.36 #orm (connect to postgre)
+asyncpg==0.29.0 #async, fast postgresql driver
+alembic==1.13.3 #db miagration
+greenlet==3.2.5. #sqlalchemy uses it internally 
+psycopg2-binary==2.9.12 #sync postgresql driver
+
+
+# Redis
+redis==5.1.1 #connect fastapi to redis
+# Auth & Security
+python-jose[cryptography]==3.3.0 #create and verify jwt tokens
+passlib[bcrypt]==1.7.4 #password hashing
+pydantic==2.9.2 #data validation
+pydantic-settings==2.5.2 #read env variables
+
+# HTTP Client
+httpx==0.27.2 #call external apis(OpenAI APIs, GoogleAPIs, Payment gateways)
+
+# AI
+openai==1.51.2 #connect to openaimodels(chatbot, textgeneration, ai assistants, summaries)
+
+# Rate Limiting
+slowapi==0.1.9 #prevent user from sending too many requests (ex-5req/minute)
+
+# Background Tasks
+celery==5.4.0 #run long task in background
+
+# File uploads
+python-multipart==0.0.12 #uploads file using FastAPI
+
+# Dev
+pytest==8.3.3 #run test
+pytest-asyncio==0.24.0 #test async functions
+httpx==0.27.2
+
+#for excel related operations
+openpyxl==3.1.5
+
+
