@@ -122,6 +122,6 @@ app.include_router(asha.router, prefix=settings.API_V1_PREFIX)
 app.include_router(admin.router, prefix=settings.API_V1_PREFIX)
 
 
-@app.get("/health", tags=["Health"])
+@app.get("/", tags=["Health"])
 async def health_check():
     return {"status": "ok", "version": settings.VERSION}
