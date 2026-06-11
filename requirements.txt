@@ -6,7 +6,7 @@ uvicorn[standard]==0.30.6 #runs fastapi application
 sqlalchemy==2.0.36 #orm (connect to postgre)
 asyncpg==0.29.0 #async, fast postgresql driver
 alembic==1.13.3 #db miagration
-greenlet==3.2.5. #sqlalchemy uses it internally 
+greenlet==3.2.5 #sqlalchemy uses it internally 
 psycopg2-binary==2.9.12 #sync postgresql driver
 
 
