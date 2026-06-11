@@ -16,7 +16,6 @@ redis==5.1.1 #connect fastapi to redis
 python-jose[cryptography]==3.3.0 #create and verify jwt tokens
 passlib[bcrypt]==1.7.4 #password hashing
 pydantic==2.9.2 #data validation
-pydantic-core==2.23.4
 pydantic-settings==2.5.2 #read env variables
 
 # HTTP Client
