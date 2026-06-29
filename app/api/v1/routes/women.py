@@ -63,7 +63,7 @@ from app.core.exceptions import (
 from app.models.models import (
     User, Beneficiary, BPCRAssessment, ANCVisit,
     Appointment, Reminder, Alert, AlertType, RiskLevel,
-    EducationalContent, ChatbotConversation,
+    EducationalContent, ChatbotConversation,FAQ
 )
 from app.schemas.women import (
     WomenRegisterRequest,
@@ -85,6 +85,7 @@ from app.schemas.women import (
     ChatbotMessageResponse,
     ChatbotFeedbackRequest,
     SchemeEligibilityResponse,
+    FAQOut
 )
 from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
