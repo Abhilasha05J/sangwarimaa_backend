@@ -598,7 +598,7 @@ async def get_faqs(
     result = await db.execute(query)
     faqs = result.scalars().all()
 
-    return success_response([FAQOut.model_validate(f) for f in faqs])
+    return success_envelope([FAQOut.model_validate(f) for f in faqs])
 
 
 # ── Chatbot ────────────────────────────────────────────────────────────────────
