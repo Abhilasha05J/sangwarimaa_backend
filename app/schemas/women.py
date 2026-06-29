@@ -397,7 +397,7 @@ class FAQOut(BaseModel):
     tags: Optional[list[str]] = None
  
     class Config:
-        from_attributes = True  # pydantic v2 (use `orm_mode = True` if v1)
+        from_attributes = True 
 
 
 # ── Notifications ─────────────────────────────────────────────────────────────
