@@ -13,6 +13,7 @@ from sqlalchemy.orm import relationship
 
 from app.core.database import Base
 
+
 # ── Enums ────────────────────────────────────────────────────────────────────
 
 import enum
@@ -298,3 +299,38 @@ class HealthFacility(Base):
     remarks = Column(Text)
     last_updated = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
     created_at = Column(DateTime(timezone=True), default=now_utc)
+
+class FAQ(Base):
+    """
+    Dedicated FAQ table — split out from EducationalContent because that
+    table's `category` column means *content type* ('faq'/'video'/'scheme'/
+    'danger_sign'), not topic. Here, `category` IS the topic
+    ('bpcr' | 'mhs' | 'pnc'), which is what the GET /women/faqs?category=
+    query param actually needs to filter on.
+    """
+    __tablename__ = "faqs"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+
+    # Top-level topic: 'bpcr' | 'mhs' | 'pnc' — drives the category chips.
+    category = Column(Text, nullable=False, index=True)
+
+    # Optional finer-grained grouping within a category, e.g. for PNC:
+    # 'maternal_recovery' | 'nutrition' | 'mental_health' |
+    # 'family_planning' | 'newborn_care' | 'newborn_danger_signs' |
+    # 'immunization' | 'low_birth_weight'. Null for bpcr/mhs (single-section).
+    subcategory = Column(Text, nullable=True)
+
+    title_hi = Column(Text)
+    title_en = Column(Text)
+    content_hi = Column(Text)
+    content_en = Column(Text)
+
+    # Free-form search keywords — separate from category/subcategory.
+    tags = Column(JSONB, default=list)
+
+    display_order = Column(Integer, default=0, nullable=False)
+    is_active = Column(Boolean, default=True, nullable=False)
+
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)

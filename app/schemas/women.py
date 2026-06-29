@@ -389,11 +389,15 @@ class ChatbotFeedbackRequest(BaseModel):
 class FAQOut(BaseModel):
     id: UUID
     category: str
-    title_hi: Optional[str]
-    title_en: Optional[str]
-    content_hi: Optional[str]
-    content_en: Optional[str]
-    tags: Optional[list[str]]
+    subcategory: Optional[str] = None
+    title_hi: Optional[str] = None
+    title_en: Optional[str] = None
+    content_hi: Optional[str] = None
+    content_en: Optional[str] = None
+    tags: Optional[list[str]] = None
+ 
+    class Config:
+        from_attributes = True  # pydantic v2 (use `orm_mode = True` if v1)
 
 
 # ── Notifications ─────────────────────────────────────────────────────────────

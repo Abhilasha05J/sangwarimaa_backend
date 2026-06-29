@@ -589,19 +589,15 @@ async def get_faqs(
     category: Optional[str] = Query(None),
     db: AsyncSession = Depends(get_db),
 ):
-    query = select(EducationalContent).where(EducationalContent.category == "faq").where(EducationalContent.is_active == True)
+    query = select(FAQ).where(FAQ.is_active == True)
     if category:
-        query = query.where(EducationalContent.tags.contains([category]))
+        query = query.where(FAQ.category == category)
+    query = query.order_by(FAQ.display_order, FAQ.created_at)
 
     result = await db.execute(query)
     faqs = result.scalars().all()
 
-    return success_envelope([{
-        "id": str(f.id),
-        "title": f.title_hi if lang == "hi" else f.title_en,
-        "content": f.content_hi if lang == "hi" else f.content_en,
-        "tags": f.tags,
-    } for f in faqs])
+    return success_response([FAQOut.model_validate(f) for f in faqs])
 
 
 # ── Chatbot ────────────────────────────────────────────────────────────────────
