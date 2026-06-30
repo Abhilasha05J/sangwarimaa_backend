@@ -1,0 +1,3412 @@
+[
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What is BPCR?",
+    "title_hi": "बीपीसीआर क्या है?",
+    "content_en": "BPCR stands for Birth Preparedness and Complication Readiness. It is a strategy that helps pregnant women and families prepare for childbirth and respond quickly to emergencies during pregnancy, delivery, and the postnatal period.",
+    "content_hi": "बीपीसीआर (जन्म तैयारी एवं प्रसव जटिलता तत्परता) एक ऐसी रणनीति है जो गर्भवती महिलाओं और उनके परिवारों को प्रसव की तैयारी करने तथा गर्भावस्था, प्रसव और प्रसवोत्तर अवधि के दौरान होने वाली आपात स्थितियों में शीघ्र प्रतिक्रिया देने में सहायता करती है।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "Why is BPCR important?",
+    "title_hi": "बीपीसीआर क्यों महत्वपूर्ण है?",
+    "content_en": "BPCR reduces delays in seeking, reaching, and receiving healthcare. Early preparation improves maternal and newborn survival and promotes safer deliveries.",
+    "content_hi": "बीपीसीआर स्वास्थ्य सेवाएँ प्राप्त करने में होने वाली देरी को कम करता है। समय पर तैयारी करने से माँ और नवजात शिशु के जीवित रहने की संभावना बढ़ती है तथा सुरक्षित प्रसव को बढ़ावा मिलता है।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "When should BPCR planning start?",
+    "title_hi": "बीपीसीआर की योजना कब शुरू करनी चाहिए?",
+    "content_en": "BPCR planning should ideally begin during the first ANC visit and be updated throughout pregnancy.",
+    "content_hi": "आदर्श रूप से बीपीसीआर की योजना पहली एएनसी (गर्भावस्था जाँच) यात्रा से शुरू करनी चाहिए और पूरी गर्भावस्था के दौरान इसे समय-समय पर अद्यतन करना चाहिए।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "Where should I deliver my baby?",
+    "title_hi": "मुझे अपने शिशु का जन्म कहाँ कराना चाहिए?",
+    "content_en": "Delivery should preferably take place in a healthcare facility with skilled birth attendants, such as a PHC, CHC, FRU, District Hospital, or Medical College Hospital.",
+    "content_hi": "प्रसव किसी ऐसे स्वास्थ्य संस्थान में होना चाहिए जहाँ प्रशिक्षित प्रसव सहायक उपलब्ध हों, जैसे पीएचसी, सीएचसी, एफआरयू, जिला अस्पताल या मेडिकल कॉलेज अस्पताल।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "Why is institutional delivery important?",
+    "title_hi": "संस्थागत प्रसव क्यों महत्वपूर्ण है?",
+    "content_en": "Institutional delivery ensures skilled care during childbirth and immediate management of complications, reducing maternal and neonatal deaths.",
+    "content_hi": "संस्थागत प्रसव से प्रसव के दौरान प्रशिक्षित स्वास्थ्य सेवाएँ और जटिलताओं का तुरंत उपचार उपलब्ध होता है, जिससे मातृ एवं नवजात मृत्यु दर कम होती है।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "How do I choose a health facility?",
+    "title_hi": "स्वास्थ्य संस्थान का चयन कैसे करें?",
+    "content_en": "Consider distance, availability of skilled staff, emergency obstetric services, blood transfusion facilities, newborn care services, and transportation access.",
+    "content_hi": "संस्थान का चयन करते समय दूरी, प्रशिक्षित स्वास्थ्यकर्मियों की उपलब्धता, आपातकालीन प्रसूति सेवाएँ, रक्त चढ़ाने की सुविधा, नवजात देखभाल सेवाएँ तथा परिवहन की उपलब्धता पर ध्यान दें।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What is an FRU?",
+    "title_hi": null,
+    "content_en": "A First Referral Unit (FRU) is a healthcare facility equipped to provide emergency obstetric and newborn care, including cesarean sections, blood transfusion, and specialist services.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What is emergency transport planning?",
+    "title_hi": null,
+    "content_en": "Emergency transport planning involves identifying vehicles, ambulance services, and transportation options before delivery or emergencies occur.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "How can I arrange money for delivery?",
+    "title_hi": null,
+    "content_en": "Families should save enough funds during pregnancy, which can be better utilized during delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "Who should accompany me during delivery?",
+    "title_hi": null,
+    "content_en": "A trusted family member, spouse, caregiver, or birth companion should accompany the pregnant woman to provide support and assist during emergencies.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What items should be packed for delivery?",
+    "title_hi": null,
+    "content_en": "Carry MCP Card, identification documents, referral slips, clothes for mother and baby, sanitary pads, toiletries, medicines, and emergency contact information.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "When should I leave for the hospital?",
+    "title_hi": null,
+    "content_en": "Go to the hospital immediately if labor pains start, water breaks, bleeding occurs, fetal movements decrease, or any danger sign develops.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What are emergency contact numbers?",
+    "title_hi": null,
+    "content_en": "Important emergency contacts include 108/102 Ambulance Service, ASHA worker, ANM, nearest health facility, and family emergency contacts.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What is 108 ambulance service?",
+    "title_hi": null,
+    "content_en": "108 is a free emergency ambulance service that provides transportation during medical emergencies, including pregnancy and childbirth complications.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What is 102 ambulance service?",
+    "title_hi": null,
+    "content_en": "102 provides free transportation services for pregnant women and newborns to access healthcare facilities for delivery and postnatal care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "How can family help in BPCR?",
+    "title_hi": null,
+    "content_en": "Family members can support ANC visits, arrange transport, save emergency funds, identify blood donors, recognize danger signs, and provide emotional support.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 16
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What role does the husband play in BPCR?",
+    "title_hi": null,
+    "content_en": "Husbands can accompany women for ANC visits, support healthy nutrition, arrange transportation, save money, identify health facilities, and assist during emergencies.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 17
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What is a blood donor plan?",
+    "title_hi": null,
+    "content_en": "A blood donor plan identifies potential blood donors before delivery in case emergency blood transfusion becomes necessary.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 18
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What if complications occur suddenly?",
+    "title_hi": null,
+    "content_en": "Seek immediate medical care, call emergency transport services, inform healthcare providers, and proceed to the nearest equipped health facility.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 19
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What is a birth preparedness plan?",
+    "title_hi": null,
+    "content_en": "A birth preparedness plan outlines where delivery will occur, who will accompany the mother, transportation arrangements, emergency contacts, and financial planning.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 20
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "Why should I identify a referral facility?",
+    "title_hi": null,
+    "content_en": "Referral facilities provide higher-level care if complications cannot be managed at the primary healthcare level.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 21
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "What should I do if labor starts at night?",
+    "title_hi": null,
+    "content_en": "Use your pre-planned transportation arrangements and proceed immediately to the designated health facility.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 22
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "Why should emergency phone numbers be saved?",
+    "title_hi": null,
+    "content_en": "Quick access to emergency contacts reduces delays in obtaining medical care during complications.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 23
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "How does BPCR reduce maternal deaths?",
+    "title_hi": null,
+    "content_en": "BPCR promotes timely recognition of complications and rapid access to appropriate healthcare services, preventing avoidable maternal deaths.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 24
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "How does BPCR reduce newborn deaths?",
+    "title_hi": null,
+    "content_en": "Early planning ensures skilled delivery, prompt newborn care, and timely treatment of neonatal complications.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 25
+  },
+  {
+    "category": "bpcr",
+    "subcategory": null,
+    "title_en": "Can ASHA help with BPCR planning?",
+    "title_hi": null,
+    "content_en": "Yes. ASHA workers counsel families, help prepare BPCR plans, facilitate ANC visits, and coordinate for the referral services.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 26
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "Why should I prepare for childbirth even if my pregnancy is normal?",
+    "title_hi": null,
+    "content_en": "Complications can occur unexpectedly during any pregnancy. Preparation helps ensure timely care and safer delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 27
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "Can complications happen without warning signs?",
+    "title_hi": null,
+    "content_en": "Yes. Some emergencies such as severe bleeding or obstructed labor may occur suddenly.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 28
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "What is the safest place for delivery?",
+    "title_hi": null,
+    "content_en": "A health facility with skilled birth attendants and emergency obstetric care services is safest.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 29
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "How early should delivery planning start?",
+    "title_hi": null,
+    "content_en": "BPCR planning should begin during the first trimester and be reviewed during every ANC visit.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 30
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "Why should I identify a health facility in advance?",
+    "title_hi": null,
+    "content_en": "Advance planning reduces delays in reaching the health facility and delay in seeking care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 31
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "Should I identify more than one facility?",
+    "title_hi": null,
+    "content_en": "Yes. A backup facility is important if referral becomes necessary.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 32
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "How do I know whether my nearest facility conducts deliveries?",
+    "title_hi": null,
+    "content_en": "Ask your ASHA, ANM, or local health center for information.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 33
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "Can first-time mothers have more complications?",
+    "title_hi": null,
+    "content_en": "Yes, it may require during first pregnancies as it needs closer monitoring and timely institutional delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 34
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "advanced",
+    "title_en": "Why should family members know my delivery plan?",
+    "title_hi": null,
+    "content_en": "Family members often make decisions during emergencies and should be informed beforehand.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 35
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "birth_companion",
+    "title_en": "Who is a birth companion?",
+    "title_hi": null,
+    "content_en": "A trusted person who accompanies and supports the woman during labor and delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 36
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "birth_companion",
+    "title_en": "Can my husband accompany me during delivery?",
+    "title_hi": null,
+    "content_en": "Facility policies vary, but husbands can provide emotional and logistical support.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 37
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "birth_companion",
+    "title_en": "Why should a birth companion be identified early?",
+    "title_hi": null,
+    "content_en": "Early identification ensures someone is available during labor.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 38
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_transport",
+    "title_en": "Why should transport be earmarked?",
+    "title_hi": null,
+    "content_en": "If not earmarked then there can be delay in reaching the health facility.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 39
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_transport",
+    "title_en": "What transport options should I identify?",
+    "title_hi": null,
+    "content_en": "Ambulance, private vehicle, local transport, or community emergency transport.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 40
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_transport",
+    "title_en": "What if roads are inaccessible during rains?",
+    "title_hi": null,
+    "content_en": "Identify alternative routes and backup transport arrangements.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 41
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_transport",
+    "title_en": "Can I use public transport during labor?",
+    "title_hi": null,
+    "content_en": "It may be possible, but dedicated transport is safer and faster.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 42
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_transport",
+    "title_en": "What information should I keep ready before calling an ambulance?",
+    "title_hi": null,
+    "content_en": "Name, location, and contact number of the healthcare facility where the delivery is planned.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 43
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_transport",
+    "title_en": "Should transport money be kept separately?",
+    "title_hi": null,
+    "content_en": "Yes. Emergency funds should be readily accessible.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 44
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "financial",
+    "title_en": "Why should I save money for delivery?",
+    "title_hi": null,
+    "content_en": "Unexpected expenses may occur despite government support programs.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 45
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "financial",
+    "title_en": "How much money should I keep ready?",
+    "title_hi": null,
+    "content_en": "Families should estimate transport, food, companion expenses, and emergency costs.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 46
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "financial",
+    "title_en": "Can government schemes cover all expenses?",
+    "title_hi": null,
+    "content_en": "Many services are free, but some incidental expenses may still occur.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 47
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "financial",
+    "title_en": "Should emergency funds be kept separately?",
+    "title_hi": null,
+    "content_en": "Yes. Easily accessible funds help avoid delays.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 48
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "financial",
+    "title_en": "Who should know about the emergency savings?",
+    "title_hi": null,
+    "content_en": "Key family decision-makers should be informed.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 49
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "blood_donor",
+    "title_en": "Why should a blood donor be identified before delivery?",
+    "title_hi": null,
+    "content_en": "Severe bleeding is a leading cause of maternal deaths.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 50
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "blood_donor",
+    "title_en": "Who can be a blood donor?",
+    "title_hi": null,
+    "content_en": "Healthy adults meeting blood donation criteria.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 51
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "blood_donor",
+    "title_en": "How many blood donors should be identified?",
+    "title_hi": null,
+    "content_en": "Ideally at least two potential donors should be identified.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 52
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "blood_donor",
+    "title_en": "Should blood group be known during pregnancy?",
+    "title_hi": null,
+    "content_en": "Yes. Blood grouping is part of ANC care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 53
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "blood_donor",
+    "title_en": "What if no family member can donate blood?",
+    "title_hi": null,
+    "content_en": "Nearby blood banks and voluntary donors may help.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 54
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "blood_donor",
+    "title_en": "Is blood donation safe?",
+    "title_hi": null,
+    "content_en": "Yes, when performed at authorized facilities.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 55
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "high_risk_pregnancy",
+    "title_en": "Does every high-risk pregnancy need special planning?",
+    "title_hi": null,
+    "content_en": "Yes. Additional precautions and referral planning are necessary.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 56
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "high_risk_pregnancy",
+    "title_en": "Why should high-risk women deliver at higher facilities?",
+    "title_hi": null,
+    "content_en": "They may require specialized care and emergency interventions.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 57
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "high_risk_pregnancy",
+    "title_en": "What extra preparations are needed for high-risk pregnancies?",
+    "title_hi": null,
+    "content_en": "Referral plans, specialist consultations, emergency transport, and facility readiness.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 58
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "high_risk_pregnancy",
+    "title_en": "Should high-risk mothers reach hospital before labor begins?",
+    "title_hi": null,
+    "content_en": "In some cases, healthcare providers may advise early admission.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 59
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "labor_readiness",
+    "title_en": "How do I know labor has started?",
+    "title_hi": null,
+    "content_en": "Regular contractions, leaking fluid, or blood spotting may indicate labor.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 60
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "labor_readiness",
+    "title_en": "What are true labor pains?",
+    "title_hi": null,
+    "content_en": "Contractions that become regular, stronger, and closer together.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 61
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "labor_readiness",
+    "title_en": "What is false labor?",
+    "title_hi": null,
+    "content_en": "Irregular contractions that usually stop with rest or hydration.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 62
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "labor_readiness",
+    "title_en": "When should I go to the hospital?",
+    "title_hi": null,
+    "content_en": "When contractions become regular, water breaks, bleeding occurs, or advised by a provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 63
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "labor_readiness",
+    "title_en": "Should I wait for severe pain before leaving?",
+    "title_hi": null,
+    "content_en": "No. Timely arrival reduces risks.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 64
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "labor_readiness",
+    "title_en": "What if labor starts earlier than expected?",
+    "title_hi": null,
+    "content_en": "Seek immediate medical care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 65
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "family_preparedness",
+    "title_en": "Why should husbands attend ANC visits?",
+    "title_hi": null,
+    "content_en": "They learn how to support pregnant mothers and recognize danger signs.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 66
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "family_preparedness",
+    "title_en": "How can husbands help in BPCR?",
+    "title_hi": null,
+    "content_en": "By arranging transport, finances, facility selection, and emotional support.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 67
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "family_preparedness",
+    "title_en": "What role does the mother-in-law play?",
+    "title_hi": null,
+    "content_en": "Supporting healthcare decisions and timely facility visits.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 68
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "family_preparedness",
+    "title_en": "Why should the whole family know danger signs?",
+    "title_hi": null,
+    "content_en": "Quick recognition helps prevent delays in seeking care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 69
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "family_preparedness",
+    "title_en": "Can family members save emergency numbers in advance?",
+    "title_hi": null,
+    "content_en": "Yes. Everyone involved should have emergency contacts readily available.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 70
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "delivery_kit",
+    "title_en": "What should I pack before delivery?",
+    "title_hi": null,
+    "content_en": "MCP card, ID documents, clothes, baby clothes, medicines, and essential personal items.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 71
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "delivery_kit",
+    "title_en": "When should the delivery bag be ready?",
+    "title_hi": null,
+    "content_en": "By the 8th month of pregnancy.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 72
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "delivery_kit",
+    "title_en": "Should baby clothes be washed before use?",
+    "title_hi": null,
+    "content_en": "Yes. Clean clothing reduces infection risk.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 73
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "delivery_kit",
+    "title_en": "Should important documents be packed?",
+    "title_hi": null,
+    "content_en": "Yes. Carry ANC records, MCP card, and identification documents.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 74
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "delivery_kit",
+    "title_en": "Should I pack medicines?",
+    "title_hi": null,
+    "content_en": "Carry medicines prescribed during pregnancy.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 75
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_decision_making",
+    "title_en": "Who should make decisions during emergencies?",
+    "title_hi": null,
+    "content_en": "A pre-identified family member should be empowered to act quickly.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 76
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_decision_making",
+    "title_en": "Why is quick decision-making important?",
+    "title_hi": null,
+    "content_en": "Delays increase the risk of complications and death.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 77
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_decision_making",
+    "title_en": "What if the husband is away?",
+    "title_hi": null,
+    "content_en": "Another responsible family member should be designated in advance.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 78
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_decision_making",
+    "title_en": "Can Sangwari MAA help during emergencies?",
+    "title_hi": null,
+    "content_en": "Yes. It can identify danger signs, provide guidance, send alerts, and display emergency contacts.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 79
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "emergency_decision_making",
+    "title_en": "Why should emergency plans be reviewed regularly?",
+    "title_hi": null,
+    "content_en": "Circumstances may change during pregnancy and plans need updating.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 80
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "What should I do if labor starts suddenly at home?",
+    "title_hi": null,
+    "content_en": "Stay calm and immediately contact your ASHA, ANM, healthcare provider, or call 102/108 ambulance services. Do not delay seeking care. Proceed to the planned health facility as soon as possible.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 81
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "What should I do if no transport is available during an emergency?",
+    "title_hi": null,
+    "content_en": "Call 102/ 108 emergency ambulance services immediately. Contact your ASHA worker, village health committee members, neighbors, or previously identified emergency transport providers. Always keep backup transport options ready.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 82
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "What if labor starts while I am traveling or away from my village?",
+    "title_hi": null,
+    "content_en": "Go to the nearest health facility immediately. Carry your MCP Card and ANC records whenever you travel during pregnancy. Inform family members and healthcare providers about your location.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 83
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "What should I do if I experience heavy bleeding before reaching the hospital?",
+    "title_hi": null,
+    "content_en": "Heavy bleeding is a medical emergency. Lie down safely, seek immediate transport, call 102/ 108 ambulance services, and inform your ASHA or healthcare provider. Do not wait for bleeding to stop on its own.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 84
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "What should my family do if I become unconscious during pregnancy?",
+    "title_hi": null,
+    "content_en": "Family members should immediately call emergency medical services, arrange transportation, and take you to the nearest health facility without delay. Unconsciousness during pregnancy is a serious danger sign.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 85
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "What emergency numbers should every pregnant woman keep saved?",
+    "title_hi": null,
+    "content_en": "Important numbers include 108 Ambulance Services, 102 Maternal Transport Services (where available), ASHA worker, ANM, Medical Officer, referral hospital, and key family contacts.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 86
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Why should I keep all pregnancy documents ready before delivery?",
+    "title_hi": null,
+    "content_en": "Keeping your MCP Card, ANC records, laboratory reports, ultrasound reports, identification documents, and scheme-related documents together helps healthcare providers make quick and informed decisions during emergencies.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 87
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "How often should I review my BPCR plan?",
+    "title_hi": null,
+    "content_en": "Review your BPCR plan during every ANC visit, especially during the third trimester. Update transport arrangements, emergency contacts, facility selection, and family responsibilities whenever needed.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 88
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "What is a BPCR readiness checklist?",
+    "title_hi": null,
+    "content_en": "A BPCR checklist includes confirmation of ANC completion, facility selection, transport arrangements, emergency funds, blood donor identification, emergency contacts, birth companion identification, and hospital bag preparation.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 89
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "How can Sangwari MAA help during an obstetric emergency?",
+    "title_hi": null,
+    "content_en": "Sangwari MAA can identify danger signs through symptom screening, provide immediate guidance, display emergency contact numbers, alert ASHA/ANM workers, activate referral pathways, show nearby facilities, and remind families of their BPCR emergency plan.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 90
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Does your family know where you plan to deliver?",
+    "title_hi": null,
+    "content_en": "All key family members should know the selected facility, transport arrangements, and emergency contacts.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 91
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you practiced your emergency transport plan?",
+    "title_hi": null,
+    "content_en": "Families should know the route, travel time, and alternative transport options before labor begins.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 92
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Is your mobile phone charged and emergency numbers saved?",
+    "title_hi": null,
+    "content_en": "A charged phone and saved emergency contacts can help reduce delays during emergencies.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 93
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you identified who will care for other children when you go for delivery?",
+    "title_hi": null,
+    "content_en": "It is better to identify as hildcare planning is an important component of birth preparedness.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 94
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Do you know the nearest facility that provides caesarean section services?",
+    "title_hi": null,
+    "content_en": "High-risk pregnancies should identify facilities capable of comprehensive emergency obstetric care including the caesarean section services.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 95
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you discussed danger signs with your husband or caregiver?",
+    "title_hi": null,
+    "content_en": "Shared knowledge improves early recognition and prompt action during complications.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 96
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Do you know your blood group and Rh status?",
+    "title_hi": null,
+    "content_en": "This information can be critical during obstetric emergencies requiring blood transfusion.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 97
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "What is your BPCR Preparedness Score today?",
+    "title_hi": null,
+    "content_en": "Sangwari MAA can automatically calculate a preparedness score based on ANC completion, transport readiness, emergency planning, and danger sign awareness.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 98
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you identified your delivery facility?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 99
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Do you know the route to the facility?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 100
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you arranged transportation?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 101
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Do you have emergency contact numbers?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 102
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you identified a birth companion?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 103
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you saved money for delivery expenses?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 104
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you identified a blood donor?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 105
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Do you know pregnancy danger signs?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 106
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Is your MCP card available?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 107
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Have you discussed the delivery plan with family?",
+    "title_hi": null,
+    "content_en": "Yes / No",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 108
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "Score",
+    "title_hi": null,
+    "content_en": "Status",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 109
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "0–3",
+    "title_hi": null,
+    "content_en": "🔴 Poor Preparedness",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 110
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "4–6",
+    "title_hi": null,
+    "content_en": "🟡 Moderate Preparedness",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 111
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "7–8",
+    "title_hi": null,
+    "content_en": "🟢 Good Preparedness",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 112
+  },
+  {
+    "category": "bpcr",
+    "subcategory": "additional",
+    "title_en": "9–10",
+    "title_hi": null,
+    "content_en": "✅ Fully Prepared",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 113
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What is Janani Suraksha Yojana (JSY)?",
+    "title_hi": null,
+    "content_en": "Janani Suraksha Yojana (JSY) is a Government of India scheme that promotes institutional deliveries by providing cash incentives to eligible pregnant women and ASHA workers.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Who is eligible for JSY?",
+    "title_hi": null,
+    "content_en": "Eligibility depends on government guidelines, state category, maternal age, parity, and institutional delivery status. ASHA workers and health facilities can provide updated eligibility information.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "How much incentive is available under JSY?",
+    "title_hi": null,
+    "content_en": "Incentive amounts vary according to state category and beneficiary status. Eligible women receive financial assistance after institutional delivery as per current government norms.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What documents are needed for JSY?",
+    "title_hi": null,
+    "content_en": "Common documents include MCP Card, Aadhaar Card, bank account details, pregnancy registration records, and proof of institutional delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What is Janani Shishu Suraksha Karyakram (JSSK)?",
+    "title_hi": null,
+    "content_en": "JSSK is a scheme that provides free maternal and newborn healthcare services, reducing out-of-pocket expenses for families.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What services are free under JSSK?",
+    "title_hi": null,
+    "content_en": "Free services include delivery (normal & caesarean section), medicines, diagnostics, blood transfusion, diet & stay during hospitalization, transportation services and exemption from all user charges.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Is transport free under JSSK?",
+    "title_hi": null,
+    "content_en": "Yes. Free transportation is available from home to public health facility, between facilities if referred, and back home after discharge.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Are medicines free under JSSK?",
+    "title_hi": null,
+    "content_en": "Yes. Essential medicines and consumables required during pregnancy, delivery, and newborn care are provided free at government facilities.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Are diagnostics free under JSSK?",
+    "title_hi": null,
+    "content_en": "Yes. Recommended laboratory investigations and diagnostic services are available free of cost at government facilities.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What is Pradhan Mantri Matru Vandana Yojana (PMMVY)?",
+    "title_hi": null,
+    "content_en": "PMMVY is a maternity benefit scheme that provides financial assistance to eligible pregnant and lactating women to support maternal nutrition and healthcare.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Who can receive PMMVY benefits?",
+    "title_hi": null,
+    "content_en": "Eligible pregnant and lactating women who meet scheme criteria can receive benefits after fulfilling registration and documentation requirements.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "How much financial assistance is available under PMMVY?",
+    "title_hi": null,
+    "content_en": "Financial assistance is provided in installments according to current government guidelines and eligibility conditions.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "How can I apply for PMMVY?",
+    "title_hi": null,
+    "content_en": "Applications can be submitted through Anganwadi Centres, health facilities, Common Service Centres, or designated government portals with required documents.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What is PMSMA?",
+    "title_hi": null,
+    "content_en": "The Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA) provides free comprehensive antenatal checkups by qualified doctors on designated days every month.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What is MCP Card?",
+    "title_hi": null,
+    "content_en": "The Mother and Child Protection (MCP) Card is a home-based record that tracks pregnancy, delivery, immunization, child growth, and health services. It is given to the pregnant mothers at the time of registration.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What role does ASHA play?",
+    "title_hi": null,
+    "content_en": "ASHA workers identify pregnant women, support registration, promote ANC visits, facilitate institutional deliveries, provide counseling, and assist with scheme benefits.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 16
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What role does ANM play?",
+    "title_hi": null,
+    "content_en": "ANMs provide antenatal care, immunization, risk assessment, counseling, referrals, and maternal and child health services at the community level.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 17
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What is Ayushman Bharat?",
+    "title_hi": null,
+    "content_en": "Ayushman Bharat is a national health protection program that provides eligible families with financial coverage for hospitalization and healthcare services.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 18
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Are pregnant women covered under Ayushman Bharat?",
+    "title_hi": null,
+    "content_en": "Eligible beneficiaries can receive coverage for certain pregnancy-related complications, hospital admissions, and related treatments under approved packages.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 19
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What schemes support tribal women?",
+    "title_hi": null,
+    "content_en": "Tribal women may benefit from JSY, JSSK, PMMVY, Ayushman Bharat, state-specific maternal health programs, nutrition schemes, and outreach services in tribal areas.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 20
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What schemes support high-risk pregnancies?",
+    "title_hi": null,
+    "content_en": "High-risk pregnancies receive additional monitoring through PMSMA, referral services, specialized ANC clinics, JSSK benefits, and facility-based management.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 21
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What benefits are available for institutional delivery?",
+    "title_hi": null,
+    "content_en": "Institutional delivery provides access to skilled birth attendants, emergency obstetric care, free services under JSSK, and eligible incentives under JSY.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 22
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Where can I complain if benefits are delayed?",
+    "title_hi": null,
+    "content_en": "Beneficiaries can contact the Medical Officer, ANM, ASHA, Block Medical Office, District Health Office, or relevant scheme grievance redressal mechanisms.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 23
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "How can Sangwari MAA connect with government services?",
+    "title_hi": null,
+    "content_en": "Sangwari MAA can provide scheme information, eligibility guidance, reminders, service directories, referral support, and links to government health programs.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 24
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Where can I get help regarding maternal health schemes?",
+    "title_hi": null,
+    "content_en": "Assistance is available from ASHA workers, ANMs, Anganwadi Workers, PHCs, CHCs, District Hospitals, health helplines, and government service centers.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 25
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What if I do not have a bank account?",
+    "title_hi": null,
+    "content_en": "A bank account is usually required for direct benefit transfer. ASHA or health workers can guide you regarding account opening procedures.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 26
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Are Aadhaar details required for scheme benefits?",
+    "title_hi": null,
+    "content_en": "Aadhaar may be required for identification and benefit transfer according to current government guidelines.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 27
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "Can migrant pregnant women access government schemes?",
+    "title_hi": null,
+    "content_en": "Yes. Eligible migrant women can often access services and benefits after updating records and informing local health workers.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 28
+  },
+  {
+    "category": "mhs",
+    "subcategory": null,
+    "title_en": "What if my MCP Card is lost?",
+    "title_hi": null,
+    "content_en": "Contact your ASHA, ANM, or health facility for assistance in obtaining a replacement or updating records.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 29
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "What is the postnatal period?",
+    "title_hi": null,
+    "content_en": "The postnatal period starts immediately after childbirth and continues for 42 days. This period is important for recovery of the mother and monitoring the health of both mother and baby.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "How long does recovery take after delivery?",
+    "title_hi": null,
+    "content_en": "Most mothers recover within 6 weeks after childbirth, although complete recovery may take longer depending on the type of delivery and overall health.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Is tiredness normal after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Mild fatigue is common. Adequate rest, nutrition, hydration, and family support help recovery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Is bleeding normal after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Vaginal bleeding called lochia is normal for several weeks after childbirth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "How long does bleeding continue after delivery?",
+    "title_hi": null,
+    "content_en": "Bleeding usually decreases gradually over 4–6 weeks.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "When is bleeding dangerous?",
+    "title_hi": null,
+    "content_en": "If you soak more than two pads in an hour, pass large clots, feel dizzy, or bleeding suddenly increases, seek immediate medical care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Is abdominal pain normal after delivery?",
+    "title_hi": null,
+    "content_en": "Mild abdominal cramps are common as the uterus returns to its normal size. Severe pain requires medical attention.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "I have fever after delivery. What should I do?",
+    "title_hi": null,
+    "content_en": "Fever may indicate infection. Visit a healthcare facility immediately.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "What are signs of infection after delivery?",
+    "title_hi": null,
+    "content_en": "Fever, foul-smelling vaginal discharge, redness, swelling, severe pain, or pus from stitches may indicate infection.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "My stitches hurt. Is it normal?",
+    "title_hi": null,
+    "content_en": "Mild discomfort is common. Severe pain, redness, swelling, or discharge requires medical evaluation.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "How should I care for my cesarean wound?",
+    "title_hi": null,
+    "content_en": "Keep the wound clean and dry. Follow your doctor's advice and report redness, swelling, or discharge.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Can I take a bath after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Good personal hygiene helps prevent infections.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "How much rest should I take after delivery?",
+    "title_hi": null,
+    "content_en": "Rest whenever possible, especially when the baby sleeps. Avoid heavy physical work during the recovery period.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Why am I unable to sleep properly?",
+    "title_hi": null,
+    "content_en": "Frequent feeding and newborn care can affect sleep. Try resting when the baby sleeps.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Is swelling in legs normal after delivery?",
+    "title_hi": null,
+    "content_en": "Mild swelling may occur. Sudden swelling, pain, or difficulty breathing requires immediate medical care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "I have a severe headache after delivery. Is it dangerous?",
+    "title_hi": null,
+    "content_en": "Severe headache, especially with blurred vision or high blood pressure, requires urgent medical attention.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 16
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "It hurts when I pass urine. What should I do?",
+    "title_hi": null,
+    "content_en": "Painful urination may indicate infection. Consult a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 17
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Is constipation common after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Drink water, eat fiber-rich foods, and remain physically active as advised.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 18
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "When should I have my postnatal check-up?",
+    "title_hi": null,
+    "content_en": "Within 24–48 hours, on day 3, between days 7–14, and at 6 weeks after delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 19
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "What are maternal danger signs after delivery?",
+    "title_hi": null,
+    "content_en": "Heavy bleeding, fever, severe headache, convulsions, breathing difficulty, chest pain, and severe abdominal pain are danger signs.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 20
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "When can I resume normal activities?",
+    "title_hi": null,
+    "content_en": "Gradually increase activity based on recovery and healthcare provider advice.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 21
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Can I lift heavy objects after delivery?",
+    "title_hi": null,
+    "content_en": "Avoid heavy lifting during the first few weeks.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 22
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "When can I start exercise?",
+    "title_hi": null,
+    "content_en": "Light walking can begin early if comfortable. Consult your doctor before starting strenuous exercise.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 23
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Why is family support important after delivery?",
+    "title_hi": null,
+    "content_en": "Family support helps mothers recover physically and emotionally and ensures proper newborn care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 24
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "What medicines can I take for pain?",
+    "title_hi": null,
+    "content_en": "Only take medicines prescribed or recommended by a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 25
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Is vaginal discharge normal after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Gradual reduction is expected. Foul smell or unusual color requires medical attention.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 26
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "Can blood pressure remain high after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Continue follow-up if you had high blood pressure during pregnancy.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 27
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "What if I had diabetes during pregnancy?",
+    "title_hi": null,
+    "content_en": "Follow-up testing and medical advice are important after delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 28
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "When should I go to the hospital immediately?",
+    "title_hi": null,
+    "content_en": "Heavy bleeding, breathing difficulty, convulsions, severe pain, or unconsciousness require immediate care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 29
+  },
+  {
+    "category": "pnc",
+    "subcategory": "maternal_recovery",
+    "title_en": "How do I know I am recovering well?",
+    "title_hi": null,
+    "content_en": "Good recovery includes reduced bleeding, improved energy, no fever, and ability to care for yourself and your baby.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 30
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Why is nutrition important after delivery?",
+    "title_hi": null,
+    "content_en": "Good nutrition helps the mother's body recover, supports breastfeeding, prevents weakness, and promotes overall health.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 31
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "What should I eat after delivery?",
+    "title_hi": null,
+    "content_en": "Eat a balanced diet including cereals, pulses, milk, fruits, vegetables, eggs, meat (if consumed), and plenty of fluids.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 32
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "How many times should I eat in a day after delivery?",
+    "title_hi": null,
+    "content_en": "Eat 3 main meals and 2–3 healthy snacks daily to meet increased nutritional needs.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 33
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Do breastfeeding mothers need extra food?",
+    "title_hi": null,
+    "content_en": "Yes. Breastfeeding mothers require additional calories to support milk production and maintain their health.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 34
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "How much water should I drink after delivery?",
+    "title_hi": null,
+    "content_en": "Drink at least 8–10 glasses of water daily or more if breastfeeding and thirsty.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 35
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Should I continue Iron-Folic Acid tablets after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Continue Iron-Folic Acid tablets for at least 3 months after delivery or as advised by your healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 36
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Should I continue Calcium tablets after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Calcium supplementation should continue during the postnatal period as recommended.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 37
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Can poor nutrition cause anemia after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Inadequate intake of iron-rich foods and blood loss during delivery can lead to anemia.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 38
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Which foods are rich in iron?",
+    "title_hi": null,
+    "content_en": "Green leafy vegetables, jaggery, dates, beans, lentils, meat, liver, and fortified foods are good sources of iron.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 39
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "How can I improve iron absorption?",
+    "title_hi": null,
+    "content_en": "Consume vitamin C-rich foods such as oranges, lemons, guava, amla, and tomatoes along with iron-rich foods.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 40
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Why is protein important after delivery?",
+    "title_hi": null,
+    "content_en": "Protein helps tissue repair, wound healing, muscle recovery, and breast milk production.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 41
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Which foods are rich in protein?",
+    "title_hi": null,
+    "content_en": "Pulses, beans, milk, curd, paneer, eggs, fish, chicken, soybean, and nuts are excellent protein sources.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 42
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Will breastfeeding help me lose pregnancy weight?",
+    "title_hi": null,
+    "content_en": "Breastfeeding may help gradual weight loss. Avoid crash dieting and focus on balanced nutrition.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 43
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Are there foods I should avoid while breastfeeding?",
+    "title_hi": null,
+    "content_en": "Avoid alcohol, tobacco, and excessive caffeine. Most healthy foods are safe unless they cause discomfort to the mother or baby.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 44
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Can I eat spicy food after delivery?",
+    "title_hi": null,
+    "content_en": "Moderate consumption is usually safe. Observe if any food appears to affect the baby and discuss concerns with a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 45
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "What local foods can improve my nutrition?",
+    "title_hi": null,
+    "content_en": "Dal, green leafy vegetables, seasonal fruits, groundnuts, jaggery, ragi, millets, chana, and milk are nutritious options.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 46
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "What should I eat to prevent constipation after delivery?",
+    "title_hi": null,
+    "content_en": "Increase intake of water, fruits, vegetables, whole grains, and fiber-rich foods.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 47
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "I have poor appetite after delivery. What should I do?",
+    "title_hi": null,
+    "content_en": "Eat small frequent meals, stay hydrated, and seek medical advice if poor appetite persists.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 48
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "Is a special diet needed after cesarean delivery?",
+    "title_hi": null,
+    "content_en": "No special diet is required, but adequate protein, fluids, iron, and balanced nutrition help recovery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 49
+  },
+  {
+    "category": "pnc",
+    "subcategory": "nutrition",
+    "title_en": "When should I seek medical help regarding nutrition?",
+    "title_hi": null,
+    "content_en": "Seek medical care if you experience severe weakness, dizziness, inability to eat, significant weight loss, or symptoms of anemia.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 50
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "What is maternal mental health?",
+    "title_hi": null,
+    "content_en": "Maternal mental health refers to a mother's emotional, psychological, and social well-being during pregnancy and after childbirth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 51
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "Is it normal to feel emotional after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Hormonal changes, lack of sleep, and adjustment to motherhood can cause emotional ups and downs during the first few days after delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 52
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "What are baby blues?",
+    "title_hi": null,
+    "content_en": "Baby blues are mild mood changes, sadness, irritability, or crying that occur during the first few days after childbirth and usually improve within two weeks.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 53
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "How long do baby blues last?",
+    "title_hi": null,
+    "content_en": "Baby blues generally start within a few days after delivery and improve within 10–14 days.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 54
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "What is postpartum depression?",
+    "title_hi": null,
+    "content_en": "Postpartum depression is a serious condition involving persistent sadness, hopelessness, loss of interest, and difficulty caring for oneself or the baby.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 55
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "What is the difference between baby blues and postpartum depression?",
+    "title_hi": null,
+    "content_en": "Baby blues are mild and short-term. Postpartum depression is more severe, lasts longer than two weeks, and often requires professional support.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 56
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "I feel sad all the time after delivery. Is this normal?",
+    "title_hi": null,
+    "content_en": "Persistent sadness lasting more than two weeks may indicate postpartum depression. Seek support from a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 57
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "Why do I cry frequently after childbirth?",
+    "title_hi": null,
+    "content_en": "Hormonal changes and stress can contribute. If frequent crying persists or affects daily life, consult a healthcare professional.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 58
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "Is anxiety common after childbirth?",
+    "title_hi": null,
+    "content_en": "Yes. Many mothers worry about their baby's health, feeding, and caregiving. Severe or persistent anxiety should be evaluated by a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 59
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "I cannot sleep even when my baby is sleeping. Should I be concerned?",
+    "title_hi": null,
+    "content_en": "Difficulty sleeping despite having an opportunity to rest may be a sign of anxiety or depression. Seek advice if it continues.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 60
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "I no longer enjoy things I used to like. What does this mean?",
+    "title_hi": null,
+    "content_en": "Loss of interest in activities can be a symptom of postpartum depression and should be discussed with a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 61
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "I do not feel connected to my baby. Is this abnormal?",
+    "title_hi": null,
+    "content_en": "Some mothers take time to develop a strong bond with their baby. If feelings persist or cause distress, seek support.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 62
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "Why am I becoming angry or irritable easily?",
+    "title_hi": null,
+    "content_en": "Fatigue, stress, hormonal changes, and emotional challenges can contribute to irritability after delivery.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 63
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "I feel lonely after childbirth. What can I do?",
+    "title_hi": null,
+    "content_en": "Talk with family members, friends, healthcare providers, or support groups. Social support is important for emotional well-being.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 64
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "How can family members support a mother's mental health?",
+    "title_hi": null,
+    "content_en": "Family can help by providing emotional support, sharing household responsibilities, assisting with baby care, and encouraging rest.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 65
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "What can I do to improve my mental well-being after delivery?",
+    "title_hi": null,
+    "content_en": "Rest adequately, eat nutritious meals, stay physically active as advised, talk about your feelings, and seek help when needed.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 66
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "How can I manage stress after childbirth?",
+    "title_hi": null,
+    "content_en": "Practice relaxation techniques, accept help from family, maintain a healthy routine, and discuss concerns with trusted individuals.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 67
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "When should I seek professional help for emotional problems?",
+    "title_hi": null,
+    "content_en": "Seek help if symptoms last more than two weeks, worsen over time, interfere with daily activities, or affect baby care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 68
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "What should I do if I have thoughts of harming myself or my baby?",
+    "title_hi": null,
+    "content_en": "This is a medical emergency. Seek immediate help from a healthcare provider, family member, or emergency service. Do not stay alone.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 69
+  },
+  {
+    "category": "pnc",
+    "subcategory": "mental_health",
+    "title_en": "Can postpartum depression be treated?",
+    "title_hi": null,
+    "content_en": "Yes. With timely support, counseling, family assistance, and medical care when needed, most mothers recover successfully.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 70
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Why is family planning important after delivery?",
+    "title_hi": null,
+    "content_en": "Family planning helps prevent unintended pregnancies, allows the mother's body to recover, and improves the health of both mother and baby.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 71
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "What is the recommended gap between two pregnancies?",
+    "title_hi": null,
+    "content_en": "A minimum interval of 24 months between pregnancies is recommended for better maternal and child health outcomes.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 72
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Can I become pregnant soon after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Pregnancy can occur even before menstruation returns, especially if breastfeeding is not exclusive.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 73
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "My periods have not returned. Can I still become pregnant?",
+    "title_hi": null,
+    "content_en": "Yes. Ovulation may occur before the first menstrual period after childbirth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 74
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "When should I start thinking about family planning after delivery?",
+    "title_hi": null,
+    "content_en": "Family planning should be discussed during pregnancy and before discharge from the health facility after childbirth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 75
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Does breastfeeding completely prevent pregnancy?",
+    "title_hi": null,
+    "content_en": "No. Exclusive breastfeeding can reduce the chance of pregnancy under certain conditions but is not 100% effective.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 76
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "What is the Lactational Amenorrhea Method (LAM)?",
+    "title_hi": null,
+    "content_en": "LAM is a temporary family planning method effective for the first 6 months after childbirth if the mother exclusively breastfeeds and menstruation has not returned.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 77
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "How long does LAM work?",
+    "title_hi": null,
+    "content_en": "LAM is effective only for the first 6 months after delivery and under specific conditions.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 78
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Can I use condoms after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Condoms are safe, effective, and can be used immediately after childbirth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 79
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "What are the benefits of condoms?",
+    "title_hi": null,
+    "content_en": "Condoms help prevent pregnancy and protect against sexually transmitted infections.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 80
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Can I take contraceptive pills after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. Certain contraceptive pills are safe after childbirth, especially those suitable for breastfeeding mothers. Consult a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 81
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "What are injectable contraceptives?",
+    "title_hi": null,
+    "content_en": "Injectable contraceptives provide pregnancy protection for several weeks or months depending on the type.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 82
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Can I use Copper-T after delivery?",
+    "title_hi": null,
+    "content_en": "Yes. A postpartum intrauterine contraceptive device (PPIUCD) can be inserted soon after childbirth by a trained provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 83
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "How long does Copper-T provide protection?",
+    "title_hi": null,
+    "content_en": "Depending on the type, Copper-T can provide protection for several years.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 84
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Are contraceptive implants available after delivery?",
+    "title_hi": null,
+    "content_en": "In some settings, contraceptive implants are available and provide long-term reversible contraception.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 85
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "What is female sterilization?",
+    "title_hi": null,
+    "content_en": "Female sterilization is a permanent family planning method for women who do not want more children.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 86
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "What is male sterilization (vasectomy)?",
+    "title_hi": null,
+    "content_en": "Vasectomy is a safe and effective permanent family planning method for men.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 87
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "How do I choose the right family planning method?",
+    "title_hi": null,
+    "content_en": "Choice depends on your health, breastfeeding status, reproductive goals, and personal preference. Consult a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 88
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Do family planning methods have side effects?",
+    "title_hi": null,
+    "content_en": "Some methods may have temporary side effects. A healthcare provider can help choose the most suitable option.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 89
+  },
+  {
+    "category": "pnc",
+    "subcategory": "family_planning",
+    "title_en": "Where can I get family planning services?",
+    "title_hi": null,
+    "content_en": "Family planning services are available through ASHAs, ANMs, PHCs, CHCs, government hospitals, and accredited private facilities.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 90
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "What is routine newborn care?",
+    "title_hi": null,
+    "content_en": "Routine newborn care includes breastfeeding, keeping the baby warm, cord care, immunization, hygiene, and regular monitoring of growth and health.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 91
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "What should be done immediately after birth?",
+    "title_hi": null,
+    "content_en": "The baby should be dried, kept warm, placed skin-to-skin with the mother, and breastfeeding should begin within one hour of birth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 92
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Why should breastfeeding start within one hour?",
+    "title_hi": null,
+    "content_en": "Early breastfeeding provides colostrum, protects against infections, and helps bonding between mother and baby.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 93
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "What is colostrum?",
+    "title_hi": null,
+    "content_en": "Colostrum is the thick yellow milk produced during the first few days after birth. It contains antibodies and nutrients that protect the baby from infections.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 94
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Should colostrum be given to the baby?",
+    "title_hi": null,
+    "content_en": "Yes. Colostrum should always be given because it is the baby's first natural protection against disease.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 95
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Should honey, ghutti, water, or sugar water be given after birth?",
+    "title_hi": null,
+    "content_en": "No. Only breast milk should be given. Honey, ghutti, sugar water, and other substances can be harmful.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 96
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "What is exclusive breastfeeding?",
+    "title_hi": null,
+    "content_en": "Giving only breast milk for the first six months without water, animal milk, or any other foods or liquids.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 97
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How often should I breastfeed my newborn?",
+    "title_hi": null,
+    "content_en": "Feed the baby whenever the baby shows signs of hunger, usually 8–12 times in 24 hours.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 98
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How can I know my baby is hungry?",
+    "title_hi": null,
+    "content_en": "Hunger signs include opening the mouth, sucking movements, putting hands to the mouth, and restlessness.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 99
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How do I know if my baby is getting enough milk?",
+    "title_hi": null,
+    "content_en": "The baby feeds actively, urinates regularly, gains weight, and appears satisfied after feeds.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 100
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Should I burp my baby after feeding?",
+    "title_hi": null,
+    "content_en": "Yes. Burping helps remove swallowed air and may reduce discomfort.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 101
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How much sleep does a newborn need?",
+    "title_hi": null,
+    "content_en": "Newborns usually sleep 16–18 hours a day, waking frequently for feeding.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 102
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "What is the safest sleeping position for a newborn?",
+    "title_hi": null,
+    "content_en": "Babies should be placed on their back to sleep on a firm, flat surface.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 103
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Why is keeping the baby warm important?",
+    "title_hi": null,
+    "content_en": "Newborns can lose heat quickly. Keeping them warm helps prevent illness and complications.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 104
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "What is skin-to-skin care?",
+    "title_hi": null,
+    "content_en": "Skin-to-skin care means placing the baby directly on the mother's chest. It helps maintain warmth and promotes breastfeeding.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 105
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How should I dress my newborn?",
+    "title_hi": null,
+    "content_en": "Dress the baby in comfortable clothing and add one extra layer compared to what an adult would wear comfortably.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 106
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "When should a newborn be bathed?",
+    "title_hi": null,
+    "content_en": "Bathing should be delayed for at least 24 hours after birth whenever possible.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 107
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How often should I bathe my newborn?",
+    "title_hi": null,
+    "content_en": "Babies do not require daily baths. Gentle bathing 2–3 times per week is usually sufficient.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 108
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How should I care for my baby's umbilical cord?",
+    "title_hi": null,
+    "content_en": "Keep the cord clean and dry. Do not apply oil, powder, ash, turmeric, or other substances.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 109
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "When will the umbilical cord fall off?",
+    "title_hi": null,
+    "content_en": "The cord usually falls off within 1–2 weeks after birth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 110
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How often should I change diapers?",
+    "title_hi": null,
+    "content_en": "Change diapers whenever they become wet or soiled to prevent rashes and infection.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 111
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How can I prevent diaper rash?",
+    "title_hi": null,
+    "content_en": "Keep the diaper area clean and dry and change diapers frequently.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 112
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How should I clean my baby's eyes?",
+    "title_hi": null,
+    "content_en": "Gently clean with clean water and a soft cloth if needed. Avoid applying kajal or other substances.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 113
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Does a newborn need oral care?",
+    "title_hi": null,
+    "content_en": "Before teeth erupt, gently clean the gums with a clean soft cloth if advised.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 114
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Can many visitors handle my newborn?",
+    "title_hi": null,
+    "content_en": "Limit unnecessary handling and ensure anyone touching the baby washes their hands.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 115
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Why is handwashing important before touching a baby?",
+    "title_hi": null,
+    "content_en": "Handwashing reduces the risk of infections that can be serious for newborns.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 116
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Why do newborns cry frequently?",
+    "title_hi": null,
+    "content_en": "Crying may indicate hunger, discomfort, need for warmth, a wet diaper, or the need for comfort.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 117
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Should I expose my baby to sunlight?",
+    "title_hi": null,
+    "content_en": "Brief indirect morning sunlight may be beneficial, but avoid direct harsh sunlight and consult healthcare providers if jaundice is suspected.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 118
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "Why are newborn follow-up visits important?",
+    "title_hi": null,
+    "content_en": "Follow-up visits help monitor growth, feeding, immunization, and early detection of health problems.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 119
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_care",
+    "title_en": "How can I keep my newborn healthy?",
+    "title_hi": null,
+    "content_en": "Ensure exclusive breastfeeding, immunization, hygiene, warmth, regular check-ups, and prompt care if danger signs develop.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 120
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "What are newborn danger signs?",
+    "title_hi": null,
+    "content_en": "Newborn danger signs are symptoms that indicate a baby may be seriously ill and needs immediate medical attention.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 121
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby is not feeding. What should I do?",
+    "title_hi": null,
+    "content_en": "Not feeding is a serious danger sign. Take the baby to the nearest health facility immediately.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 122
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby is feeding much less than usual. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. Poor feeding can indicate infection or illness and requires prompt evaluation.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 123
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby refuses to breastfeed. What should I do?",
+    "title_hi": null,
+    "content_en": "Seek immediate medical care, especially if the baby is unusually sleepy or weak.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 124
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby is sleeping all the time and difficult to wake up. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. Excessive sleepiness and difficulty waking the baby are danger signs.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 125
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby is not responding normally. What should I do?",
+    "title_hi": null,
+    "content_en": "This is an emergency. Seek medical care immediately.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 126
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby has fever. What should I do?",
+    "title_hi": null,
+    "content_en": "Fever in a newborn is a medical emergency. Visit a healthcare facility immediately.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 127
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby feels very hot. Is this serious?",
+    "title_hi": null,
+    "content_en": "Yes. A newborn with a high temperature requires immediate medical evaluation.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 128
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby feels cold. What should I do?",
+    "title_hi": null,
+    "content_en": "Warm the baby immediately and seek medical care if the baby remains cold.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 129
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "Why is low body temperature dangerous in newborns?",
+    "title_hi": null,
+    "content_en": "Hypothermia can lead to severe illness and death if not treated promptly.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 130
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby is breathing very fast. Is it dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. Fast breathing can indicate serious infection or lung problems.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 131
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby is having difficulty breathing. What should I do?",
+    "title_hi": null,
+    "content_en": "This is an emergency. Take the baby to a health facility immediately.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 132
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "What is chest indrawing?",
+    "title_hi": null,
+    "content_en": "Chest indrawing occurs when the chest moves inward during breathing. It is a serious danger sign.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 133
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby makes grunting sounds while breathing. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. Grunting can indicate breathing difficulty and requires urgent medical attention.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 134
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's lips look blue. What should I do?",
+    "title_hi": null,
+    "content_en": "Blue lips may indicate oxygen deficiency. Seek emergency medical care immediately.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 135
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby had a seizure. What should I do?",
+    "title_hi": null,
+    "content_en": "Convulsions are a medical emergency. Seek immediate hospital care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 136
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's body becomes stiff at times. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. Stiffness may indicate neurological problems or infection and requires urgent evaluation.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 137
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby has unusual jerking movements. What should I do?",
+    "title_hi": null,
+    "content_en": "Seek medical care immediately. Abnormal movements can indicate seizures.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 138
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's eyes are yellow. Is this normal?",
+    "title_hi": null,
+    "content_en": "Mild jaundice may occur, but severe yellowing should be evaluated by a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 139
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "When is jaundice dangerous?",
+    "title_hi": null,
+    "content_en": "Jaundice affecting the palms, soles, or appearing within the first 24 hours is dangerous.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 140
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's palms and soles are yellow. What should I do?",
+    "title_hi": null,
+    "content_en": "This is a danger sign. Seek medical care immediately.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 141
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's eyes have pus. What should I do?",
+    "title_hi": null,
+    "content_en": "Eye infection requires medical assessment and treatment.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 142
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's eyes are red and swollen. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. Eye infections can damage vision if untreated.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 143
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's umbilical cord area is red. What should I do?",
+    "title_hi": null,
+    "content_en": "Redness around the cord may indicate infection. Seek medical care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 144
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "There is pus around my baby's cord. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. Umbilical infection requires immediate treatment.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 145
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's cord smells bad. What should I do?",
+    "title_hi": null,
+    "content_en": "Foul smell from the cord can indicate infection. Visit a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 146
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby has skin boils or infection. What should I do?",
+    "title_hi": null,
+    "content_en": "Skin infections should be assessed by a healthcare professional.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 147
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby has a widespread rash. Is it dangerous?",
+    "title_hi": null,
+    "content_en": "Severe or spreading rash requires medical evaluation.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 148
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby vomits repeatedly. What should I do?",
+    "title_hi": null,
+    "content_en": "Repeated vomiting may indicate serious illness and requires medical care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 149
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby vomits green fluid. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. Green vomiting is an emergency and requires immediate hospital care.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 150
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby's abdomen looks swollen. What should I do?",
+    "title_hi": null,
+    "content_en": "Abdominal swelling may indicate illness and should be evaluated immediately.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 151
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby has not passed stool. Is this normal?",
+    "title_hi": null,
+    "content_en": "If stool has not passed within the expected time after birth or the baby appears unwell, seek medical advice.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 152
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby is not passing urine. What should I do?",
+    "title_hi": null,
+    "content_en": "Reduced or absent urination may indicate dehydration or illness. Seek medical evaluation.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 153
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby has a weak cry. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "A weak cry may indicate illness and requires assessment.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 154
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby cries continuously and cannot be comforted. What should I do?",
+    "title_hi": null,
+    "content_en": "Persistent inconsolable crying may indicate illness. Seek medical advice.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 155
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby feels floppy or limp. Is this dangerous?",
+    "title_hi": null,
+    "content_en": "Yes. A floppy baby requires urgent medical evaluation.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 156
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "My baby seems to be losing too much weight. What should I do?",
+    "title_hi": null,
+    "content_en": "Excessive weight loss should be evaluated by a healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 157
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "How can I recognize dehydration in a newborn?",
+    "title_hi": null,
+    "content_en": "Signs include poor feeding, dry mouth, reduced urination, and lethargy.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 158
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "Can newborns get serious infections?",
+    "title_hi": null,
+    "content_en": "Yes. Newborn infections can progress rapidly and require immediate treatment.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 159
+  },
+  {
+    "category": "pnc",
+    "subcategory": "newborn_danger_signs",
+    "title_en": "When should I take my baby to the hospital immediately?",
+    "title_hi": null,
+    "content_en": "Immediately if the baby is not feeding, has fever, difficulty breathing, convulsions, jaundice of palms/soles, severe sleepiness, or any other danger sign.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 160
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "Why is immunization important for my baby?",
+    "title_hi": null,
+    "content_en": "Immunization protects children against serious diseases such as tuberculosis, polio, hepatitis B, measles, diphtheria, pertussis, tetanus, and other vaccine-preventable diseases.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 161
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "Are vaccines safe for babies?",
+    "title_hi": null,
+    "content_en": "Yes. Vaccines used in the national immunization program are carefully tested and monitored for safety and effectiveness.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 162
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "Which vaccines are given at birth?",
+    "title_hi": null,
+    "content_en": "At birth, babies usually receive BCG, OPV birth dose, and Hepatitis B birth dose as per the national schedule.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 163
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "What is a vaccination card?",
+    "title_hi": null,
+    "content_en": "A vaccination card records all vaccines received by the child and helps caregivers track upcoming doses.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 164
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "I lost my baby's vaccination card. What should I do?",
+    "title_hi": null,
+    "content_en": "Visit your health facility or contact your ASHA/ANM. Immunization records may be available and a replacement card can often be issued.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 165
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "My baby missed a vaccine. What should I do?",
+    "title_hi": null,
+    "content_en": "Visit the nearest health facility as soon as possible. Missed vaccines can often be given later according to catch-up schedules.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 166
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "Can a mildly sick baby receive vaccines?",
+    "title_hi": null,
+    "content_en": "Minor illnesses such as mild cough or cold usually do not prevent vaccination. Consult your healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 167
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "Are side effects normal after vaccination?",
+    "title_hi": null,
+    "content_en": "Mild fever, pain, swelling, or redness at the injection site may occur and usually resolve within a few days.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 168
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "My baby has fever after vaccination. What should I do?",
+    "title_hi": null,
+    "content_en": "Mild fever is common. Continue breastfeeding and follow advice given by your healthcare provider. Seek care if symptoms are severe.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 169
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "There is swelling at the injection site. Is this normal?",
+    "title_hi": null,
+    "content_en": "Mild swelling or redness is common after some vaccines and usually resolves without treatment.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 170
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "When should I seek medical care after vaccination?",
+    "title_hi": null,
+    "content_en": "Seek care if the baby has difficulty breathing, persistent high fever, severe swelling, convulsions, or appears very ill.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 171
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "Why should vaccines be given on time?",
+    "title_hi": null,
+    "content_en": "Timely vaccination provides protection when babies are most vulnerable to serious infections.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 172
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "How do I know if my child is fully immunized?",
+    "title_hi": null,
+    "content_en": "Compare the vaccines received with the national immunization schedule and consult your healthcare provider.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 173
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "What diseases do vaccines prevent?",
+    "title_hi": null,
+    "content_en": "Vaccines help prevent diseases such as tuberculosis, polio, hepatitis B, diphtheria, pertussis, tetanus, measles, rubella, and others.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 174
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "What are booster doses?",
+    "title_hi": null,
+    "content_en": "Booster doses strengthen immunity and provide continued protection against diseases.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 175
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "What is growth monitoring?",
+    "title_hi": null,
+    "content_en": "Growth monitoring involves regularly measuring a child's weight, length/height, and development to ensure healthy growth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 176
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "Why is regular weight measurement important?",
+    "title_hi": null,
+    "content_en": "Weight monitoring helps identify growth problems, malnutrition, and illness at an early stage.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 177
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "How often should my baby be weighed?",
+    "title_hi": null,
+    "content_en": "Babies should be weighed regularly during immunization visits and growth monitoring sessions.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 178
+  },
+  {
+    "category": "pnc",
+    "subcategory": "immunization",
+    "title_en": "What is a growth chart?",
+    "title_hi": null,
+    "content_en": "A growth chart is a tool used to track a child's growth over time and compare it with expected growth patterns.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 179
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "What is a low birth weight baby?",
+    "title_hi": null,
+    "content_en": "A low birth weight baby weighs less than 2500 grams (2.5 kg) at birth. These babies need extra care and monitoring.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 180
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "What is a preterm baby?",
+    "title_hi": null,
+    "content_en": "A preterm baby is born before 37 completed weeks of pregnancy.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 181
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "Why are some babies born with low birth weight?",
+    "title_hi": null,
+    "content_en": "Causes include premature birth, poor maternal nutrition, multiple pregnancies, maternal illness, infections, anemia, and high-risk pregnancies.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 182
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "Why are some babies born prematurely?",
+    "title_hi": null,
+    "content_en": "Premature birth can occur due to maternal illness, infections, hypertension, multiple pregnancies, poor nutrition, or unknown reasons.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 183
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "Why do low birth weight babies need special care?",
+    "title_hi": null,
+    "content_en": "They are more vulnerable to infections, hypothermia, feeding difficulties, breathing problems, and growth delays.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 184
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "What is Kangaroo Mother Care (KMC)?",
+    "title_hi": null,
+    "content_en": "KMC involves prolonged skin-to-skin contact between mother and baby, exclusive breastfeeding, and close monitoring. It helps improve survival and growth.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 185
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "What are the benefits of Kangaroo Mother Care?",
+    "title_hi": null,
+    "content_en": "KMC helps maintain body temperature, improves breastfeeding, promotes weight gain, reduces infections, and strengthens bonding.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 186
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "How long should Kangaroo Mother Care be provided?",
+    "title_hi": null,
+    "content_en": "As many hours as possible each day, ideally continuously whenever feasible.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 187
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "Why is keeping a low birth weight baby warm important?",
+    "title_hi": null,
+    "content_en": "These babies lose heat quickly and can become dangerously cold, leading to serious complications.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 188
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "How can I prevent my baby from becoming cold?",
+    "title_hi": null,
+    "content_en": "Use skin-to-skin care, warm clothing, caps, blankets, and avoid unnecessary exposure to cold environments.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 189
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "How should I feed a low birth weight baby?",
+    "title_hi": null,
+    "content_en": "Frequent breastfeeding is recommended. Some babies may need expressed breast milk if direct breastfeeding is difficult.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 190
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "How often should a low birth weight baby be fed?",
+    "title_hi": null,
+    "content_en": "Feed frequently, usually every 2–3 hours or as advised by healthcare providers.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 191
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "Can preterm babies receive breast milk?",
+    "title_hi": null,
+    "content_en": "Yes. Breast milk is the best nutrition for preterm and low birth weight babies.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 192
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "What if my baby cannot suck properly?",
+    "title_hi": null,
+    "content_en": "Express breast milk and feed it using a clean cup, spoon, or other recommended method under medical guidance.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 193
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "Why is weight monitoring important for low birth weight babies?",
+    "title_hi": null,
+    "content_en": "Regular weight monitoring helps assess growth and identify problems early.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 194
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "Are low birth weight babies more prone to infections?",
+    "title_hi": null,
+    "content_en": "Yes. Their immune systems are less developed, making them more vulnerable to infections.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 195
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "How often should low birth weight babies be checked by healthcare providers?",
+    "title_hi": null,
+    "content_en": "They require regular follow-up visits as advised by healthcare providers, often more frequently than full-term babies.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 196
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "Will my preterm baby develop normally?",
+    "title_hi": null,
+    "content_en": "Many preterm babies develop normally, but some may need additional monitoring and support for growth and development.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 197
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "What danger signs should I watch for in a low birth weight baby?",
+    "title_hi": null,
+    "content_en": "Poor feeding, fever, low body temperature, breathing difficulty, excessive sleepiness, convulsions, or reduced activity require immediate medical attention.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 198
+  },
+  {
+    "category": "pnc",
+    "subcategory": "low_birth_weight",
+    "title_en": "When should I take my low birth weight baby to the hospital immediately?",
+    "title_hi": null,
+    "content_en": "Immediately if the baby has feeding problems, breathing difficulties, fever, feels cold, becomes unusually sleepy, or shows any danger signs.",
+    "content_hi": null,
+    "tags": [],
+    "display_order": 199
+  }
+]
