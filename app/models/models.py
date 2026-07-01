@@ -240,21 +240,41 @@ class OTPToken(Base):
     used = Column(Boolean, default=False)
 
 
+# class EducationalContent(Base):
+#     __tablename__ = "educational_content"
+
+#     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+#     category = Column(Text, nullable=False)   # 'faq','video','scheme','danger_sign'
+#     title_hi = Column(Text)
+#     title_en = Column(Text)
+#     content_hi = Column(Text)
+#     content_en = Column(Text)
+#     media_url = Column(Text)
+#     tags = Column(JSONB)
+#     is_active = Column(Boolean, default=True)
+#     created_at = Column(DateTime(timezone=True), default=now_utc)
+
 class EducationalContent(Base):
     __tablename__ = "educational_content"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    category = Column(Text, nullable=False)   # 'faq','video','scheme','danger_sign'
+    category = Column(Text, nullable=False, index=True)      # 'bpcr', 'pnc' — add index, you'll filter by this constantly
+    content_type = Column(Text, nullable=False, default="video")  # 'video' now, 'article'/'infographic' later — table name is generic, so future-proof it
     title_hi = Column(Text)
     title_en = Column(Text)
     content_hi = Column(Text)
     content_en = Column(Text)
-    media_url = Column(Text)
+    media_url = Column(Text, nullable=False)                  # nullable=False — a video row without a link is useless
+    thumbnail_url = Column(Text)                               # NEW — YouTube auto-thumbnails are unreliable for youtu.be short links; store explicitly
+    video_source = Column(Text, default="youtube")             # NEW — 'youtube', 'vimeo' — lets you decide embed-player vs external-link later
+    duration_seconds = Column(Integer)                         # NEW, nullable — nice-to-have for UI, cheap to add now
+    sort_order = Column(Integer, default=0)                    # NEW — lets Admin control display order instead of relying on created_at
     tags = Column(JSONB)
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)  # NEW — you'll want this once Admin can edit rows
 
-
+    
 class ChatbotConversation(Base):
     __tablename__ = "chatbot_conversations"
 
