@@ -249,6 +249,76 @@ class WeekGuide(BaseModel):
     what_to_expect: str
     image_url: Optional[str] = None
 
+# ── ANC Visit Checklist Template ──────────────────────────────────────────────
+# (key, label_hi, label_en) tuples per visit_number. Drives both the API response
+# and what the ASHA app writes into ANCVisit.checklist (JSONB).
+
+ANC_VISIT_TEMPLATE: dict[int, dict] = {
+    1: {
+        "title_hi": "पहली एएनसी विजिट", "title_en": "First ANC Visit",
+        "week_range": "Before 12 Weeks",
+        "items": [
+            ("weight_recorded", "वजन दर्ज किया गया", "Weight recorded"),
+            ("bp_checked", "रक्तचाप जांचा गया", "Blood pressure checked"),
+            ("hemoglobin_tested", "हीमोग्लोबिन जांच", "Hemoglobin tested"),
+            ("blood_group_tested", "ब्लड ग्रुप जांच", "Blood group tested"),
+            ("urine_test_done", "यूरिन टेस्ट", "Urine test done"),
+            ("hiv_screening", "एचआईवी जांच", "HIV screening"),
+            ("hepatitis_b_screening", "हेपेटाइटिस बी जांच", "Hepatitis B screening"),
+            ("counselling_completed", "परामर्श पूर्ण", "Counselling completed"),
+        ],
+    },
+    2: {
+        "title_hi": "दूसरी एएनसी विजिट", "title_en": "Second ANC Visit",
+        "week_range": "14-26 Weeks",
+        "items": [
+            ("weight_measured", "वजन मापा गया", "Weight measured"),
+            ("bp_checked", "बीपी जांची गई", "BP checked"),
+            ("fetal_growth_assessed", "भ्रूण वृद्धि आकलन", "Fetal growth assessed"),
+            ("ifa_started", "आईएफए शुरू", "IFA started"),
+            ("calcium_started", "कैल्शियम शुरू", "Calcium started"),
+            ("danger_sign_counselling", "खतरे के संकेत परामर्श", "Danger sign counselling"),
+        ],
+    },
+    3: {
+        "title_hi": "तीसरी एएनसी विजिट", "title_en": "Third ANC Visit",
+        "week_range": "28-34 Weeks",
+        "items": [
+            ("weight_measured", "वजन मापा गया", "Weight measured"),
+            ("bp_checked", "बीपी जांची गई", "BP checked"),
+            ("fetal_movement_assessment", "भ्रूण गति आकलन", "Fetal movement assessment"),
+            ("birth_preparedness_discussed", "प्रसव तैयारी चर्चा", "Birth preparedness discussed"),
+            ("high_risk_screening", "उच्च जोखिम जांच", "High-risk screening"),
+        ],
+    },
+    4: {
+        "title_hi": "चौथी एएनसी विजिट", "title_en": "Fourth ANC Visit",
+        "week_range": "36 Weeks",
+        "items": [
+            ("weight_measured", "वजन मापा गया", "Weight measured"),
+            ("bp_checked", "बीपी जांची गई", "BP checked"),
+            ("fetal_position_checked", "भ्रूण स्थिति जांच", "Fetal position checked"),
+            ("delivery_planning_completed", "प्रसव योजना पूर्ण", "Delivery planning completed"),
+            ("referral_facility_identified", "रेफरल सुविधा चयनित", "Referral facility identified"),
+            ("emergency_transport_confirmed", "आपातकालीन परिवहन पुष्टि", "Emergency transport confirmed"),
+        ],
+    },
+}
+
+MEDICINE_DEFAULTS = {"iron": 180, "calcium": 360}
+IMMUNIZATION_DOSE_TYPES = ["dose_1", "dose_2", "booster"]
+ULTRASOUND_SCAN_TYPES = ["pregnancy_scan", "early_scan", "anomaly_scan", "growth_scan"]
+
+
+class ImmunizationUpdateRequest(BaseModel):
+    status: str = Field(..., pattern=r"^(pending|received)$")
+    received_date: Optional[date] = None
+
+
+class UltrasoundUpdateRequest(BaseModel):
+    status: str = Field(..., pattern=r"^(due|completed)$")
+    scan_date: Optional[date] = None
+    facility_name: Optional[str] = None
 
 # ── Appointments ──────────────────────────────────────────────────────────────
 

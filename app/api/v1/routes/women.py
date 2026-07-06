@@ -63,7 +63,8 @@ from app.core.exceptions import (
 from app.models.models import (
     User, Beneficiary, BPCRAssessment, ANCVisit,
     Appointment, Reminder, Alert, AlertType, RiskLevel,
-    EducationalContent, ChatbotConversation,FAQ
+    EducationalContent, ChatbotConversation,FAQ,
+    PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,
 )
 from app.schemas.women import (
     WomenRegisterRequest,
@@ -85,7 +86,9 @@ from app.schemas.women import (
     ChatbotMessageResponse,
     ChatbotFeedbackRequest,
     SchemeEligibilityResponse,
-    FAQOut
+    FAQOut,
+    ANC_VISIT_TEMPLATE, MEDICINE_DEFAULTS, IMMUNIZATION_DOSE_TYPES, ULTRASOUND_SCAN_TYPES,   # NEW
+    ImmunizationUpdateRequest, UltrasoundUpdateRequest,
 )
 from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
@@ -130,6 +133,70 @@ async def get_beneficiary_or_404(user: User, db: AsyncSession) -> Beneficiary:
         raise NotFoundException("Beneficiary profile")
     return b
 
+# ── Lazy-provisioning helpers (auto-create default rows on first access) ──────
+
+async def get_or_create_registration(beneficiary_id: UUID, db: AsyncSession) -> PregnancyRegistration:
+    result = await db.execute(
+        select(PregnancyRegistration).where(PregnancyRegistration.beneficiary_id == beneficiary_id)
+    )
+    reg = result.scalar_one_or_none()
+    if not reg:
+        reg = PregnancyRegistration(beneficiary_id=beneficiary_id)
+        db.add(reg)
+        await db.commit()
+        await db.refresh(reg)
+    return reg
+
+
+async def get_or_create_medicine_trackers(beneficiary_id: UUID, db: AsyncSession) -> dict[str, MedicineTracker]:
+    result = await db.execute(select(MedicineTracker).where(MedicineTracker.beneficiary_id == beneficiary_id))
+    existing = {t.medicine_type: t for t in result.scalars().all()}
+    created = False
+    for med_type, total in MEDICINE_DEFAULTS.items():
+        if med_type not in existing:
+            t = MedicineTracker(beneficiary_id=beneficiary_id, medicine_type=med_type, total_doses=total)
+            db.add(t)
+            existing[med_type] = t
+            created = True
+    if created:
+        await db.commit()
+        for t in existing.values():
+            await db.refresh(t)
+    return existing
+
+
+async def get_or_create_immunizations(beneficiary_id: UUID, db: AsyncSession) -> dict[str, Immunization]:
+    result = await db.execute(select(Immunization).where(Immunization.beneficiary_id == beneficiary_id))
+    existing = {i.dose_type: i for i in result.scalars().all()}
+    created = False
+    for dose_type in IMMUNIZATION_DOSE_TYPES:
+        if dose_type not in existing:
+            i = Immunization(beneficiary_id=beneficiary_id, dose_type=dose_type)
+            db.add(i)
+            existing[dose_type] = i
+            created = True
+    if created:
+        await db.commit()
+        for i in existing.values():
+            await db.refresh(i)
+    return existing
+
+
+async def get_or_create_ultrasounds(beneficiary_id: UUID, db: AsyncSession) -> dict[str, UltrasoundScan]:
+    result = await db.execute(select(UltrasoundScan).where(UltrasoundScan.beneficiary_id == beneficiary_id))
+    existing = {s.scan_type: s for s in result.scalars().all()}
+    created = False
+    for scan_type in ULTRASOUND_SCAN_TYPES:
+        if scan_type not in existing:
+            s = UltrasoundScan(beneficiary_id=beneficiary_id, scan_type=scan_type)
+            db.add(s)
+            existing[scan_type] = s
+            created = True
+    if created:
+        await db.commit()
+        for s in existing.values():
+            await db.refresh(s)
+    return existing
 
 def get_week(lmp: date) -> int:
     return min((date.today() - lmp).days // 7, 42)
@@ -396,13 +463,13 @@ async def respond_bpcr(
 
 
 # ── ANC Services ───────────────────────────────────────────────────────────────
-
-@router.get("/anc-services", summary="ANC visits history + overdue info + week guide")
+@router.get("/anc-services", summary="Full ANC Services screen data")
 async def get_anc_services(
     user: User = Depends(get_current_woman),
     db: AsyncSession = Depends(get_db),
 ):
     b = await get_beneficiary_or_404(user, db)
+    pregnancy = compute_pregnancy_info(b.lmp)
 
     result = await db.execute(
         select(ANCVisit)
@@ -411,39 +478,223 @@ async def get_anc_services(
     )
     visits = result.scalars().all()
 
+    # Latest ANCVisit row per visit_number (1-4), for merging into the template.
+    visit_by_number: dict[int, ANCVisit] = {}
+    for v in visits:
+        if v.visit_number and v.visit_number not in visit_by_number:
+            visit_by_number[v.visit_number] = v
+
     last_visit = visits[0] if visits else None
     next_due = last_visit.next_due_date if last_visit else None
     today = date.today()
     is_overdue = next_due is not None and next_due < today
     overdue_days = (today - next_due).days if is_overdue else None
 
-    # High-risk flags from last visit
     high_risk_flags = []
     if last_visit:
         if last_visit.bp_systolic and last_visit.bp_systolic > 140:
             high_risk_flags.append("high_bp")
         if last_visit.bp_diastolic and last_visit.bp_diastolic > 90:
             high_risk_flags.append("high_diastolic_bp")
-        if last_visit.hemoglobin and float(last_visit.hemoglobin) < 7.0:
-            high_risk_flags.append("severe_anemia")
-        elif last_visit.hemoglobin and float(last_visit.hemoglobin) < 11.0:
-            high_risk_flags.append("mild_anemia")
+        if last_visit.hemoglobin:
+            hb = float(last_visit.hemoglobin)
+            if hb < 7.0:
+                high_risk_flags.append("severe_anemia")
+            elif hb < 11.0:
+                high_risk_flags.append("mild_anemia")
 
-    pregnancy = compute_pregnancy_info(b.lmp)
-    week = pregnancy["gestational_week"]
+    # ── Merge template + actual checklist state into a per-visit timeline ──
+    timeline = []
+    for visit_number, template in ANC_VISIT_TEMPLATE.items():
+        visit = visit_by_number.get(visit_number)
+        checklist_state = (visit.checklist or {}) if visit else {}
+        items = [{
+            "key": key,
+            "label_hi": label_hi,
+            "label_en": label_en,
+            "checked": bool(checklist_state.get(key, False)),
+        } for key, label_hi, label_en in template["items"]]
+        checked_count = sum(1 for i in items if i["checked"])
+        timeline.append({
+            "visit_number": visit_number,
+            "title_hi": template["title_hi"],
+            "title_en": template["title_en"],
+            "week_range": template["week_range"],
+            "items": items,
+            "tests_completed": checked_count,
+            "tests_total": len(items),
+            "status": "completed" if items and checked_count == len(items) else "due",
+            "visit_date": visit.visit_date.isoformat() if visit else None,
+        })
+
+    # ── BPCR percentage (for the header card) ──
+    bpcr_result = await db.execute(
+        select(BPCRAssessment)
+        .where(BPCRAssessment.beneficiary_id == b.id)
+        .order_by(desc(BPCRAssessment.assessed_at))
+    )
+    seen_bpcr: dict[str, BPCRAssessment] = {}
+    for a in bpcr_result.scalars().all():
+        if a.component not in seen_bpcr:
+            seen_bpcr[a.component] = a
+    bpcr_score_percent = round(sum(a.score or 0 for a in seen_bpcr.values()) / 10 * 100, 0) if seen_bpcr else None
+
+    reg = await get_or_create_registration(b.id, db)
+    trackers = await get_or_create_medicine_trackers(b.id, db)
+    immunizations = await get_or_create_immunizations(b.id, db)
+    scans = await get_or_create_ultrasounds(b.id, db)
 
     return success_envelope({
+        "gestational_week": pregnancy["gestational_week"],
+        "trimester": pregnancy["trimester"],
+        "edd": pregnancy["edd"].isoformat(),
+        "high_risk_status": "Yes" if high_risk_flags else "No",
+        "high_risk_flags": high_risk_flags,
+        "bpcr_score_percent": bpcr_score_percent,
+        "visit_progress": [
+            {"visit_number": t["visit_number"], "week_range": t["week_range"], "is_completed": t["status"] == "completed"}
+            for t in timeline
+        ],
+        "pregnancy_registration": {
+            "is_registered": reg.is_registered,
+            "registered_date": reg.registered_date.isoformat() if reg.registered_date else None,
+            "rch_id_generated": bool(reg.rch_id),
+            "rch_id": reg.rch_id,
+            "mcp_card_received": reg.mcp_card_received,
+            "asha_assigned": b.asha_id is not None,
+        },
+        "anc_visit_timeline": timeline,
+        "medicine_tracker": {
+            med_type: {"taken": t.doses_taken, "total": t.total_doses}
+            for med_type, t in trackers.items()
+        },
+        "immunization": [{
+            "dose_type": dose_type,
+            "status": immunizations[dose_type].status,
+            "date": immunizations[dose_type].received_date.isoformat() if immunizations[dose_type].received_date else None,
+        } for dose_type in IMMUNIZATION_DOSE_TYPES],
+        "ultrasound": [{
+            "scan_type": scan_type,
+            "status": scans[scan_type].status,
+            "scan_date": scans[scan_type].scan_date.isoformat() if scans[scan_type].scan_date else None,
+        } for scan_type in ULTRASOUND_SCAN_TYPES],
         "visits": [ANCVisitOut.model_validate(v).model_dump() for v in visits],
         "total_visits": len(visits),
         "last_visit": ANCVisitOut.model_validate(last_visit).model_dump() if last_visit else None,
         "next_due_date": next_due.isoformat() if next_due else None,
         "is_overdue": is_overdue,
         "overdue_days": overdue_days,
-        "high_risk_flags": high_risk_flags,
-        "current_week": week,
-        "trimester": pregnancy["trimester"],
     })
 
+
+@router.post("/anc-services/medicine/{medicine_type}/mark-taken", summary="Mark today's dose as taken")
+async def mark_medicine_taken(
+    medicine_type: str,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    if medicine_type not in MEDICINE_DEFAULTS:
+        raise ValidationException("Invalid medicine type. Use 'iron' or 'calcium'")
+    b = await get_beneficiary_or_404(user, db)
+
+    result = await db.execute(
+        select(MedicineTracker)
+        .where(MedicineTracker.beneficiary_id == b.id)
+        .where(MedicineTracker.medicine_type == medicine_type)
+    )
+    tracker = result.scalar_one_or_none()
+    if not tracker:
+        tracker = MedicineTracker(beneficiary_id=b.id, medicine_type=medicine_type, total_doses=MEDICINE_DEFAULTS[medicine_type])
+        db.add(tracker)
+
+    today = date.today()
+    if tracker.last_taken_date == today:
+        return success_envelope({
+            "message": "Already marked for today",
+            "medicine_type": medicine_type,
+            "doses_taken": tracker.doses_taken,
+            "total_doses": tracker.total_doses,
+        })
+
+    tracker.doses_taken = min(tracker.doses_taken + 1, tracker.total_doses)
+    tracker.last_taken_date = today
+    await db.commit()
+    await db.refresh(tracker)
+
+    return success_envelope({
+        "message": "Dose marked as taken",
+        "medicine_type": medicine_type,
+        "doses_taken": tracker.doses_taken,
+        "total_doses": tracker.total_doses,
+    })
+
+
+@router.patch("/anc-services/immunization/{dose_type}", summary="Update immunization dose status")
+async def update_immunization(
+    dose_type: str,
+    payload: ImmunizationUpdateRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    if dose_type not in IMMUNIZATION_DOSE_TYPES:
+        raise ValidationException(f"Invalid dose type. Must be one of: {IMMUNIZATION_DOSE_TYPES}")
+    b = await get_beneficiary_or_404(user, db)
+
+    result = await db.execute(
+        select(Immunization)
+        .where(Immunization.beneficiary_id == b.id)
+        .where(Immunization.dose_type == dose_type)
+    )
+    dose = result.scalar_one_or_none()
+    if not dose:
+        dose = Immunization(beneficiary_id=b.id, dose_type=dose_type)
+        db.add(dose)
+
+    dose.status = payload.status
+    dose.received_date = payload.received_date or (date.today() if payload.status == "received" else None)
+    await db.commit()
+
+    return success_envelope({
+        "message": "Immunization updated",
+        "dose_type": dose_type,
+        "status": dose.status,
+        "date": dose.received_date.isoformat() if dose.received_date else None,
+    })
+
+
+@router.patch("/anc-services/ultrasound/{scan_type}", summary="Update ultrasound scan status")
+async def update_ultrasound(
+    scan_type: str,
+    payload: UltrasoundUpdateRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    if scan_type not in ULTRASOUND_SCAN_TYPES:
+        raise ValidationException(f"Invalid scan type. Must be one of: {ULTRASOUND_SCAN_TYPES}")
+    b = await get_beneficiary_or_404(user, db)
+
+    result = await db.execute(
+        select(UltrasoundScan)
+        .where(UltrasoundScan.beneficiary_id == b.id)
+        .where(UltrasoundScan.scan_type == scan_type)
+    )
+    scan = result.scalar_one_or_none()
+    if not scan:
+        scan = UltrasoundScan(beneficiary_id=b.id, scan_type=scan_type)
+        db.add(scan)
+
+    scan.status = payload.status
+    scan.scan_date = payload.scan_date or (date.today() if payload.status == "completed" else scan.scan_date)
+    if payload.facility_name:
+        scan.facility_name = payload.facility_name
+    await db.commit()
+
+    return success_envelope({
+        "message": "Ultrasound updated",
+        "scan_type": scan_type,
+        "status": scan.status,
+        "scan_date": scan.scan_date.isoformat() if scan.scan_date else None,
+    })
 
 # ── Appointments ───────────────────────────────────────────────────────────────
 

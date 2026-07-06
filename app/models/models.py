@@ -194,10 +194,77 @@ class ANCVisit(Base):
     fetal_heart_rate = Column(SmallInteger)
     notes = Column(Text)
     next_due_date = Column(Date)
+    checklist = Column(JSONB, default=dict)
     created_at = Column(DateTime(timezone=True), default=now_utc)
 
     beneficiary = relationship("Beneficiary", back_populates="anc_visits")
 
+class PregnancyRegistration(Base):
+    """1:1 with Beneficiary — RCH/MCP registration status shown on ANC Services screen."""
+    __tablename__ = "pregnancy_registrations"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), unique=True, nullable=False)
+    is_registered = Column(Boolean, default=False)
+    registered_date = Column(Date)
+    rch_id = Column(Text)
+    mcp_card_received = Column(Boolean, default=False)
+    mcp_card_received_date = Column(Date)
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+
+    beneficiary = relationship("Beneficiary")
+
+
+class MedicineTracker(Base):
+    """One row per (beneficiary, medicine_type) — 'iron' | 'calcium' adherence counter."""
+    __tablename__ = "medicine_trackers"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), nullable=False)
+    medicine_type = Column(Text, nullable=False)          # 'iron' | 'calcium'
+    total_doses = Column(Integer, nullable=False, default=180)
+    doses_taken = Column(Integer, nullable=False, default=0)
+    last_taken_date = Column(Date)
+    started_at = Column(Date, default=lambda: datetime.now(timezone.utc).date())
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+
+    __table_args__ = (UniqueConstraint("beneficiary_id", "medicine_type", name="uq_medicine_tracker"),)
+    beneficiary = relationship("Beneficiary")
+
+
+class Immunization(Base):
+    """One row per (beneficiary, dose_type) — 'dose_1' | 'dose_2' | 'booster'."""
+    __tablename__ = "immunizations"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), nullable=False)
+    dose_type = Column(Text, nullable=False)
+    status = Column(Text, nullable=False, default="pending")   # 'pending' | 'received'
+    received_date = Column(Date)
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+
+    __table_args__ = (UniqueConstraint("beneficiary_id", "dose_type", name="uq_immunization_dose"),)
+    beneficiary = relationship("Beneficiary")
+
+
+class UltrasoundScan(Base):
+    """One row per (beneficiary, scan_type)."""
+    __tablename__ = "ultrasound_scans"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), nullable=False)
+    scan_type = Column(Text, nullable=False)     # 'pregnancy_scan'|'early_scan'|'anomaly_scan'|'growth_scan'
+    status = Column(Text, nullable=False, default="due")   # 'due' | 'completed'
+    scan_date = Column(Date)
+    facility_name = Column(Text)
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+
+    __table_args__ = (UniqueConstraint("beneficiary_id", "scan_type", name="uq_ultrasound_scan"),)
+    beneficiary = relationship("Beneficiary")
 
 class Appointment(Base):
     __tablename__ = "appointments"

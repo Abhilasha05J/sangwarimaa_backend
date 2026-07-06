@@ -3408,5 +3408,1835 @@
     "content_hi": "तुरंत जाएँ यदि शिशु को दूध पिलाने में समस्या हो, साँस लेने में कठिनाई हो, बुखार हो, ठंडा महसूस हो, असामान्य रूप से नींद आए, या कोई खतरे का संकेत दिखे।",
     "tags": [],
     "display_order": 199
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What should I do if I think I am pregnant?",
+    "title_hi": "यदि मुझे लगे कि मैं गर्भवती हूँ तो क्या करूँ?",
+    "content_en": "Visit the nearest health facility, Sub Health Centre, PHC, or consult an ASHA worker for confirmation of pregnancy and early registration.",
+    "content_hi": "गर्भावस्था की पुष्टि और शीघ्र पंजीकरण के लिए निकटतम स्वास्थ्य सुविधा, उप स्वास्थ्य केंद्र, पीएचसी पर जाएँ या आशा कार्यकर्ता से परामर्श करें।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "When should pregnancy be registered?",
+    "title_hi": "गर्भावस्था का पंजीकरण कब कराना चाहिए?",
+    "content_en": "Pregnancy should ideally be registered as soon as it is confirmed, preferably within the first 12 weeks (first trimester).",
+    "content_hi": "गर्भावस्था की पुष्टि होते ही, आदर्श रूप से पहली तिमाही के भीतर यानी पहले 12 हफ्तों में, पंजीकरण कराना चाहिए।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Why is early registration important?",
+    "title_hi": "शीघ्र पंजीकरण क्यों महत्वपूर्ण है?",
+    "content_en": "Early registration helps identify health risks, initiate antenatal care, provide nutritional support, vaccinations, and ensure timely monitoring throughout pregnancy.",
+    "content_hi": "शीघ्र पंजीकरण से स्वास्थ्य जोखिमों की पहचान, प्रसवपूर्व देखभाल शुरू करने, पोषण सहायता, टीकाकरण और पूरी गर्भावस्था में समय पर निगरानी सुनिश्चित करने में मदद मिलती है।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Where can I register my pregnancy?",
+    "title_hi": "मैं अपनी गर्भावस्था का पंजीकरण कहाँ करा सकती हूँ?",
+    "content_en": "Pregnancy can be registered through ASHA, ANM, Anganwadi Centre, Sub Health Centre, PHC, CHC, District Hospital, or other recognized health facilities.",
+    "content_hi": "गर्भावस्था का पंजीकरण आशा, एएनएम, आंगनवाड़ी केंद्र, उप स्वास्थ्य केंद्र, पीएचसी, सीएचसी, जिला अस्पताल या अन्य मान्यता प्राप्त स्वास्थ्य सुविधाओं के माध्यम से कराया जा सकता है।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What documents are needed for pregnancy registration?",
+    "title_hi": "गर्भावस्था पंजीकरण के लिए कौन से दस्तावेज चाहिए?",
+    "content_en": "Generally, Aadhaar Card, MCP Card (if already issued), mobile number, address proof, and bank account details for government schemes may be required. Requirements may vary by state.",
+    "content_hi": "आमतौर पर आधार कार्ड, एमसीपी कार्ड (यदि पहले से जारी हो), मोबाइल नंबर, पता प्रमाण और सरकारी योजनाओं के लिए बैंक खाते का विवरण आवश्यक हो सकता है। आवश्यकताएँ राज्य के अनुसार भिन्न हो सकती हैं।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "How many ANC visits are recommended?",
+    "title_hi": "कितनी एएनसी विज़िट की सिफारिश की जाती है?",
+    "content_en": "A minimum of 4 focused ANC visits is recommended, though WHO currently recommends at least 8 contacts during pregnancy for better maternal and fetal outcomes.",
+    "content_hi": "न्यूनतम 4 केंद्रित एएनसी विज़िट की सिफारिश की जाती है, हालाँकि डब्ल्यूएचओ बेहतर मातृ और भ्रूण परिणामों के लिए गर्भावस्था के दौरान कम से कम 8 संपर्कों की सिफारिश करता है।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What is the first ANC visit?",
+    "title_hi": "पहली एएनसी विज़िट क्या है?",
+    "content_en": "The first ANC visit is the initial health check-up after pregnancy registration, where medical history, examinations, laboratory tests, counselling, and risk assessment are conducted.",
+    "content_hi": "पहली एएनसी विज़िट गर्भावस्था पंजीकरण के बाद की प्रारंभिक स्वास्थ्य जाँच है, जिसमें चिकित्सा इतिहास, परीक्षण, प्रयोगशाला जाँच, परामर्श और जोखिम मूल्यांकन किया जाता है।",
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What information will be collected during registration?",
+    "title_hi": "पंजीकरण के दौरान कौन सी जानकारी एकत्र की जाएगी?",
+    "content_en": "Personal details, age, address, obstetric history, Last Menstrual Period (LMP), Expected Date of Delivery (EDD), previous pregnancies, medical illnesses, and current pregnancy details are recorded.",
+    "content_hi": "व्यक्तिगत विवरण, आयु, पता, प्रसूति इतिहास, अंतिम मासिक धर्म (एलएमपी), अपेक्षित प्रसव तिथि (ईडीडी), पिछली गर्भावस्थाएँ, चिकित्सा बीमारियाँ और वर्तमान गर्भावस्था विवरण दर्ज किए जाते हैं।",
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "How is Expected Date of Delivery (EDD) calculated?",
+    "title_hi": "अपेक्षित प्रसव तिथि (ईडीडी) की गणना कैसे की जाती है?",
+    "content_en": "EDD is usually calculated by adding 9 months and 7 days to the first day of the Last Menstrual Period (LMP) using Naegele's Rule.",
+    "content_hi": "ईडीडी की गणना आमतौर पर नेगेले के नियम का उपयोग करके अंतिम मासिक धर्म (एलएमपी) के पहले दिन में 9 महीने और 7 दिन जोड़कर की जाती है।",
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What is Last Menstrual Period (LMP)?",
+    "title_hi": "अंतिम मासिक धर्म (एलएमपी) क्या है?",
+    "content_en": "LMP refers to the first day of the woman's last menstrual cycle before becoming pregnant. It is used to estimate gestational age and EDD.",
+    "content_hi": "एलएमपी गर्भवती होने से पहले महिला के अंतिम मासिक चक्र के पहले दिन को संदर्भित करता है। इसका उपयोग गर्भकालीन आयु और ईडीडी का अनुमान लगाने के लिए किया जाता है।",
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What if I don't remember my LMP?",
+    "title_hi": "यदि मुझे अपना एलएमपी याद न हो तो क्या करें?",
+    "content_en": "If LMP is unknown, an ultrasound examination, especially during early pregnancy, can help estimate gestational age and EDD.",
+    "content_hi": "यदि एलएमपी अज्ञात हो, तो अल्ट्रासाउंड जाँच, विशेषकर प्रारंभिक गर्भावस्था में, गर्भकालीन आयु और ईडीडी का अनुमान लगाने में मदद कर सकती है।",
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Can pregnancy be registered after 3 months?",
+    "title_hi": "क्या 3 महीने बाद गर्भावस्था का पंजीकरण हो सकता है?",
+    "content_en": "Yes, pregnancy can be registered at any stage, but early registration is strongly recommended to receive the full benefits of antenatal care.",
+    "content_hi": "हाँ, गर्भावस्था किसी भी चरण में पंजीकृत की जा सकती है, लेकिन प्रसवपूर्व देखभाल के पूर्ण लाभ पाने के लिए शीघ्र पंजीकरण की दृढ़ता से सिफारिश की जाती है।",
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Can I register pregnancy online?",
+    "title_hi": "क्या मैं गर्भावस्था का पंजीकरण ऑनलाइन कर सकती हूँ?",
+    "content_en": "In some states, pregnancy details may be entered digitally through systems such as RCH Portal, ANMOL, or state-specific health applications by healthcare workers.",
+    "content_hi": "कुछ राज्यों में, स्वास्थ्यकर्मियों द्वारा आरसीएच पोर्टल, एएनएमओएल या राज्य-विशिष्ट स्वास्थ्य अनुप्रयोगों जैसी प्रणालियों के माध्यम से गर्भावस्था विवरण डिजिटल रूप से दर्ज किया जा सकता है।",
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Why is weight measured during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान वजन क्यों मापा जाता है?",
+    "content_en": "Weight monitoring helps assess maternal nutritional status and fetal growth. Inadequate or excessive weight gain may indicate health concerns requiring attention.",
+    "content_hi": "वजन की निगरानी मातृ पोषण स्थिति और भ्रूण के विकास का आकलन करने में मदद करती है। अपर्याप्त या अत्यधिक वजन बढ़ना ध्यान देने योग्य स्वास्थ्य संबंधी चिंताओं का संकेत हो सकता है।",
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Why is blood pressure checked?",
+    "title_hi": "रक्तचाप की जाँच क्यों की जाती है?",
+    "content_en": "Blood pressure monitoring helps detect pregnancy-induced hypertension and pre-eclampsia, which can be dangerous for both mother and baby.",
+    "content_hi": "रक्तचाप की निगरानी गर्भावस्था-प्रेरित उच्च रक्तचाप और प्री-एक्लेम्पसिया का पता लगाने में मदद करती है, जो माँ और शिशु दोनों के लिए खतरनाक हो सकता है।",
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What blood tests are done during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान कौन से रक्त परीक्षण किए जाते हैं?",
+    "content_en": "Common tests include hemoglobin, blood group, Rh factor, blood sugar, HIV, Hepatitis B, syphilis (VDRL), and other tests as advised by healthcare providers.",
+    "content_hi": "सामान्य जाँचों में हीमोग्लोबिन, रक्त समूह, आरएच कारक, रक्त शर्करा, एचआईवी, हेपेटाइटिस बी, सिफलिस (वीडीआरएल) और स्वास्थ्यकर्मियों द्वारा सुझाई गई अन्य जाँचें शामिल हैं।",
+    "tags": [],
+    "display_order": 16
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Why is urine tested during ANC?",
+    "title_hi": "एएनसी के दौरान मूत्र परीक्षण क्यों किया जाता है?",
+    "content_en": "Urine testing helps detect infections, protein in urine (which may indicate pre-eclampsia), and sugar in urine, which may suggest diabetes.",
+    "content_hi": "मूत्र परीक्षण संक्रमण, मूत्र में प्रोटीन (जो प्री-एक्लेम्पसिया का संकेत हो सकता है) और मूत्र में शर्करा का पता लगाने में मदद करता है, जो मधुमेह का संकेत हो सकता है।",
+    "tags": [],
+    "display_order": 17
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What is hemoglobin testing?",
+    "title_hi": "हीमोग्लोबिन परीक्षण क्या है?",
+    "content_en": "Hemoglobin testing measures the amount of hemoglobin in blood and helps identify anemia, a common condition during pregnancy.",
+    "content_hi": "हीमोग्लोबिन परीक्षण रक्त में हीमोग्लोबिन की मात्रा मापता है और एनीमिया की पहचान करने में मदद करता है, जो गर्भावस्था के दौरान एक सामान्य स्थिति है।",
+    "tags": [],
+    "display_order": 18
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What is a Mother and Child Protection (MCP) Card?",
+    "title_hi": "मातृ एवं शिशु सुरक्षा (एमसीपी) कार्ड क्या है?",
+    "content_en": "The MCP Card is an official record that tracks pregnancy, ANC visits, immunizations, delivery details, postnatal care, and child health services.",
+    "content_hi": "एमसीपी कार्ड एक आधिकारिक रिकॉर्ड है जो गर्भावस्था, एएनसी विज़िट, टीकाकरण, प्रसव विवरण, प्रसवोत्तर देखभाल और शिशु स्वास्थ्य सेवाओं को ट्रैक करता है।",
+    "tags": [],
+    "display_order": 19
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "How do I keep track of my ANC visits?",
+    "title_hi": "मैं अपनी एएनसी विज़िट का रिकॉर्ड कैसे रखूँ?",
+    "content_en": "ANC visits can be tracked using the MCP Card, appointment reminders from ASHA/ANM, mobile health applications, or the Sangwari MAA chatbot reminder system.",
+    "content_hi": "एएनसी विज़िट को एमसीपी कार्ड, आशा/एएनएम से अपॉइंटमेंट अनुस्मारक, मोबाइल स्वास्थ्य अनुप्रयोगों या संगवारी माँ चैटबॉट अनुस्मारक प्रणाली का उपयोग करके ट्रैक किया जा सकता है।",
+    "tags": [],
+    "display_order": 20
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Is pregnancy registration free?",
+    "title_hi": "क्या गर्भावस्था पंजीकरण मुफ्त है?",
+    "content_en": "Yes. Pregnancy registration and essential antenatal services at government health facilities are generally provided free of cost.",
+    "content_hi": "हाँ। सरकारी स्वास्थ्य सुविधाओं पर गर्भावस्था पंजीकरण और आवश्यक प्रसवपूर्व सेवाएँ आमतौर पर निःशुल्क प्रदान की जाती हैं।",
+    "tags": [],
+    "display_order": 21
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What role does ASHA play after registration?",
+    "title_hi": "पंजीकरण के बाद आशा की क्या भूमिका है?",
+    "content_en": "ASHA provides counselling, home visits, ANC reminders, nutritional advice, BPCR counselling, referral support, and information about government schemes and entitlements.",
+    "content_hi": "आशा परामर्श, गृह विज़िट, एएनसी अनुस्मारक, पोषण संबंधी सलाह, बीपीसीआर परामर्श, रेफरल सहायता और सरकारी योजनाओं व पात्रताओं के बारे में जानकारी प्रदान करती है।",
+    "tags": [],
+    "display_order": 22
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What services are available after registration?",
+    "title_hi": "पंजीकरण के बाद कौन सी सेवाएँ उपलब्ध हैं?",
+    "content_en": "Services include ANC check-ups, laboratory tests, IFA and calcium supplementation, Td vaccination, nutrition counselling, BPCR counselling, high-risk pregnancy screening, and linkage to government schemes.",
+    "content_hi": "सेवाओं में एएनसी जाँच, प्रयोगशाला परीक्षण, आईएफए और कैल्शियम अनुपूरण, टीडी टीकाकरण, पोषण परामर्श, बीपीसीआर परामर्श, उच्च जोखिम गर्भावस्था जाँच और सरकारी योजनाओं से जुड़ाव शामिल हैं।",
+    "tags": [],
+    "display_order": 23
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "What if I move to another village during pregnancy?",
+    "title_hi": "यदि गर्भावस्था के दौरान मैं दूसरे गाँव जाऊँ तो क्या करूँ?",
+    "content_en": "Inform your ASHA/ANM and transfer your MCP Card details to the new health facility so that ANC services can continue without interruption.",
+    "content_hi": "अपनी आशा/एएनएम को सूचित करें और अपने एमसीपी कार्ड का विवरण नई स्वास्थ्य सुविधा में स्थानांतरित करें ताकि एएनसी सेवाएँ बिना रुकावट जारी रह सकें।",
+    "tags": [],
+    "display_order": 24
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_registration",
+    "title_en": "Can a high-risk pregnancy be identified during registration?",
+    "title_hi": "क्या पंजीकरण के दौरान उच्च जोखिम वाली गर्भावस्था की पहचान हो सकती है?",
+    "content_en": "Yes. Conditions such as severe anemia, hypertension, diabetes, previous cesarean delivery, multiple pregnancy, adolescent pregnancy, advanced maternal age, or previous complications can often be identified during registration and early ANC visits.",
+    "content_hi": "हाँ। गंभीर एनीमिया, उच्च रक्तचाप, मधुमेह, पिछला सिजेरियन प्रसव, एकाधिक गर्भावस्था, किशोर गर्भावस्था, अधिक मातृ आयु या पिछली जटिलताएँ जैसी स्थितियों की पहचान अक्सर पंजीकरण और प्रारंभिक एएनसी विज़िट के दौरान की जा सकती है।",
+    "tags": [],
+    "display_order": 25
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "How many months pregnant am I?",
+    "title_hi": "मैं कितने महीने की गर्भवती हूँ?",
+    "content_en": "Pregnancy is usually counted in weeks. A full-term pregnancy lasts about 40 weeks (approximately 9 months and 1 week). Your pregnancy month can be estimated based on the number of completed weeks since your Last Menstrual Period (LMP).",
+    "content_hi": "गर्भावस्था आमतौर पर हफ्तों में गिनी जाती है। एक पूर्णकालिक गर्भावस्था लगभग 40 हफ्ते (लगभग 9 महीने और 1 हफ्ते) की होती है। आपकी गर्भावस्था का महीना अंतिम मासिक धर्म (एलएमपी) के बाद से पूरे हुए हफ्तों के आधार पर अनुमानित किया जा सकता है।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "How many weeks are there in pregnancy?",
+    "title_hi": "गर्भावस्था में कितने हफ्ते होते हैं?",
+    "content_en": "A normal pregnancy lasts about 40 weeks, calculated from the first day of the Last Menstrual Period (LMP).",
+    "content_hi": "एक सामान्य गर्भावस्था लगभग 40 हफ्ते की होती है, जिसकी गणना अंतिम मासिक धर्म (एलएमपी) के पहले दिन से की जाती है।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "What happens in the first trimester?",
+    "title_hi": "पहली तिमाही में क्या होता है?",
+    "content_en": "During the first trimester (0–12 weeks), major organs begin to form, the baby's heart starts beating, and rapid growth and development occur. Mothers may experience nausea, vomiting, fatigue, and breast changes.",
+    "content_hi": "पहली तिमाही (0–12 हफ्ते) के दौरान, प्रमुख अंग बनने लगते हैं, शिशु का दिल धड़कना शुरू होता है और तेजी से विकास होता है। माताओं को मतली, उल्टी, थकान और स्तन परिवर्तन हो सकते हैं।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "What happens in the second trimester?",
+    "title_hi": "दूसरी तिमाही में क्या होता है?",
+    "content_en": "During the second trimester (13–28 weeks), the baby grows rapidly, movements become noticeable, organs continue maturing, and many mothers feel more energetic.",
+    "content_hi": "दूसरी तिमाही (13–28 हफ्ते) के दौरान, शिशु तेजी से बढ़ता है, हलचलें ध्यान देने योग्य हो जाती हैं, अंगों का विकास जारी रहता है और कई माताएँ अधिक ऊर्जावान महसूस करती हैं।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "What happens in the third trimester?",
+    "title_hi": "तीसरी तिमाही में क्या होता है?",
+    "content_en": "During the third trimester (29–40 weeks), the baby gains weight, lungs mature, brain development accelerates, and the baby prepares for birth.",
+    "content_hi": "तीसरी तिमाही (29–40 हफ्ते) के दौरान, शिशु का वजन बढ़ता है, फेफड़े परिपक्व होते हैं, मस्तिष्क विकास तेज होता है और शिशु जन्म के लिए तैयार होता है।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "When can I hear the baby's heartbeat?",
+    "title_hi": "मैं शिशु की दिल की धड़कन कब सुन सकती हूँ?",
+    "content_en": "The baby's heartbeat can often be detected by ultrasound around 6–8 weeks and by Doppler device around 10–12 weeks of pregnancy.",
+    "content_hi": "शिशु की दिल की धड़कन अक्सर अल्ट्रासाउंड द्वारा लगभग 6–8 हफ्ते में और डॉप्लर डिवाइस द्वारा गर्भावस्था के लगभग 10–12 हफ्ते में पता की जा सकती है।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "When will I feel the baby move?",
+    "title_hi": "मुझे शिशु की हलचल कब महसूस होगी?",
+    "content_en": "Most mothers feel fetal movements between 18–24 weeks of pregnancy. Women who have been pregnant before may notice movements earlier.",
+    "content_hi": "अधिकांश माताएँ गर्भावस्था के 18–24 हफ्ते के बीच भ्रूण की हलचल महसूस करती हैं। पहले गर्भवती हो चुकी महिलाएँ हलचल पहले नोटिस कर सकती हैं।",
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "What are fetal kicks?",
+    "title_hi": "भ्रूण की किक क्या हैं?",
+    "content_en": "Fetal kicks are the movements of the baby inside the womb, including kicking, stretching, rolling, or turning. They are a sign of fetal well-being.",
+    "content_hi": "भ्रूण की किक गर्भ के अंदर शिशु की हलचलें हैं, जिनमें लात मारना, फैलाना, लुढ़कना या मुड़ना शामिल है। ये भ्रूण के स्वास्थ्य का संकेत हैं।",
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "How many fetal movements are normal?",
+    "title_hi": "भ्रूण की कितनी हलचलें सामान्य हैं?",
+    "content_en": "Every baby has a unique movement pattern. Mothers should become familiar with their baby's usual activity. Regular movements every day are reassuring.",
+    "content_hi": "हर शिशु की हलचल का एक अनोखा पैटर्न होता है। माताओं को अपने शिशु की सामान्य गतिविधि से परिचित होना चाहिए। प्रतिदिन नियमित हलचलें आश्वस्त करने वाली होती हैं।",
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "What should I do if baby movements decrease?",
+    "title_hi": "यदि शिशु की हलचल कम हो जाए तो क्या करूँ?",
+    "content_en": "If you notice significantly reduced or absent fetal movements compared to usual, contact your healthcare provider or visit a health facility immediately.",
+    "content_hi": "यदि आप सामान्य की तुलना में भ्रूण की हलचल में उल्लेखनीय कमी या अनुपस्थिति देखें, तो तुरंत अपने स्वास्थ्यकर्मी से संपर्क करें या स्वास्थ्य सुविधा पर जाएँ।",
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "How does the baby grow month by month?",
+    "title_hi": "शिशु का महीने दर महीने विकास कैसे होता है?",
+    "content_en": "The baby develops from a tiny embryo in the first month to a fully developed newborn by the ninth month. Growth includes development of organs, bones, muscles, brain, lungs, and body weight.",
+    "content_hi": "शिशु पहले महीने में एक छोटे भ्रूण से नवें महीने तक पूरी तरह विकसित नवजात बन जाता है। विकास में अंगों, हड्डियों, मांसपेशियों, मस्तिष्क, फेफड़ों और शरीर के वजन का विकास शामिल है।",
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "What is fetal growth monitoring?",
+    "title_hi": "भ्रूण विकास निगरानी क्या है?",
+    "content_en": "Fetal growth monitoring involves regular ANC examinations, fundal height measurements, fetal movement assessment, and ultrasound scans when indicated to ensure the baby is growing properly.",
+    "content_hi": "भ्रूण विकास निगरानी में नियमित एएनसी परीक्षण, फंडल ऊँचाई माप, भ्रूण हलचल मूल्यांकन और संकेत मिलने पर अल्ट्रासाउंड स्कैन शामिल हैं, ताकि यह सुनिश्चित हो सके कि शिशु ठीक से बढ़ रहा है।",
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "anc",
+    "subcategory": "pregnancy_duration",
+    "title_en": "What is fundal height?",
+    "title_hi": "फंडल ऊँचाई क्या है?",
+    "content_en": "Fundal height is the measurement from the pubic bone to the top of the uterus.",
+    "content_hi": "फंडल ऊँचाई जघन हड्डी से गर्भाशय के शीर्ष तक का माप है।",
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "How many ANC checkups are required?",
+    "title_hi": "कितनी एएनसी जाँच आवश्यक हैं?",
+    "content_en": "At least four Antenatal Care (ANC) checkups are recommended under national guidelines. WHO recommends a minimum of eight contacts during pregnancy to improve maternal and newborn health outcomes.",
+    "content_hi": "राष्ट्रीय दिशा-निर्देशों के तहत कम से कम चार प्रसवपूर्व देखभाल (एएनसी) जाँचें अनुशंसित हैं। डब्ल्यूएचओ मातृ और नवजात स्वास्थ्य परिणामों को बेहतर बनाने के लिए गर्भावस्था के दौरान न्यूनतम आठ संपर्कों की सिफारिश करता है।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Why are regular ANC visits important?",
+    "title_hi": "नियमित एएनसी विज़िट क्यों महत्वपूर्ण हैं?",
+    "content_en": "Regular ANC visits help monitor the health of both mother and baby, detect complications early, provide preventive care, counselling, vaccinations, and nutritional support.",
+    "content_hi": "नियमित एएनसी विज़िट माँ और शिशु दोनों के स्वास्थ्य की निगरानी, जटिलताओं का जल्दी पता लगाने, निवारक देखभाल, परामर्श, टीकाकरण और पोषण सहायता प्रदान करने में मदद करती हैं।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What happens during each ANC visit?",
+    "title_hi": "प्रत्येक एएनसी विज़िट के दौरान क्या होता है?",
+    "content_en": "During ANC visits, healthcare providers check weight, blood pressure, fetal growth, fetal heartbeat, laboratory reports, nutritional status, danger signs, and provide counselling on pregnancy care and birth preparedness.",
+    "content_hi": "एएनसी विज़िट के दौरान, स्वास्थ्यकर्मी वजन, रक्तचाप, भ्रूण विकास, भ्रूण की दिल की धड़कन, प्रयोगशाला रिपोर्ट, पोषण स्थिति, खतरे के संकेत जाँचते हैं और गर्भावस्था देखभाल व प्रसव तैयारी पर परामर्श देते हैं।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "When should the first ANC visit occur?",
+    "title_hi": "पहली एएनसी विज़िट कब होनी चाहिए?",
+    "content_en": "The first ANC visit should occur as early as possible, preferably within the first 12 weeks of pregnancy.",
+    "content_hi": "पहली एएनसी विज़िट जल्द से जल्द, आदर्श रूप से गर्भावस्था के पहले 12 हफ्तों के भीतर, होनी चाहिए।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "When should the second ANC visit occur?",
+    "title_hi": "दूसरी एएनसी विज़िट कब होनी चाहिए?",
+    "content_en": "The second ANC visit is usually scheduled between 14 and 26 weeks of pregnancy.",
+    "content_hi": "दूसरी एएनसी विज़िट आमतौर पर गर्भावस्था के 14 से 26 हफ्तों के बीच निर्धारित की जाती है।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "When should the third ANC visit occur?",
+    "title_hi": "तीसरी एएनसी विज़िट कब होनी चाहिए?",
+    "content_en": "The third ANC visit generally takes place between 28 and 34 weeks of pregnancy.",
+    "content_hi": "तीसरी एएनसी विज़िट आमतौर पर गर्भावस्था के 28 से 34 हफ्तों के बीच होती है।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "When should the fourth ANC visit occur?",
+    "title_hi": "चौथी एएनसी विज़िट कब होनी चाहिए?",
+    "content_en": "The fourth ANC visit is usually conducted between 36 weeks and delivery. Additional visits may be needed for high-risk pregnancies.",
+    "content_hi": "चौथी एएनसी विज़िट आमतौर पर 36 हफ्तों और प्रसव के बीच आयोजित की जाती है। उच्च जोखिम वाली गर्भावस्थाओं के लिए अतिरिक्त विज़िट की आवश्यकता हो सकती है।",
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What if I miss an ANC visit?",
+    "title_hi": "यदि एएनसी विज़िट छूट जाए तो क्या करूँ?",
+    "content_en": "Attend the missed visit as soon as possible. Missing ANC visits may delay detection of complications and important preventive services.",
+    "content_hi": "जितनी जल्दी हो सके छूटी हुई विज़िट करें। एएनसी विज़िट छूटने से जटिलताओं का पता लगाने और महत्वपूर्ण निवारक सेवाओं में देरी हो सकती है।",
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Can ANC visits prevent complications?",
+    "title_hi": "क्या एएनसी विज़िट जटिलताओं को रोक सकती हैं?",
+    "content_en": "ANC visits cannot prevent all complications, but they help identify risks early and allow timely treatment or referral, reducing maternal and newborn health problems.",
+    "content_hi": "एएनसी विज़िट सभी जटिलताओं को नहीं रोक सकती, लेकिन ये जोखिमों की जल्दी पहचान करने और समय पर उपचार या रेफरल की अनुमति देने में मदद करती हैं, जिससे मातृ और नवजात स्वास्थ्य समस्याएँ कम होती हैं।",
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Why is blood pressure monitored?",
+    "title_hi": "रक्तचाप की निगरानी क्यों की जाती है?",
+    "content_en": "Blood pressure monitoring helps detect pregnancy-induced hypertension and pre-eclampsia, which can be dangerous if untreated.",
+    "content_hi": "रक्तचाप की निगरानी गर्भावस्था-प्रेरित उच्च रक्तचाप और प्री-एक्लेम्पसिया का पता लगाने में मदद करती है, जो उपचार न होने पर खतरनाक हो सकता है।",
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Why is weight gain monitored?",
+    "title_hi": "वजन बढ़ने की निगरानी क्यों की जाती है?",
+    "content_en": "Monitoring weight gain helps assess maternal nutrition and fetal growth. Abnormal weight gain may indicate nutritional or medical concerns.",
+    "content_hi": "वजन बढ़ने की निगरानी मातृ पोषण और भ्रूण के विकास का आकलन करने में मदद करती है। असामान्य वजन बढ़ना पोषण या चिकित्सा संबंधी चिंताओं का संकेत हो सकता है।",
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Why is abdominal examination done?",
+    "title_hi": "पेट की जाँच क्यों की जाती है?",
+    "content_en": "Abdominal examination helps assess uterine growth, fetal position, fetal presentation, and overall pregnancy progress.",
+    "content_hi": "पेट की जाँच गर्भाशय के विकास, भ्रूण की स्थिति, भ्रूण की प्रस्तुति और समग्र गर्भावस्था की प्रगति का आकलन करने में मदद करती है।",
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What is fetal heart sound examination?",
+    "title_hi": "भ्रूण की दिल की आवाज़ परीक्षण क्या है?",
+    "content_en": "Healthcare providers listen to the baby's heartbeat using a Doppler device or fetoscope to assess fetal well-being.",
+    "content_hi": "स्वास्थ्यकर्मी भ्रूण के स्वास्थ्य का आकलन करने के लिए डॉप्लर डिवाइस या फेटोस्कोप का उपयोग करके शिशु की दिल की धड़कन सुनते हैं।",
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What laboratory tests are repeated?",
+    "title_hi": "कौन से प्रयोगशाला परीक्षण दोबारा किए जाते हैं?",
+    "content_en": "Depending on pregnancy stage and risk factors, tests such as hemoglobin, urine examination, blood sugar, and other investigations may be repeated.",
+    "content_hi": "गर्भावस्था चरण और जोखिम कारकों के आधार पर, हीमोग्लोबिन, मूत्र परीक्षण, रक्त शर्करा और अन्य जाँचें दोबारा की जा सकती हैं।",
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What is ultrasound in pregnancy?",
+    "title_hi": "गर्भावस्था में अल्ट्रासाउंड क्या है?",
+    "content_en": "Ultrasound is a safe imaging test that uses sound waves to assess fetal growth, development, placental location, amniotic fluid, and pregnancy progress.",
+    "content_hi": "अल्ट्रासाउंड एक सुरक्षित इमेजिंग परीक्षण है जो भ्रूण के विकास, प्लेसेंटा के स्थान, एमनियोटिक द्रव और गर्भावस्था की प्रगति का आकलन करने के लिए ध्वनि तरंगों का उपयोग करता है।",
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "How many ultrasounds are needed?",
+    "title_hi": "कितने अल्ट्रासाउंड की आवश्यकता है?",
+    "content_en": "The number of ultrasounds depends on clinical needs. Commonly, scans are performed during early pregnancy, around 18–22 weeks for anomaly screening, and later if medically indicated.",
+    "content_hi": "अल्ट्रासाउंड की संख्या नैदानिक आवश्यकताओं पर निर्भर करती है। आमतौर पर, स्कैन प्रारंभिक गर्भावस्था के दौरान, विसंगति जाँच के लिए लगभग 18–22 हफ्ते में और बाद में चिकित्सकीय आवश्यकता होने पर किए जाते हैं।",
+    "tags": [],
+    "display_order": 16
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Can I have ANC at a private hospital?",
+    "title_hi": "क्या मैं किसी निजी अस्पताल में एएनसी करा सकती हूँ?",
+    "content_en": "Yes. ANC services can be received from qualified healthcare providers in government or private health facilities.",
+    "content_hi": "हाँ। सरकारी या निजी स्वास्थ्य सुविधाओं में योग्य स्वास्थ्यकर्मियों से एएनसी सेवाएँ प्राप्त की जा सकती हैं।",
+    "tags": [],
+    "display_order": 17
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Can ASHA accompany me for ANC?",
+    "title_hi": "क्या आशा एएनसी के लिए मेरे साथ आ सकती है?",
+    "content_en": "Yes. ASHA workers can assist with scheduling visits, providing guidance, facilitating referrals, and accompanying pregnant women when needed.",
+    "content_hi": "हाँ। आशा कार्यकर्ता विज़िट निर्धारित करने, मार्गदर्शन प्रदान करने, रेफरल में सहायता करने और जरूरत पड़ने पर गर्भवती महिलाओं के साथ जाने में मदद कर सकती हैं।",
+    "tags": [],
+    "display_order": 18
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What is a high-risk pregnancy?",
+    "title_hi": "उच्च जोखिम वाली गर्भावस्था क्या है?",
+    "content_en": "A high-risk pregnancy is one where the mother or baby has a greater chance of complications due to medical conditions, obstetric history, age, multiple pregnancy, or pregnancy-related disorders.",
+    "content_hi": "उच्च जोखिम वाली गर्भावस्था वह है जिसमें माँ या शिशु को चिकित्सा स्थितियों, प्रसूति इतिहास, आयु, एकाधिक गर्भावस्था या गर्भावस्था संबंधी विकारों के कारण जटिलताओं की अधिक संभावना होती है।",
+    "tags": [],
+    "display_order": 19
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What happens if a complication is detected?",
+    "title_hi": "यदि कोई जटिलता पाई जाए तो क्या होता है?",
+    "content_en": "Healthcare providers may conduct additional tests, initiate treatment, increase monitoring, or refer the mother to a higher-level facility for specialized care.",
+    "content_hi": "स्वास्थ्यकर्मी अतिरिक्त जाँच कर सकते हैं, उपचार शुरू कर सकते हैं, निगरानी बढ़ा सकते हैं, या विशेष देखभाल के लिए माँ को उच्च स्तरीय सुविधा पर रेफर कर सकते हैं।",
+    "tags": [],
+    "display_order": 20
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Why is referral important?",
+    "title_hi": "रेफरल क्यों महत्वपूर्ण है?",
+    "content_en": "Referral ensures that women with complications receive appropriate care at facilities equipped to manage emergencies and high-risk pregnancies.",
+    "content_hi": "रेफरल यह सुनिश्चित करता है कि जटिलताओं वाली महिलाओं को आपात स्थितियों और उच्च जोखिम वाली गर्भावस्थाओं को संभालने में सक्षम सुविधाओं पर उचित देखभाल मिले।",
+    "tags": [],
+    "display_order": 21
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What is a First Referral Unit (FRU)?",
+    "title_hi": "प्रथम रेफरल इकाई (एफआरयू) क्या है?",
+    "content_en": "An FRU is a designated health facility capable of providing emergency obstetric and newborn care, including cesarean delivery, blood transfusion, and specialist services.",
+    "content_hi": "एफआरयू एक निर्धारित स्वास्थ्य सुविधा है जो सिजेरियन प्रसव, रक्त आधान और विशेषज्ञ सेवाओं सहित आपातकालीन प्रसूति और नवजात देखभाल प्रदान करने में सक्षम है।",
+    "tags": [],
+    "display_order": 22
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "What is a 24x7 PHC?",
+    "title_hi": "24×7 पीएचसी क्या है?",
+    "content_en": "A 24×7 Primary Health Centre provides round-the-clock maternal and newborn health services, including normal delivery care and emergency stabilization.",
+    "content_hi": "24×7 प्राथमिक स्वास्थ्य केंद्र सामान्य प्रसव देखभाल और आपातकालीन स्थिरीकरण सहित चौबीसों घंटे मातृ और नवजात स्वास्थ्य सेवाएँ प्रदान करता है।",
+    "tags": [],
+    "display_order": 23
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "Can teleconsultation help during pregnancy?",
+    "title_hi": "क्या गर्भावस्था के दौरान टेलीकंसल्टेशन मदद कर सकती है?",
+    "content_en": "Yes. Teleconsultation can provide health advice, follow-up support, specialist consultation, and guidance when in-person visits are difficult, although emergency situations require direct medical care.",
+    "content_hi": "हाँ। टेलीकंसल्टेशन स्वास्थ्य सलाह, अनुवर्ती सहायता, विशेषज्ञ परामर्श और मार्गदर्शन प्रदान कर सकती है जब व्यक्तिगत विज़िट कठिन हो, हालाँकि आपात स्थितियों में प्रत्यक्ष चिकित्सा देखभाल की आवश्यकता होती है।",
+    "tags": [],
+    "display_order": 24
+  },
+  {
+    "category": "anc",
+    "subcategory": "anc_visits",
+    "title_en": "How can Sangwari MAA remind me about ANC visits?",
+    "title_hi": "संगवारी माँ मुझे एएनसी विज़िट के बारे में कैसे याद दिला सकती है?",
+    "content_en": "Sangwari MAA can send personalized reminders for upcoming ANC appointments, vaccinations, laboratory tests, medication schedules, and important pregnancy milestones based on gestational age.",
+    "content_hi": "संगवारी माँ गर्भकालीन आयु के आधार पर आगामी एएनसी अपॉइंटमेंट, टीकाकरण, प्रयोगशाला परीक्षण, दवा कार्यक्रम और महत्वपूर्ण गर्भावस्था मील के पत्थरों के लिए व्यक्तिगत अनुस्मारक भेज सकती है।",
+    "tags": [],
+    "display_order": 25
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What should I eat during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान मुझे क्या खाना चाहिए?",
+    "content_en": "Eat a balanced diet that includes cereals, pulses, milk and dairy products, eggs or meat (if consumed), green leafy vegetables, fruits, nuts, and adequate fluids. A variety of nutritious foods supports healthy pregnancy and fetal growth.",
+    "content_hi": "एक संतुलित आहार लें जिसमें अनाज, दालें, दूध और डेयरी उत्पाद, अंडे या मांस (यदि खाते हों), हरी पत्तेदार सब्जियाँ, फल, मेवे और पर्याप्त तरल पदार्थ शामिल हों। विविध पोषक खाद्य पदार्थ स्वस्थ गर्भावस्था और भ्रूण के विकास में सहायता करते हैं।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "How much extra food do I need?",
+    "title_hi": "मुझे कितना अतिरिक्त भोजन चाहिए?",
+    "content_en": "Pregnant women generally need one additional meal per day during the second and third trimesters. The focus should be on nutrient-rich foods rather than simply increasing quantity.",
+    "content_hi": "गर्भवती महिलाओं को आमतौर पर दूसरी और तीसरी तिमाही के दौरान प्रति दिन एक अतिरिक्त भोजन की आवश्यकता होती है। केवल मात्रा बढ़ाने के बजाय पोषक तत्वों से भरपूर खाद्य पदार्थों पर ध्यान देना चाहिए।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Why is nutrition important?",
+    "title_hi": "पोषण क्यों महत्वपूर्ण है?",
+    "content_en": "Good nutrition supports the growth and development of the baby, helps maintain maternal health, prevents anemia, reduces complications, and improves birth outcomes.",
+    "content_hi": "अच्छा पोषण शिशु के विकास और बढ़ोतरी में सहायता करता है, मातृ स्वास्थ्य बनाए रखने में मदद करता है, एनीमिया रोकता है, जटिलताएँ कम करता है और प्रसव परिणाम सुधारता है।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What foods are rich in protein?",
+    "title_hi": "कौन से खाद्य पदार्थ प्रोटीन से भरपूर हैं?",
+    "content_en": "Protein-rich foods include pulses, lentils, beans, soy products, milk, curd, paneer, eggs, fish, chicken, and nuts. Protein helps in fetal growth and tissue development.",
+    "content_hi": "प्रोटीन युक्त खाद्य पदार्थों में दालें, मसूर, बीन्स, सोया उत्पाद, दूध, दही, पनीर, अंडे, मछली, मुर्गी और मेवे शामिल हैं। प्रोटीन भ्रूण के विकास और ऊतक निर्माण में मदद करता है।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What foods contain iron?",
+    "title_hi": "कौन से खाद्य पदार्थों में आयरन होता है?",
+    "content_en": "Iron-rich foods include green leafy vegetables, jaggery, dates, raisins, beans, lentils, ragi, meat, liver, and fortified foods. Iron helps prevent anemia.",
+    "content_hi": "आयरन युक्त खाद्य पदार्थों में हरी पत्तेदार सब्जियाँ, गुड़, खजूर, किशमिश, बीन्स, मसूर, रागी, मांस, कलेजी और फोर्टिफाइड खाद्य पदार्थ शामिल हैं। आयरन एनीमिया को रोकने में मदद करता है।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What foods contain calcium?",
+    "title_hi": "कौन से खाद्य पदार्थों में कैल्शियम होता है?",
+    "content_en": "Calcium-rich foods include milk, curd, paneer, ragi, sesame seeds, soy products, green leafy vegetables, and fortified foods. Calcium is important for bone development.",
+    "content_hi": "कैल्शियम युक्त खाद्य पदार्थों में दूध, दही, पनीर, रागी, तिल, सोया उत्पाद, हरी पत्तेदार सब्जियाँ और फोर्टिफाइड खाद्य पदार्थ शामिल हैं। कैल्शियम हड्डियों के विकास के लिए महत्वपूर्ण है।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Which fruits are good during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान कौन से फल अच्छे हैं?",
+    "content_en": "Fruits such as bananas, oranges, guava, apples, papaya (ripe), pomegranate, mangoes, and seasonal fruits provide vitamins, minerals, and fiber.",
+    "content_hi": "केले, संतरे, अमरूद, सेब, पपीता (पका हुआ), अनार, आम और मौसमी फल विटामिन, खनिज और फाइबर प्रदान करते हैं।",
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Which vegetables are recommended?",
+    "title_hi": "कौन सी सब्जियाँ अनुशंसित हैं?",
+    "content_en": "Green leafy vegetables, carrots, pumpkin, beans, peas, tomatoes, beetroot, and other seasonal vegetables are highly recommended.",
+    "content_hi": "हरी पत्तेदार सब्जियाँ, गाजर, कद्दू, बीन्स, मटर, टमाटर, चुकंदर और अन्य मौसमी सब्जियाँ अत्यधिक अनुशंसित हैं।",
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Should I drink milk daily?",
+    "title_hi": "क्या मुझे प्रतिदिन दूध पीना चाहिए?",
+    "content_en": "Yes. Milk and dairy products are excellent sources of calcium, protein, and other nutrients important for maternal and fetal health.",
+    "content_hi": "हाँ। दूध और डेयरी उत्पाद कैल्शियम, प्रोटीन और अन्य पोषक तत्वों के उत्कृष्ट स्रोत हैं जो मातृ और भ्रूण स्वास्थ्य के लिए महत्वपूर्ण हैं।",
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "How much water should I drink?",
+    "title_hi": "मुझे कितना पानी पीना चाहिए?",
+    "content_en": "Most pregnant women should drink approximately 8–10 glasses (2–3 liters) of safe drinking water daily unless otherwise advised by a healthcare provider.",
+    "content_hi": "अधिकांश गर्भवती महिलाओं को प्रतिदिन लगभग 8–10 गिलास (2–3 लीटर) सुरक्षित पेयजल पीना चाहिए जब तक स्वास्थ्यकर्मी अन्यथा सलाह न दें।",
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Can I drink tea or coffee?",
+    "title_hi": "क्या मैं चाय या कॉफी पी सकती हूँ?",
+    "content_en": "Moderate consumption is generally acceptable. Excessive caffeine intake should be avoided as it may affect pregnancy outcomes.",
+    "content_hi": "मध्यम मात्रा में सेवन आमतौर पर स्वीकार्य है। अत्यधिक कैफीन सेवन से बचना चाहिए क्योंकि यह गर्भावस्था के परिणामों को प्रभावित कर सकता है।",
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What foods should be avoided?",
+    "title_hi": "किन खाद्य पदार्थों से बचना चाहिए?",
+    "content_en": "Avoid alcohol, tobacco, excessive caffeine, spoiled food, unpasteurized dairy products, and foods prepared under unhygienic conditions.",
+    "content_hi": "शराब, तंबाकू, अत्यधिक कैफीन, खराब भोजन, बिना पाश्चुरीकृत डेयरी उत्पाद और अस्वच्छ परिस्थितियों में तैयार भोजन से बचें।",
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Is fasting safe during pregnancy?",
+    "title_hi": "क्या गर्भावस्था के दौरान उपवास सुरक्षित है?",
+    "content_en": "Prolonged fasting may affect maternal nutrition and fetal growth. Consult a healthcare provider if fasting is planned for religious or cultural reasons.",
+    "content_hi": "लंबे समय तक उपवास मातृ पोषण और भ्रूण के विकास को प्रभावित कर सकता है। यदि धार्मिक या सांस्कृतिक कारणों से उपवास की योजना हो तो स्वास्थ्यकर्मी से परामर्श करें।",
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Can I eat spicy food?",
+    "title_hi": "क्या मैं मसालेदार खाना खा सकती हूँ?",
+    "content_en": "Yes. Moderate consumption of spicy foods is generally safe unless it causes discomfort such as heartburn or indigestion.",
+    "content_hi": "हाँ। मसालेदार खाद्य पदार्थों का मध्यम सेवन आमतौर पर सुरक्षित है जब तक यह सीने में जलन या अपच जैसी असुविधा का कारण न बने।",
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "How can I prevent anemia?",
+    "title_hi": "एनीमिया को कैसे रोकूँ?",
+    "content_en": "Eat iron-rich foods, take Iron-Folic Acid (IFA) tablets as advised, consume vitamin C-rich foods, and attend regular ANC checkups.",
+    "content_hi": "आयरन युक्त खाद्य पदार्थ खाएँ, सलाह के अनुसार आयरन-फोलिक एसिड (आईएफए) की गोलियाँ लें, विटामिन सी युक्त खाद्य पदार्थ खाएँ और नियमित एएनसी जाँच में जाएँ।",
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What is a balanced diet?",
+    "title_hi": "संतुलित आहार क्या है?",
+    "content_en": "A balanced diet contains appropriate amounts of carbohydrates, proteins, fats, vitamins, minerals, fiber, and water needed for maternal and fetal health.",
+    "content_hi": "संतुलित आहार में मातृ और भ्रूण स्वास्थ्य के लिए आवश्यक उचित मात्रा में कार्बोहाइड्रेट, प्रोटीन, वसा, विटामिन, खनिज, फाइबर और पानी शामिल होते हैं।",
+    "tags": [],
+    "display_order": 16
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "How much weight should I gain?",
+    "title_hi": "मेरा कितना वजन बढ़ना चाहिए?",
+    "content_en": "Healthy weight gain depends on pre-pregnancy body weight. Most women gain approximately 10–12 kilograms during pregnancy, but individual recommendations may vary.",
+    "content_hi": "स्वस्थ वजन बढ़ना गर्भावस्था से पहले के शरीर के वजन पर निर्भर करता है। अधिकांश महिलाएँ गर्भावस्था के दौरान लगभग 10–12 किलोग्राम वजन बढ़ाती हैं, लेकिन व्यक्तिगत सिफारिशें भिन्न हो सकती हैं।",
+    "tags": [],
+    "display_order": 17
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Why do I feel hungry frequently?",
+    "title_hi": "मुझे बार-बार भूख क्यों लगती है?",
+    "content_en": "Pregnancy increases energy and nutrient requirements. Frequent hunger is common due to hormonal changes and the growing baby's needs.",
+    "content_hi": "गर्भावस्था ऊर्जा और पोषक तत्वों की आवश्यकता बढ़ाती है। हार्मोनल बदलावों और बढ़ते शिशु की जरूरतों के कारण बार-बार भूख लगना आम है।",
+    "tags": [],
+    "display_order": 18
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "Can I eat outside food?",
+    "title_hi": "क्या मैं बाहर का खाना खा सकती हूँ?",
+    "content_en": "Occasionally, yes, but ensure the food is freshly prepared, hygienic, and nutritious. Avoid food from unhygienic sources.",
+    "content_hi": "कभी-कभी हाँ, लेकिन सुनिश्चित करें कि भोजन ताजा तैयार, स्वच्छ और पोषक हो। अस्वच्छ स्रोतों से भोजन से बचें।",
+    "tags": [],
+    "display_order": 19
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What are healthy snacks?",
+    "title_hi": "स्वस्थ नाश्ता क्या है?",
+    "content_en": "Fruits, roasted chana, sprouts, nuts, milk, yogurt, boiled eggs, vegetable sandwiches, and homemade snacks are healthy options.",
+    "content_hi": "फल, भुना चना, अंकुरित दाल, मेवे, दूध, दही, उबले अंडे, सब्जी सैंडविच और घर के बने नाश्ते स्वस्थ विकल्प हैं।",
+    "tags": [],
+    "display_order": 20
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What is the role of folic acid?",
+    "title_hi": "फोलिक एसिड की क्या भूमिका है?",
+    "content_en": "Folic acid helps prevent neural tube defects in the developing baby and supports healthy cell growth and development.",
+    "content_hi": "फोलिक एसिड विकासशील शिशु में न्यूरल ट्यूब दोषों को रोकने में मदद करता है और स्वस्थ कोशिका वृद्धि और विकास में सहायता करता है।",
+    "tags": [],
+    "display_order": 21
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What is the role of iron?",
+    "title_hi": "आयरन की क्या भूमिका है?",
+    "content_en": "Iron helps produce hemoglobin, prevents anemia, improves oxygen transport, and supports fetal growth and development.",
+    "content_hi": "आयरन हीमोग्लोबिन उत्पादन में मदद करता है, एनीमिया रोकता है, ऑक्सीजन परिवहन सुधारता है और भ्रूण के विकास और बढ़ोतरी में सहायता करता है।",
+    "tags": [],
+    "display_order": 22
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What is the role of calcium?",
+    "title_hi": "कैल्शियम की क्या भूमिका है?",
+    "content_en": "Calcium supports the development of the baby's bones and teeth and helps maintain maternal bone health and muscle function.",
+    "content_hi": "कैल्शियम शिशु की हड्डियों और दाँतों के विकास में सहायता करता है और मातृ हड्डियों के स्वास्थ्य और मांसपेशियों के कार्य को बनाए रखने में मदद करता है।",
+    "tags": [],
+    "display_order": 23
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "How can family support maternal nutrition?",
+    "title_hi": "परिवार मातृ पोषण में कैसे सहायता कर सकता है?",
+    "content_en": "Family members can ensure timely meals, provide nutritious foods, encourage supplementation, reduce workload, and support healthy eating habits.",
+    "content_hi": "परिवार के सदस्य समय पर भोजन सुनिश्चित कर सकते हैं, पोषक खाद्य पदार्थ प्रदान कर सकते हैं, पूरकता को प्रोत्साहित कर सकते हैं, कार्यभार कम कर सकते हैं और स्वस्थ खाने की आदतों का समर्थन कर सकते हैं।",
+    "tags": [],
+    "display_order": 24
+  },
+  {
+    "category": "anc",
+    "subcategory": "maternal_nutrition",
+    "title_en": "What if I have poor appetite?",
+    "title_hi": "यदि मुझे भूख कम लगे तो क्या करूँ?",
+    "content_en": "Eat small, frequent meals, choose nutrient-dense foods, stay hydrated, and discuss persistent poor appetite with a healthcare provider.",
+    "content_hi": "थोड़ा-थोड़ा बार-बार खाएँ, पोषक तत्वों से घने खाद्य पदार्थ चुनें, पर्याप्त तरल पदार्थ लें और लगातार कम भूख लगने की समस्या स्वास्थ्यकर्मी से साझा करें।",
+    "tags": [],
+    "display_order": 25
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "Why should I take Iron-Folic Acid (IFA) tablets?",
+    "title_hi": "मुझे आयरन-फोलिक एसिड (आईएफए) की गोलियाँ क्यों लेनी चाहिए?",
+    "content_en": "Iron-Folic Acid tablets help prevent and treat anemia, improve hemoglobin levels, support healthy fetal growth, and reduce the risk of complications during pregnancy and childbirth.",
+    "content_hi": "आयरन-फोलिक एसिड की गोलियाँ एनीमिया को रोकने और उपचार करने, हीमोग्लोबिन स्तर सुधारने, स्वस्थ भ्रूण विकास में सहायता करने और गर्भावस्था और प्रसव के दौरान जटिलताओं के जोखिम को कम करने में मदद करती हैं।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "When should I start IFA?",
+    "title_hi": "आईएफए कब शुरू करनी चाहिए?",
+    "content_en": "IFA supplementation is usually started after the first trimester (around 14–16 weeks of pregnancy) or as advised by your healthcare provider. Folic acid may be started even before conception or during early pregnancy.",
+    "content_hi": "आईएफए अनुपूरण आमतौर पर पहली तिमाही के बाद (गर्भावस्था के लगभग 14–16 हफ्ते) या स्वास्थ्यकर्मी की सलाह के अनुसार शुरू किया जाता है। फोलिक एसिड गर्भधारण से पहले या प्रारंभिक गर्भावस्था के दौरान भी शुरू की जा सकती है।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "How many IFA tablets should I take?",
+    "title_hi": "मुझे कितनी आईएफए गोलियाँ लेनी चाहिए?",
+    "content_en": "Under national guidelines, pregnant women are generally advised to take one IFA tablet daily containing iron and folic acid for at least 180 days during pregnancy and 180 days after delivery, unless otherwise advised.",
+    "content_hi": "राष्ट्रीय दिशा-निर्देशों के तहत, गर्भवती महिलाओं को आमतौर पर गर्भावस्था के दौरान कम से कम 180 दिन और प्रसव के बाद 180 दिन तक आयरन और फोलिक एसिड युक्त एक आईएफए गोली प्रतिदिन लेने की सलाह दी जाती है।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "What are the side effects of IFA?",
+    "title_hi": "आईएफए के दुष्प्रभाव क्या हैं?",
+    "content_en": "Common side effects include nausea, constipation, stomach discomfort, dark-colored stools, or mild digestive upset. These effects are usually temporary and not harmful.",
+    "content_hi": "सामान्य दुष्प्रभावों में मतली, कब्ज, पेट की बेचैनी, काले रंग का मल या हल्की पाचन संबंधी परेशानी शामिल है। ये प्रभाव आमतौर पर अस्थायी और हानिरहित होते हैं।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "Why is calcium supplementation important?",
+    "title_hi": "कैल्शियम अनुपूरण क्यों महत्वपूर्ण है?",
+    "content_en": "Calcium supports the development of the baby's bones and teeth, helps maintain maternal bone health, and may reduce the risk of pregnancy-related hypertension and pre-eclampsia.",
+    "content_hi": "कैल्शियम शिशु की हड्डियों और दाँतों के विकास में सहायता करता है, मातृ हड्डियों के स्वास्थ्य को बनाए रखने में मदद करता है और गर्भावस्था संबंधी उच्च रक्तचाप और प्री-एक्लेम्पसिया के जोखिम को कम कर सकता है।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "When should calcium tablets be taken?",
+    "title_hi": "कैल्शियम की गोलियाँ कब लेनी चाहिए?",
+    "content_en": "Calcium supplementation is usually started during the second trimester and continued throughout pregnancy and the postnatal period as advised by healthcare providers.",
+    "content_hi": "कैल्शियम अनुपूरण आमतौर पर दूसरी तिमाही के दौरान शुरू किया जाता है और स्वास्थ्यकर्मियों की सलाह के अनुसार पूरी गर्भावस्था और प्रसवोत्तर अवधि में जारी रखा जाता है।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "Can I take IFA and calcium together?",
+    "title_hi": "क्या मैं आईएफए और कैल्शियम एक साथ ले सकती हूँ?",
+    "content_en": "No. Iron and calcium tablets should ideally be taken at different times of the day, preferably with a gap of at least 2 hours, because calcium can reduce iron absorption.",
+    "content_hi": "नहीं। आयरन और कैल्शियम की गोलियाँ आदर्श रूप से दिन के अलग-अलग समय पर ली जानी चाहिए, अधिमानतः कम से कम 2 घंटे के अंतराल के साथ, क्योंकि कैल्शियम आयरन के अवशोषण को कम कर सकता है।",
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "What if I forget a dose?",
+    "title_hi": "यदि एक खुराक भूल जाऊँ तो क्या करूँ?",
+    "content_en": "Take the missed dose when you remember. If it is almost time for the next dose, skip the missed dose and continue your regular schedule. Do not take double doses.",
+    "content_hi": "याद आने पर छूटी हुई खुराक लें। यदि अगली खुराक का समय लगभग आ गया हो, तो छूटी हुई खुराक छोड़ें और अपनी नियमित अनुसूची जारी रखें। दोहरी खुराक न लें।",
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "Why is folic acid important?",
+    "title_hi": "फोलिक एसिड क्यों महत्वपूर्ण है?",
+    "content_en": "Folic acid helps prevent neural tube defects in the baby and supports healthy cell growth, blood formation, and fetal development, especially during early pregnancy.",
+    "content_hi": "फोलिक एसिड शिशु में न्यूरल ट्यूब दोषों को रोकने में मदद करती है और स्वस्थ कोशिका वृद्धि, रक्त निर्माण और भ्रूण विकास में सहायता करती है, विशेषकर प्रारंभिक गर्भावस्था के दौरान।",
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "What vitamins are needed during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान कौन से विटामिन की आवश्यकता है?",
+    "content_en": "Important nutrients include folic acid, iron, calcium, vitamin D, vitamin B12, vitamin C, and other vitamins and minerals obtained through a balanced diet and supplementation when required.",
+    "content_hi": "महत्वपूर्ण पोषक तत्वों में फोलिक एसिड, आयरन, कैल्शियम, विटामिन डी, विटामिन बी12, विटामिन सी और संतुलित आहार और आवश्यकता होने पर अनुपूरण के माध्यम से प्राप्त अन्य विटामिन और खनिज शामिल हैं।",
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "Can supplements replace food?",
+    "title_hi": "क्या पूरक आहार की जगह ले सकते हैं?",
+    "content_en": "No. Supplements are intended to complement a healthy diet, not replace nutritious foods. A balanced diet remains essential for maternal and fetal health.",
+    "content_hi": "नहीं। पूरक स्वस्थ आहार के पूरक हैं, पोषक खाद्य पदार्थों की जगह नहीं। मातृ और भ्रूण स्वास्थ्य के लिए संतुलित आहार अनिवार्य रहता है।",
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "What if I feel nauseated after tablets?",
+    "title_hi": "यदि गोलियाँ लेने के बाद मतली हो तो क्या करूँ?",
+    "content_en": "Taking supplements after meals or before bedtime may reduce nausea. If symptoms persist, consult your healthcare provider for guidance.",
+    "content_hi": "भोजन के बाद या सोने से पहले पूरक लेने से मतली कम हो सकती है। यदि लक्षण जारी रहें, तो मार्गदर्शन के लिए अपने स्वास्थ्यकर्मी से परामर्श करें।",
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "How long should supplementation continue?",
+    "title_hi": "अनुपूरण कितने समय तक जारी रखना चाहिए?",
+    "content_en": "Iron and calcium supplementation are generally recommended throughout pregnancy and often continue for at least 180 days after delivery, depending on national guidelines and individual health needs.",
+    "content_hi": "आयरन और कैल्शियम अनुपूरण आमतौर पर पूरी गर्भावस्था के दौरान और अक्सर राष्ट्रीय दिशा-निर्देशों और व्यक्तिगत स्वास्थ्य आवश्यकताओं के आधार पर प्रसव के बाद कम से कम 180 दिन जारी रहता है।",
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "Are supplements free under government programs?",
+    "title_hi": "क्या सरकारी कार्यक्रमों में पूरक मुफ्त हैं?",
+    "content_en": "Yes. Iron-Folic Acid tablets, calcium supplements, and other essential maternal health supplements are generally provided free of cost through government health facilities under national maternal health programs.",
+    "content_hi": "हाँ। आयरन-फोलिक एसिड की गोलियाँ, कैल्शियम पूरक और अन्य आवश्यक मातृ स्वास्थ्य पूरक आमतौर पर राष्ट्रीय मातृ स्वास्थ्य कार्यक्रमों के तहत सरकारी स्वास्थ्य सुविधाओं के माध्यम से निःशुल्क प्रदान किए जाते हैं।",
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "anc",
+    "subcategory": "ifa_calcium",
+    "title_en": "Can anemia affect my baby?",
+    "title_hi": "क्या एनीमिया मेरे शिशु को प्रभावित कर सकता है?",
+    "content_en": "Yes. Severe maternal anemia can increase the risk of low birth weight, preterm birth, poor fetal growth, and other complications. Preventing and treating anemia is important for both mother and baby.",
+    "content_hi": "हाँ। गंभीर मातृ एनीमिया से कम जन्म वजन, समय से पहले जन्म, खराब भ्रूण विकास और अन्य जटिलताओं का खतरा बढ़ सकता है। एनीमिया को रोकना और उसका उपचार करना माँ और शिशु दोनों के लिए महत्वपूर्ण है।",
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Why are vaccines needed during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान टीके क्यों आवश्यक हैं?",
+    "content_en": "Vaccines help protect pregnant women from serious infections and reduce the risk of illness in newborns. Some vaccines provide protective antibodies that are passed from mother to baby before birth.",
+    "content_hi": "टीके गर्भवती महिलाओं को गंभीर संक्रमणों से बचाने और नवजात शिशुओं में बीमारी के जोखिम को कम करने में मदद करते हैं। कुछ टीके सुरक्षात्मक एंटीबॉडी प्रदान करते हैं जो जन्म से पहले माँ से शिशु को पहुँचती हैं।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Which vaccines are recommended during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान कौन से टीके अनुशंसित हैं?",
+    "content_en": "Under the National Immunization Schedule, pregnant women are recommended to receive Td (Tetanus and Diphtheria) vaccine. Additional vaccines may be advised in specific situations by healthcare providers.",
+    "content_hi": "राष्ट्रीय टीकाकरण कार्यक्रम के तहत गर्भवती महिलाओं को टीडी (टेटनस और डिप्थीरिया) टीका लगवाने की सिफारिश की जाती है। विशिष्ट स्थितियों में स्वास्थ्यकर्मियों द्वारा अतिरिक्त टीकों की सलाह दी जा सकती है।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "What is Td vaccine?",
+    "title_hi": "टीडी टीका क्या है?",
+    "content_en": "Td stands for Tetanus and Diphtheria vaccine. It protects pregnant women and newborns against tetanus and provides protection against diphtheria.",
+    "content_hi": "टीडी का अर्थ है टेटनस और डिप्थीरिया टीका। यह गर्भवती महिलाओं और नवजात शिशुओं को टेटनस से बचाता है और डिप्थीरिया के विरुद्ध सुरक्षा प्रदान करता है।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "How many Td doses are required?",
+    "title_hi": "कितनी टीडी खुराक आवश्यक हैं?",
+    "content_en": "If a woman has not been adequately immunized previously, two doses of Td are usually recommended during pregnancy, given at least four weeks apart. A booster dose may be sufficient for previously vaccinated women as per national guidelines.",
+    "content_hi": "यदि महिला को पहले पर्याप्त टीकाकरण न हुआ हो, तो गर्भावस्था के दौरान आमतौर पर टीडी की दो खुराक की सिफारिश की जाती है, कम से कम चार हफ्ते के अंतराल पर। राष्ट्रीय दिशा-निर्देशों के अनुसार पहले टीका लगवा चुकी महिलाओं के लिए एक बूस्टर खुराक पर्याप्त हो सकती है।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Is vaccination safe during pregnancy?",
+    "title_hi": "क्या गर्भावस्था के दौरान टीकाकरण सुरक्षित है?",
+    "content_en": "Yes. Recommended vaccines such as Td are safe during pregnancy and are important for protecting both mother and baby.",
+    "content_hi": "हाँ। टीडी जैसे अनुशंसित टीके गर्भावस्था के दौरान सुरक्षित हैं और माँ और शिशु दोनों की सुरक्षा के लिए महत्वपूर्ण हैं।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "What if I miss a Td dose?",
+    "title_hi": "यदि टीडी खुराक छूट जाए तो क्या करूँ?",
+    "content_en": "Visit your nearest health facility as soon as possible to receive the missed dose. Do not wait until delivery. Healthcare providers will advise the appropriate schedule.",
+    "content_hi": "छूटी हुई खुराक लेने के लिए जल्द से जल्द निकटतम स्वास्थ्य सुविधा पर जाएँ। प्रसव तक प्रतीक्षा न करें। स्वास्थ्यकर्मी उचित अनुसूची की सलाह देंगे।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Can vaccines harm my baby?",
+    "title_hi": "क्या टीके मेरे शिशु को नुकसान पहुँचा सकते हैं?",
+    "content_en": "No. Recommended vaccines given during pregnancy are carefully evaluated for safety and help protect newborns from serious infections.",
+    "content_hi": "नहीं। गर्भावस्था के दौरान दिए जाने वाले अनुशंसित टीकों का सुरक्षा के लिए सावधानीपूर्वक मूल्यांकन किया जाता है और ये नवजात शिशुओं को गंभीर संक्रमणों से बचाने में मदद करते हैं।",
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Why is tetanus prevention important?",
+    "title_hi": "टेटनस की रोकथाम क्यों महत्वपूर्ण है?",
+    "content_en": "Tetanus can cause severe illness and death in mothers and newborns. Vaccination is one of the most effective ways to prevent maternal and neonatal tetanus.",
+    "content_hi": "टेटनस माताओं और नवजात शिशुओं में गंभीर बीमारी और मृत्यु का कारण बन सकता है। टीकाकरण मातृ और नवजात टेटनस को रोकने का सबसे प्रभावी तरीकों में से एक है।",
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Where can I get vaccinated?",
+    "title_hi": "मैं टीका कहाँ लगवा सकती हूँ?",
+    "content_en": "Vaccines are available at government health facilities such as Sub Health Centres, PHCs, CHCs, District Hospitals, Medical Colleges, and many private healthcare facilities.",
+    "content_hi": "उप स्वास्थ्य केंद्र, पीएचसी, सीएचसी, जिला अस्पताल, मेडिकल कॉलेज जैसी सरकारी स्वास्थ्य सुविधाओं और कई निजी स्वास्थ्य सुविधाओं पर टीके उपलब्ध हैं।",
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Is vaccination free?",
+    "title_hi": "क्या टीकाकरण मुफ्त है?",
+    "content_en": "Yes. Td vaccination is provided free of cost at government health facilities under national immunization programs.",
+    "content_hi": "हाँ। राष्ट्रीय टीकाकरण कार्यक्रमों के तहत सरकारी स्वास्थ्य सुविधाओं पर टीडी टीकाकरण निःशुल्क प्रदान किया जाता है।",
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "What side effects can occur?",
+    "title_hi": "कौन से दुष्प्रभाव हो सकते हैं?",
+    "content_en": "Mild pain, redness, swelling at the injection site, low-grade fever, or mild discomfort may occur and usually resolve within a few days.",
+    "content_hi": "इंजेक्शन स्थल पर हल्का दर्द, लालिमा, सूजन, हल्का बुखार या हल्की बेचैनी हो सकती है और आमतौर पर कुछ दिनों में ठीक हो जाती है।",
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Can I receive vaccines during any trimester?",
+    "title_hi": "क्या मैं किसी भी तिमाही में टीका लगवा सकती हूँ?",
+    "content_en": "Td vaccine can be administered during pregnancy according to national guidelines. Healthcare providers will determine the most appropriate timing based on gestational age and vaccination history.",
+    "content_hi": "राष्ट्रीय दिशा-निर्देशों के अनुसार गर्भावस्था के दौरान टीडी टीका लगाया जा सकता है। स्वास्थ्यकर्मी गर्भकालीन आयु और टीकाकरण इतिहास के आधार पर सबसे उपयुक्त समय निर्धारित करेंगे।",
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "What if I received vaccination in a previous pregnancy?",
+    "title_hi": "यदि पिछली गर्भावस्था में टीकाकरण हो चुका हो तो क्या करूँ?",
+    "content_en": "Inform your healthcare provider about previous vaccinations. Depending on the time elapsed and immunization history, a booster dose may be recommended.",
+    "content_hi": "अपने स्वास्थ्यकर्मी को पिछले टीकाकरण के बारे में बताएँ। बीते समय और टीकाकरण इतिहास के आधार पर बूस्टर खुराक की सिफारिश की जा सकती है।",
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "Should vaccination be recorded in MCP Card?",
+    "title_hi": "क्या एमसीपी कार्ड में टीकाकरण दर्ज होना चाहिए?",
+    "content_en": "Yes. Every vaccine received during pregnancy should be recorded in the Mother and Child Protection (MCP) Card to ensure complete immunization tracking.",
+    "content_hi": "हाँ। गर्भावस्था के दौरान प्राप्त प्रत्येक टीका पूर्ण टीकाकरण ट्रैकिंग सुनिश्चित करने के लिए मातृ एवं शिशु सुरक्षा (एमसीपी) कार्ड में दर्ज किया जाना चाहिए।",
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "anc",
+    "subcategory": "immunization",
+    "title_en": "How does vaccination protect newborns?",
+    "title_hi": "टीकाकरण नवजात शिशुओं की सुरक्षा कैसे करता है?",
+    "content_en": "Vaccination during pregnancy allows protective antibodies to pass from mother to baby through the placenta, helping protect newborns during the first few months of life.",
+    "content_hi": "गर्भावस्था के दौरान टीकाकरण से सुरक्षात्मक एंटीबॉडी प्लेसेंटा के माध्यम से माँ से शिशु को पहुँचती हैं, जिससे जीवन के पहले कुछ महीनों में नवजात शिशुओं की सुरक्षा करने में मदद मिलती है।",
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Is nausea normal?",
+    "title_hi": "क्या मतली सामान्य है?",
+    "content_en": "Yes. Nausea is a common symptom during early pregnancy, especially during the first trimester, due to hormonal changes.",
+    "content_hi": "हाँ। हार्मोनल बदलावों के कारण प्रारंभिक गर्भावस्था, विशेषकर पहली तिमाही में, मतली एक सामान्य लक्षण है।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do I vomit frequently?",
+    "title_hi": "मुझे बार-बार उल्टी क्यों आती है?",
+    "content_en": "Frequent vomiting is often caused by pregnancy hormones. Small frequent meals, adequate hydration, and avoiding strong odors may help reduce symptoms.",
+    "content_hi": "बार-बार उल्टी आना अक्सर गर्भावस्था हार्मोन के कारण होता है। थोड़ा-थोड़ा बार-बार खाना, पर्याप्त तरल पदार्थ लेना और तेज गंध से बचने से लक्षण कम हो सकते हैं।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "What causes morning sickness?",
+    "title_hi": "सुबह की बीमारी का कारण क्या है?",
+    "content_en": "Morning sickness is believed to be caused by hormonal changes, especially increased levels of human chorionic gonadotropin (hCG) and estrogen during early pregnancy.",
+    "content_hi": "सुबह की बीमारी हार्मोनल बदलावों के कारण होती है, विशेषकर प्रारंभिक गर्भावस्था के दौरान ह्यूमन कोरियोनिक गोनाडोट्रोपिन (एचसीजी) और एस्ट्रोजन के बढ़े हुए स्तर के कारण।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do I feel tired?",
+    "title_hi": "मुझे थकान क्यों लगती है?",
+    "content_en": "Fatigue is common because your body is working harder to support the growing baby. Hormonal changes, anemia, and increased energy demands may contribute.",
+    "content_hi": "थकान सामान्य है क्योंकि आपका शरीर बढ़ते शिशु को सहारा देने के लिए अधिक मेहनत कर रहा है। हार्मोनल बदलाव, एनीमिया और बढ़ी हुई ऊर्जा की माँग इसमें योगदान कर सकते हैं।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why is my back aching?",
+    "title_hi": "मेरी पीठ में दर्द क्यों है?",
+    "content_en": "As pregnancy progresses, weight gain and changes in posture can strain back muscles and ligaments, causing backache.",
+    "content_hi": "जैसे-जैसे गर्भावस्था आगे बढ़ती है, वजन बढ़ना और मुद्रा में बदलाव पीठ की मांसपेशियों और स्नायुबंधन पर दबाव डाल सकते हैं, जिससे पीठ दर्द होता है।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do my feet swell?",
+    "title_hi": "मेरे पैर क्यों सूजते हैं?",
+    "content_en": "Mild swelling of the feet and ankles is common due to increased fluid retention and pressure from the growing uterus. Severe or sudden swelling requires medical attention.",
+    "content_hi": "बढ़ी हुई द्रव प्रतिधारण और बढ़ते गर्भाशय के दबाव के कारण पैरों और टखनों में हल्की सूजन आम है। गंभीर या अचानक सूजन के लिए चिकित्सा ध्यान आवश्यक है।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Is leg cramp normal?",
+    "title_hi": "क्या पैर में ऐंठन सामान्य है?",
+    "content_en": "Yes. Leg cramps are common during pregnancy, particularly at night. Adequate hydration, stretching exercises, and proper nutrition may help.",
+    "content_hi": "हाँ। गर्भावस्था के दौरान, विशेषकर रात में, पैरों में ऐंठन आम है। पर्याप्त तरल पदार्थ, खिंचाव व्यायाम और उचित पोषण सहायक हो सकते हैं।",
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do I urinate frequently?",
+    "title_hi": "मुझे बार-बार पेशाब क्यों आती है?",
+    "content_en": "Hormonal changes and pressure from the growing uterus on the bladder increase the need to urinate more often.",
+    "content_hi": "हार्मोनल बदलाव और मूत्राशय पर बढ़ते गर्भाशय का दबाव बार-बार पेशाब आने की जरूरत बढ़ाते हैं।",
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do I feel breathless?",
+    "title_hi": "मुझे साँस फूलने का एहसास क्यों होता है?",
+    "content_en": "Mild breathlessness may occur because pregnancy increases oxygen demand and the enlarging uterus can reduce lung expansion. Severe breathing difficulty requires immediate medical evaluation.",
+    "content_hi": "हल्की साँस फूलना हो सकता है क्योंकि गर्भावस्था ऑक्सीजन की माँग बढ़ाती है और बढ़ता गर्भाशय फेफड़ों के फैलाव को कम कर सकता है। गंभीर साँस लेने में कठिनाई के लिए तत्काल चिकित्सा मूल्यांकन आवश्यक है।",
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do I have constipation?",
+    "title_hi": "मुझे कब्ज क्यों है?",
+    "content_en": "Pregnancy hormones slow digestion, and iron supplements may also contribute to constipation. Drinking water, eating fiber-rich foods, and remaining active can help.",
+    "content_hi": "गर्भावस्था हार्मोन पाचन को धीमा कर देते हैं और आयरन की गोलियाँ भी कब्ज में योगदान कर सकती हैं। पानी पीना, फाइबर युक्त खाद्य पदार्थ खाना और सक्रिय रहना मदद कर सकता है।",
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do I have heartburn?",
+    "title_hi": "मुझे सीने में जलन क्यों होती है?",
+    "content_en": "Hormonal changes relax the valve between the stomach and esophagus, allowing stomach acid to move upward and cause heartburn.",
+    "content_hi": "हार्मोनल बदलाव पेट और ग्रासनली के बीच के वाल्व को ढीला कर देते हैं, जिससे पेट का अम्ल ऊपर की ओर बढ़ सकता है और सीने में जलन हो सकती है।",
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why am I dizzy?",
+    "title_hi": "मुझे चक्कर क्यों आते हैं?",
+    "content_en": "Dizziness may occur due to low blood sugar, anemia, dehydration, low blood pressure, or sudden position changes. Persistent dizziness should be evaluated.",
+    "content_hi": "कम रक्त शर्करा, एनीमिया, निर्जलीकरण, कम रक्तचाप या अचानक स्थिति बदलने के कारण चक्कर आ सकते हैं। लगातार चक्कर आने का मूल्यांकन किया जाना चाहिए।",
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do I have headaches?",
+    "title_hi": "मुझे सिरदर्द क्यों होता है?",
+    "content_en": "Headaches may be caused by hormonal changes, stress, fatigue, dehydration, or anemia. Severe headaches, especially with blurred vision, require urgent medical attention.",
+    "content_hi": "सिरदर्द हार्मोनल बदलावों, तनाव, थकान, निर्जलीकरण या एनीमिया के कारण हो सकता है। गंभीर सिरदर्द, विशेषकर धुँधली दृष्टि के साथ, के लिए तत्काल चिकित्सा ध्यान की आवश्यकता है।",
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "What causes vaginal discharge?",
+    "title_hi": "योनि स्राव का क्या कारण है?",
+    "content_en": "Increased vaginal discharge is common during pregnancy due to hormonal changes. However, foul-smelling, greenish, yellow, or itchy discharge may indicate infection.",
+    "content_hi": "हार्मोनल बदलावों के कारण गर्भावस्था के दौरान योनि स्राव का बढ़ना आम है। हालाँकि बदबूदार, हरे, पीले या खुजलीदार स्राव संक्रमण का संकेत हो सकता है।",
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Is itching normal?",
+    "title_hi": "क्या खुजली सामान्य है?",
+    "content_en": "Mild skin itching may occur as the skin stretches. Severe itching, especially involving palms and soles, should be evaluated by a healthcare provider.",
+    "content_hi": "त्वचा के खिंचाव के कारण हल्की त्वचा खुजली हो सकती है। गंभीर खुजली, विशेषकर हथेलियों और तलवों में, का स्वास्थ्यकर्मी द्वारा मूल्यांकन किया जाना चाहिए।",
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do I have mood swings?",
+    "title_hi": "मुझे मूड स्विंग क्यों होते हैं?",
+    "content_en": "Hormonal changes, physical discomfort, anxiety, and emotional adjustments during pregnancy can contribute to mood swings.",
+    "content_hi": "गर्भावस्था के दौरान हार्मोनल बदलाव, शारीरिक असुविधा, चिंता और भावनात्मक समायोजन मूड स्विंग में योगदान कर सकते हैं।",
+    "tags": [],
+    "display_order": 16
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why am I unable to sleep?",
+    "title_hi": "मुझे नींद क्यों नहीं आती?",
+    "content_en": "Sleep disturbances may result from hormonal changes, frequent urination, anxiety, discomfort, or fetal movements.",
+    "content_hi": "नींद में गड़बड़ी हार्मोनल बदलावों, बार-बार पेशाब आने, चिंता, असुविधा या भ्रूण की हलचल के कारण हो सकती है।",
+    "tags": [],
+    "display_order": 17
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Why do my breasts change?",
+    "title_hi": "मेरे स्तनों में बदलाव क्यों होता है?",
+    "content_en": "Breasts enlarge and become tender due to hormonal changes preparing the body for breastfeeding. Darkening of the nipples may also occur.",
+    "content_hi": "स्तनपान के लिए शरीर को तैयार करने वाले हार्मोनल बदलावों के कारण स्तन बड़े होते हैं और नरम हो जाते हैं। निप्पल का काला पड़ना भी हो सकता है।",
+    "tags": [],
+    "display_order": 18
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Is abdominal pain normal?",
+    "title_hi": "क्या पेट दर्द सामान्य है?",
+    "content_en": "Mild stretching discomfort and occasional cramps can be normal. Severe, persistent, or worsening abdominal pain requires medical evaluation.",
+    "content_hi": "हल्की खिंचाव की असुविधा और कभी-कभी ऐंठन सामान्य हो सकती है। गंभीर, लगातार या बिगड़ते पेट दर्द के लिए चिकित्सा मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 19
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "When should symptoms worry me?",
+    "title_hi": "लक्षण मुझे कब चिंतित करने चाहिए?",
+    "content_en": "Seek medical attention if symptoms are severe, persistent, sudden in onset, or associated with bleeding, fever, severe headache, reduced fetal movements, or breathing difficulty.",
+    "content_hi": "यदि लक्षण गंभीर, लगातार, अचानक शुरू हों या रक्तस्राव, बुखार, गंभीर सिरदर्द, भ्रूण की कम हलचल या साँस लेने में कठिनाई से जुड़े हों तो चिकित्सा सहायता लें।",
+    "tags": [],
+    "display_order": 20
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "What is edema?",
+    "title_hi": "एडिमा क्या है?",
+    "content_en": "Edema refers to swelling caused by excess fluid accumulation, commonly affecting the feet, ankles, and legs during pregnancy.",
+    "content_hi": "एडिमा अतिरिक्त द्रव संचय के कारण होने वाली सूजन है, जो गर्भावस्था के दौरान आमतौर पर पैरों, टखनों और पैरों को प्रभावित करती है।",
+    "tags": [],
+    "display_order": 21
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Can pregnancy affect vision?",
+    "title_hi": "क्या गर्भावस्था दृष्टि को प्रभावित कर सकती है?",
+    "content_en": "Temporary vision changes may occur during pregnancy. Blurred vision associated with severe headache or high blood pressure requires urgent medical attention.",
+    "content_hi": "गर्भावस्था के दौरान अस्थायी दृष्टि परिवर्तन हो सकते हैं। गंभीर सिरदर्द या उच्च रक्तचाप से जुड़ी धुँधली दृष्टि के लिए तत्काल चिकित्सा ध्यान की आवश्यकता है।",
+    "tags": [],
+    "display_order": 22
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Is weight gain always normal?",
+    "title_hi": "क्या वजन बढ़ना हमेशा सामान्य है?",
+    "content_en": "Some weight gain is expected during pregnancy. Excessive or inadequate weight gain may indicate nutritional or medical concerns and should be discussed during ANC visits.",
+    "content_hi": "गर्भावस्था के दौरान कुछ वजन बढ़ना अपेक्षित है। अत्यधिक या अपर्याप्त वजन बढ़ना पोषण या चिकित्सा संबंधी चिंताओं का संकेत हो सकता है और एएनसी विज़िट के दौरान चर्चा की जानी चाहिए।",
+    "tags": [],
+    "display_order": 23
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "Can stress affect pregnancy?",
+    "title_hi": "क्या तनाव गर्भावस्था को प्रभावित कर सकता है?",
+    "content_en": "Yes. Excessive stress may affect maternal well-being and pregnancy outcomes. Emotional support, relaxation, and healthcare guidance can help manage stress.",
+    "content_hi": "हाँ। अत्यधिक तनाव मातृ कल्याण और गर्भावस्था के परिणामों को प्रभावित कर सकता है। भावनात्मक समर्थन, विश्राम और स्वास्थ्य देखभाल मार्गदर्शन तनाव प्रबंधन में मदद कर सकते हैं।",
+    "tags": [],
+    "display_order": 24
+  },
+  {
+    "category": "anc",
+    "subcategory": "common_symptoms",
+    "title_en": "When should I consult a doctor?",
+    "title_hi": "मुझे डॉक्टर से कब परामर्श करना चाहिए?",
+    "content_en": "Consult a doctor if symptoms are severe, persistent, worsening, or if you experience danger signs such as bleeding, severe headache, fever, convulsions, reduced fetal movements, or breathing difficulty.",
+    "content_hi": "यदि लक्षण गंभीर, लगातार, बिगड़ते हों या रक्तस्राव, गंभीर सिरदर्द, बुखार, ऐंठन, भ्रूण की कम हलचल या साँस लेने में कठिनाई जैसे खतरे के संकेत अनुभव हों तो डॉक्टर से परामर्श करें।",
+    "tags": [],
+    "display_order": 25
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What are danger signs during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान खतरे के संकेत क्या हैं?",
+    "content_en": "Danger signs are symptoms that may indicate serious complications requiring immediate medical attention. These include vaginal bleeding, severe headache, blurred vision, convulsions, severe abdominal pain, reduced fetal movements, breathing difficulty, and high fever.",
+    "content_hi": "खतरे के संकेत वे लक्षण हैं जो तत्काल चिकित्सा ध्यान की आवश्यकता वाली गंभीर जटिलताओं का संकेत दे सकते हैं। इनमें योनि से रक्तस्राव, गंभीर सिरदर्द, धुँधली दृष्टि, ऐंठन, गंभीर पेट दर्द, भ्रूण की कम हलचल, साँस लेने में कठिनाई और तेज बुखार शामिल हैं।",
+    "tags": [],
+    "display_order": 1
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "I have vaginal bleeding. What should I do?",
+    "title_hi": "मुझे योनि से रक्तस्राव हो रहा है। क्या करूँ?",
+    "content_en": "Vaginal bleeding at any stage of pregnancy should be treated as an emergency. Go to the nearest health facility immediately or call emergency services.",
+    "content_hi": "गर्भावस्था के किसी भी चरण में योनि से रक्तस्राव को आपात स्थिति के रूप में माना जाना चाहिए। तुरंत निकटतम स्वास्थ्य सुविधा पर जाएँ या आपातकालीन सेवाओं को कॉल करें।",
+    "tags": [],
+    "display_order": 2
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "Is severe headache dangerous?",
+    "title_hi": "क्या गंभीर सिरदर्द खतरनाक है?",
+    "content_en": "Yes. Severe or persistent headache, especially with blurred vision or swelling, may indicate high blood pressure or pre-eclampsia and requires urgent evaluation.",
+    "content_hi": "हाँ। गंभीर या लगातार सिरदर्द, विशेषकर धुँधली दृष्टि या सूजन के साथ, उच्च रक्तचाप या प्री-एक्लेम्पसिया का संकेत हो सकता है और तत्काल मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 3
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have blurred vision?",
+    "title_hi": "यदि मुझे धुँधली दृष्टि हो तो क्या करूँ?",
+    "content_en": "Blurred vision, flashing lights, or temporary loss of vision can be signs of severe hypertension or pre-eclampsia. Seek immediate medical care.",
+    "content_hi": "धुँधली दृष्टि, चमकती रोशनी या अस्थायी दृष्टि हानि गंभीर उच्च रक्तचाप या प्री-एक्लेम्पसिया के संकेत हो सकते हैं। तुरंत चिकित्सा देखभाल लें।",
+    "tags": [],
+    "display_order": 4
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "Why is swelling of face dangerous?",
+    "title_hi": "चेहरे की सूजन खतरनाक क्यों है?",
+    "content_en": "Sudden swelling of the face, hands, or around the eyes may indicate pre-eclampsia and should be evaluated immediately.",
+    "content_hi": "चेहरे, हाथों या आँखों के आसपास अचानक सूजन प्री-एक्लेम्पसिया का संकेत हो सकती है और तुरंत मूल्यांकन किया जाना चाहिए।",
+    "tags": [],
+    "display_order": 5
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if baby movements decrease?",
+    "title_hi": "यदि शिशु की हलचल कम हो जाए तो क्या करूँ?",
+    "content_en": "Reduced or absent fetal movements may indicate fetal distress. Visit a healthcare facility immediately for assessment.",
+    "content_hi": "भ्रूण की कम या अनुपस्थित हलचल भ्रूण संकट का संकेत हो सकती है। मूल्यांकन के लिए तुरंत स्वास्थ्य सुविधा पर जाएँ।",
+    "tags": [],
+    "display_order": 6
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have convulsions?",
+    "title_hi": "यदि मुझे ऐंठन हो तो क्या करूँ?",
+    "content_en": "Convulsions during pregnancy are a medical emergency and may indicate eclampsia. Immediate hospitalization is required.",
+    "content_hi": "गर्भावस्था के दौरान ऐंठन एक चिकित्सा आपात स्थिति है और एक्लेम्पसिया का संकेत हो सकती है। तत्काल अस्पताल में भर्ती की आवश्यकता है।",
+    "tags": [],
+    "display_order": 7
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I develop fever?",
+    "title_hi": "यदि मुझे बुखार हो तो क्या करूँ?",
+    "content_en": "Fever during pregnancy may indicate infection. If accompanied by chills, weakness, abdominal pain, or reduced fetal movements, seek medical care promptly.",
+    "content_hi": "गर्भावस्था के दौरान बुखार संक्रमण का संकेत हो सकता है। यदि ठंड लगना, कमज़ोरी, पेट दर्द या भ्रूण की कम हलचल के साथ हो, तो तुरंत चिकित्सा देखभाल लें।",
+    "tags": [],
+    "display_order": 8
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have severe abdominal pain?",
+    "title_hi": "यदि मुझे गंभीर पेट दर्द हो तो क्या करूँ?",
+    "content_en": "Severe abdominal pain is not normal and may indicate complications such as placental problems, infection, or labor. Seek immediate medical attention.",
+    "content_hi": "गंभीर पेट दर्द सामान्य नहीं है और प्लेसेंटा समस्याओं, संक्रमण या प्रसव जैसी जटिलताओं का संकेत हो सकता है। तुरंत चिकित्सा ध्यान लें।",
+    "tags": [],
+    "display_order": 9
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if my water breaks early?",
+    "title_hi": "यदि पानी की थैली जल्दी फट जाए तो क्या करूँ?",
+    "content_en": "If fluid leaks from the vagina before labor begins, go to a health facility immediately. Early rupture of membranes increases the risk of infection and preterm birth.",
+    "content_hi": "यदि प्रसव शुरू होने से पहले योनि से तरल पदार्थ रिसे, तो तुरंत स्वास्थ्य सुविधा पर जाएँ। झिल्ली का जल्दी फटना संक्रमण और समय से पहले जन्म के जोखिम को बढ़ाता है।",
+    "tags": [],
+    "display_order": 10
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have difficulty breathing?",
+    "title_hi": "यदि मुझे साँस लेने में कठिनाई हो तो क्या करूँ?",
+    "content_en": "Difficulty breathing, chest pain, or severe shortness of breath requires urgent medical evaluation.",
+    "content_hi": "साँस लेने में कठिनाई, सीने में दर्द या गंभीर साँस फूलने के लिए तत्काल चिकित्सा मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 11
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I faint repeatedly?",
+    "title_hi": "यदि मैं बार-बार बेहोश हो जाऊँ तो क्या करूँ?",
+    "content_en": "Repeated fainting may indicate anemia, low blood pressure, dehydration, or other serious conditions. Consult a healthcare provider immediately.",
+    "content_hi": "बार-बार बेहोश होना एनीमिया, कम रक्तचाप, निर्जलीकरण या अन्य गंभीर स्थितियों का संकेत हो सकता है। तुरंत स्वास्थ्यकर्मी से परामर्श करें।",
+    "tags": [],
+    "display_order": 12
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What is pre-eclampsia?",
+    "title_hi": "प्री-एक्लेम्पसिया क्या है?",
+    "content_en": "Pre-eclampsia is a pregnancy complication characterized by high blood pressure and signs of organ involvement, usually after 20 weeks of pregnancy.",
+    "content_hi": "प्री-एक्लेम्पसिया एक गर्भावस्था जटिलता है जिसमें उच्च रक्तचाप और आमतौर पर गर्भावस्था के 20 हफ्ते बाद अंग संलिप्तता के संकेत होते हैं।",
+    "tags": [],
+    "display_order": 13
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What is eclampsia?",
+    "title_hi": "एक्लेम्पसिया क्या है?",
+    "content_en": "Eclampsia is a severe complication of pregnancy involving convulsions or seizures in a woman with pre-eclampsia. It is life-threatening and requires emergency treatment.",
+    "content_hi": "एक्लेम्पसिया गर्भावस्था की एक गंभीर जटिलता है जिसमें प्री-एक्लेम्पसिया वाली महिला को ऐंठन या दौरे पड़ते हैं। यह जानलेवा है और आपातकालीन उपचार की आवश्यकता है।",
+    "tags": [],
+    "display_order": 14
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What is antepartum hemorrhage?",
+    "title_hi": "एंटीपार्टम हेमरेज क्या है?",
+    "content_en": "Antepartum hemorrhage refers to bleeding from the genital tract after 28 weeks of pregnancy and before delivery. It requires immediate medical attention.",
+    "content_hi": "एंटीपार्टम हेमरेज गर्भावस्था के 28 हफ्ते बाद और प्रसव से पहले जनन मार्ग से रक्तस्राव को संदर्भित करता है। इसके लिए तत्काल चिकित्सा ध्यान की आवश्यकता है।",
+    "tags": [],
+    "display_order": 15
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What is severe anemia?",
+    "title_hi": "गंभीर एनीमिया क्या है?",
+    "content_en": "Severe anemia occurs when hemoglobin levels are very low, reducing oxygen delivery to mother and baby. It can increase the risk of complications and maternal death.",
+    "content_hi": "गंभीर एनीमिया तब होता है जब हीमोग्लोबिन का स्तर बहुत कम होता है, जिससे माँ और शिशु को ऑक्सीजन की आपूर्ति कम हो जाती है। यह जटिलताओं और मातृ मृत्यु के जोखिम को बढ़ा सकता है।",
+    "tags": [],
+    "display_order": 16
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What is high blood pressure in pregnancy?",
+    "title_hi": "गर्भावस्था में उच्च रक्तचाप क्या है?",
+    "content_en": "Blood pressure of 140/90 mmHg or higher during pregnancy may indicate hypertension and requires medical monitoring.",
+    "content_hi": "गर्भावस्था के दौरान 140/90 एमएमएचजी या उससे अधिक रक्तचाप उच्च रक्तचाप का संकेत हो सकता है और चिकित्सा निगरानी की आवश्यकता है।",
+    "tags": [],
+    "display_order": 17
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What are signs of infection?",
+    "title_hi": "संक्रमण के संकेत क्या हैं?",
+    "content_en": "Fever, chills, foul-smelling vaginal discharge, burning urination, severe weakness, abdominal pain, or persistent cough may indicate infection.",
+    "content_hi": "बुखार, ठंड लगना, बदबूदार योनि स्राव, पेशाब में जलन, गंभीर कमज़ोरी, पेट दर्द या लगातार खाँसी संक्रमण का संकेत हो सकते हैं।",
+    "tags": [],
+    "display_order": 18
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What is premature rupture of membranes (PROM)?",
+    "title_hi": "झिल्ली का समयपूर्व टूटना (पीआरओएम) क्या है?",
+    "content_en": "PROM occurs when the amniotic sac breaks before labor begins. It requires prompt medical evaluation to prevent infection and complications.",
+    "content_hi": "पीआरओएम तब होता है जब प्रसव शुरू होने से पहले एमनियोटिक थैली टूट जाती है। संक्रमण और जटिलताओं को रोकने के लिए तत्काल चिकित्सा मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 19
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have severe vomiting?",
+    "title_hi": "यदि मुझे गंभीर उल्टी हो तो क्या करूँ?",
+    "content_en": "Persistent vomiting that prevents eating or drinking may cause dehydration and requires medical attention.",
+    "content_hi": "लगातार उल्टी जो खाना-पीना रोकती है, निर्जलीकरण का कारण बन सकती है और चिकित्सा ध्यान की आवश्यकता है।",
+    "tags": [],
+    "display_order": 20
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have chest pain?",
+    "title_hi": "यदि मुझे सीने में दर्द हो तो क्या करूँ?",
+    "content_en": "Chest pain during pregnancy is not normal and requires immediate medical assessment.",
+    "content_hi": "गर्भावस्था के दौरान सीने में दर्द सामान्य नहीं है और तुरंत चिकित्सा मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 21
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "Can severe swelling of legs be dangerous?",
+    "title_hi": "क्या पैरों की गंभीर सूजन खतरनाक हो सकती है?",
+    "content_en": "Yes. Sudden or severe swelling, especially with headache or high blood pressure, may indicate pre-eclampsia.",
+    "content_hi": "हाँ। अचानक या गंभीर सूजन, विशेषकर सिरदर्द या उच्च रक्तचाप के साथ, प्री-एक्लेम्पसिया का संकेत हो सकती है।",
+    "tags": [],
+    "display_order": 22
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I feel my baby has stopped moving?",
+    "title_hi": "यदि लगे कि शिशु ने हिलना-डुलना बंद कर दिया है तो क्या करूँ?",
+    "content_en": "Seek emergency medical care immediately. Absence of fetal movement may indicate fetal distress.",
+    "content_hi": "तुरंत आपातकालीन चिकित्सा देखभाल लें। भ्रूण की हलचल का न होना भ्रूण संकट का संकेत हो सकता है।",
+    "tags": [],
+    "display_order": 23
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have persistent dizziness?",
+    "title_hi": "यदि मुझे लगातार चक्कर आएँ तो क्या करूँ?",
+    "content_en": "Persistent dizziness may indicate anemia, dehydration, or other medical conditions requiring evaluation.",
+    "content_hi": "लगातार चक्कर आना एनीमिया, निर्जलीकरण या मूल्यांकन की आवश्यकता वाली अन्य चिकित्सा स्थितियों का संकेत हो सकता है।",
+    "tags": [],
+    "display_order": 24
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I experience leaking fluid continuously?",
+    "title_hi": "यदि लगातार तरल पदार्थ रिसे तो क्या करूँ?",
+    "content_en": "Continuous leakage of clear fluid may indicate rupture of membranes. Visit a health facility immediately.",
+    "content_hi": "साफ तरल पदार्थ का लगातार रिसाव झिल्ली के फटने का संकेत हो सकता है। तुरंत स्वास्थ्य सुविधा पर जाएँ।",
+    "tags": [],
+    "display_order": 25
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have severe itching?",
+    "title_hi": "यदि मुझे गंभीर खुजली हो तो क्या करूँ?",
+    "content_en": "Severe itching, especially on palms and soles, may indicate a liver-related pregnancy condition and should be assessed by a doctor.",
+    "content_hi": "गंभीर खुजली, विशेषकर हथेलियों और तलवों पर, गर्भावस्था की यकृत संबंधी स्थिति का संकेत हो सकती है और डॉक्टर द्वारा मूल्यांकन किया जाना चाहिए।",
+    "tags": [],
+    "display_order": 26
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "Can severe diarrhea be dangerous during pregnancy?",
+    "title_hi": "क्या गर्भावस्था के दौरान गंभीर दस्त खतरनाक हो सकते हैं?",
+    "content_en": "Yes. Severe diarrhea can cause dehydration and affect maternal health. Seek medical care if symptoms are severe or persistent.",
+    "content_hi": "हाँ। गंभीर दस्त निर्जलीकरण का कारण बन सकते हैं और मातृ स्वास्थ्य को प्रभावित कर सकते हैं। यदि लक्षण गंभीर या लगातार हों तो चिकित्सा देखभाल लें।",
+    "tags": [],
+    "display_order": 27
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I develop sudden weakness?",
+    "title_hi": "यदि अचानक कमज़ोरी आ जाए तो क्या करूँ?",
+    "content_en": "Sudden weakness, especially with dizziness or fainting, requires prompt medical evaluation.",
+    "content_hi": "अचानक कमज़ोरी, विशेषकर चक्कर या बेहोशी के साथ, के लिए तत्काल चिकित्सा मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 28
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I have painful urination with fever?",
+    "title_hi": "यदि बुखार के साथ पेशाब में दर्द हो तो क्या करूँ?",
+    "content_en": "This may indicate a urinary tract infection that requires treatment to prevent complications.",
+    "content_hi": "यह मूत्र पथ संक्रमण का संकेत हो सकता है जिसके लिए जटिलताओं को रोकने के लिए उपचार की आवश्यकता है।",
+    "tags": [],
+    "display_order": 29
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I notice blood in urine?",
+    "title_hi": "यदि पेशाब में खून दिखे तो क्या करूँ?",
+    "content_en": "Blood in urine is abnormal and should be evaluated by a healthcare provider immediately.",
+    "content_hi": "पेशाब में खून असामान्य है और तुरंत स्वास्थ्यकर्मी द्वारा मूल्यांकन किया जाना चाहिए।",
+    "tags": [],
+    "display_order": 30
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "Can severe dehydration harm my baby?",
+    "title_hi": "क्या गंभीर निर्जलीकरण मेरे शिशु को नुकसान पहुँचा सकता है?",
+    "content_en": "Yes. Severe dehydration may affect blood flow to the baby and increase pregnancy risks.",
+    "content_hi": "हाँ। गंभीर निर्जलीकरण शिशु को रक्त प्रवाह को प्रभावित कर सकता है और गर्भावस्था के जोखिम बढ़ा सकता है।",
+    "tags": [],
+    "display_order": 31
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if my blood pressure is very high?",
+    "title_hi": "यदि मेरा रक्तचाप बहुत अधिक हो तो क्या करूँ?",
+    "content_en": "High blood pressure requires urgent medical assessment to prevent serious complications such as pre-eclampsia or stroke.",
+    "content_hi": "उच्च रक्तचाप के लिए प्री-एक्लेम्पसिया या स्ट्रोक जैसी गंभीर जटिलताओं को रोकने के लिए तत्काल चिकित्सा मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 32
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "Can infection affect my baby?",
+    "title_hi": "क्या संक्रमण मेरे शिशु को प्रभावित कर सकता है?",
+    "content_en": "Yes. Untreated maternal infections can affect fetal growth and may lead to serious complications.",
+    "content_hi": "हाँ। अनुपचारित मातृ संक्रमण भ्रूण के विकास को प्रभावित कर सकते हैं और गंभीर जटिलताओं का कारण बन सकते हैं।",
+    "tags": [],
+    "display_order": 33
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I experience sudden severe back pain?",
+    "title_hi": "यदि अचानक गंभीर पीठ दर्द हो तो क्या करूँ?",
+    "content_en": "Severe back pain, especially with contractions or fluid leakage, may indicate preterm labor and requires evaluation.",
+    "content_hi": "गंभीर पीठ दर्द, विशेषकर संकुचन या तरल पदार्थ रिसाव के साथ, समय से पहले प्रसव का संकेत हो सकता है और मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 34
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if labor pains start before 37 weeks?",
+    "title_hi": "यदि 37 हफ्ते से पहले प्रसव पीड़ा शुरू हो जाए तो क्या करूँ?",
+    "content_en": "This may be preterm labor. Seek immediate medical care.",
+    "content_hi": "यह समय से पहले प्रसव हो सकता है। तुरंत चिकित्सा देखभाल लें।",
+    "tags": [],
+    "display_order": 35
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "Can reduced urine output be dangerous?",
+    "title_hi": "क्या पेशाब का कम निकलना खतरनाक हो सकता है?",
+    "content_en": "Yes. Significantly reduced urine output may indicate dehydration, kidney problems, or severe pre-eclampsia.",
+    "content_hi": "हाँ। पेशाब का उल्लेखनीय रूप से कम निकलना निर्जलीकरण, गुर्दे की समस्याओं या गंभीर प्री-एक्लेम्पसिया का संकेत हो सकता है।",
+    "tags": [],
+    "display_order": 36
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I develop jaundice during pregnancy?",
+    "title_hi": "यदि गर्भावस्था के दौरान पीलिया हो जाए तो क्या करूँ?",
+    "content_en": "Yellowing of the eyes or skin may indicate liver disease and requires urgent medical assessment.",
+    "content_hi": "आँखों या त्वचा का पीला पड़ना यकृत रोग का संकेत हो सकता है और तत्काल चिकित्सा मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 37
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I become unconscious?",
+    "title_hi": "यदि मैं बेहोश हो जाऊँ तो क्या करूँ?",
+    "content_en": "Loss of consciousness is a medical emergency. Immediate hospitalization is required.",
+    "content_hi": "बेहोशी एक चिकित्सा आपात स्थिति है। तत्काल अस्पताल में भर्ती की आवश्यकता है।",
+    "tags": [],
+    "display_order": 38
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "What if I experience severe anxiety or confusion?",
+    "title_hi": "यदि मुझे गंभीर चिंता या भ्रम हो तो क्या करूँ?",
+    "content_en": "Sudden confusion, altered behavior, or severe anxiety may indicate serious medical conditions and requires prompt medical evaluation.",
+    "content_hi": "अचानक भ्रम, बदला हुआ व्यवहार या गंभीर चिंता गंभीर चिकित्सा स्थितियों का संकेत हो सकती है और तत्काल चिकित्सा मूल्यांकन की आवश्यकता है।",
+    "tags": [],
+    "display_order": 39
+  },
+  {
+    "category": "anc",
+    "subcategory": "danger_signs",
+    "title_en": "When should I seek emergency care during pregnancy?",
+    "title_hi": "गर्भावस्था के दौरान मुझे आपातकालीन देखभाल कब लेनी चाहिए?",
+    "content_en": "Seek emergency care immediately if you experience bleeding, convulsions, severe headache, blurred vision, reduced fetal movements, severe abdominal pain, difficulty breathing, unconsciousness, or leaking fluid before labor.",
+    "content_hi": "तुरंत आपातकालीन देखभाल लें यदि आपको रक्तस्राव, ऐंठन, गंभीर सिरदर्द, धुँधली दृष्टि, भ्रूण की कम हलचल, गंभीर पेट दर्द, साँस लेने में कठिनाई, बेहोशी या प्रसव से पहले तरल पदार्थ रिसाव का अनुभव हो।",
+    "tags": [],
+    "display_order": 40
   }
 ]
