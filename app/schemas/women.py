@@ -314,7 +314,6 @@ class ImmunizationUpdateRequest(BaseModel):
     status: str = Field(..., pattern=r"^(pending|received)$")
     received_date: Optional[date] = None
 
-
 class UltrasoundUpdateRequest(BaseModel):
     status: str = Field(..., pattern=r"^(due|completed)$")
     scan_date: Optional[date] = None
@@ -323,6 +322,23 @@ class UltrasoundUpdateRequest(BaseModel):
 class ChecklistUpdateRequest(BaseModel):
     item_key: str
     checked: bool
+
+REGISTRATION_SELF_REPORT_FIELDS = ["is_registered", "rch_id_generated", "mcp_card_received"]
+
+class RegistrationFieldUpdateRequest(BaseModel):
+    field: str = Field(..., description="One of: is_registered, rch_id_generated, mcp_card_received")
+    checked: bool
+
+    @field_validator("field")
+    @classmethod
+    def valid_field(cls, v: str) -> str:
+        if v not in REGISTRATION_SELF_REPORT_FIELDS:
+            raise ValueError(f"Invalid field. Must be one of: {REGISTRATION_SELF_REPORT_FIELDS}")
+        return v
+
+class MedicineDateToggleRequest(BaseModel):
+    taken: bool
+
 # ── Appointments ──────────────────────────────────────────────────────────────
 
 class AppointmentCreate(BaseModel):

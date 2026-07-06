@@ -745,6 +745,106 @@ async def update_visit_checklist_item(
         "tests_total": len(template_items),
         "status": "completed" if checked_count == len(template_items) else "due",
     })
+
+@router.patch("/anc-services/registration", summary="Update a pregnancy registration field (self-reported)")
+async def update_registration_field(
+    payload: RegistrationFieldUpdateRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    reg = await get_or_create_registration(b.id, db)
+
+    setattr(reg, payload.field, payload.checked)
+    if payload.field == "is_registered" and payload.checked and not reg.registered_date:
+        reg.registered_date = date.today()
+    await db.commit()
+    await db.refresh(reg)
+
+    return success_envelope({
+        "field": payload.field,
+        "checked": payload.checked,
+        "is_registered": reg.is_registered,
+        "registered_date": reg.registered_date.isoformat() if reg.registered_date else None,
+        "rch_id_generated": reg.rch_id_generated,
+        "mcp_card_received": reg.mcp_card_received,
+    })
+
+
+@router.get("/anc-services/medicine/{medicine_type}/calendar", summary="Get taken-dates for a medicine (for the calendar view)")
+async def get_medicine_calendar(
+    medicine_type: str,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    if medicine_type not in MEDICINE_DEFAULTS:
+        raise ValidationException("Invalid medicine type. Use 'iron' or 'calcium'")
+    b = await get_beneficiary_or_404(user, db)
+
+    result = await db.execute(
+        select(MedicineIntakeLog)
+        .where(MedicineIntakeLog.beneficiary_id == b.id)
+        .where(MedicineIntakeLog.medicine_type == medicine_type)
+        .order_by(MedicineIntakeLog.taken_date)
+    )
+    logs = result.scalars().all()
+
+    return success_envelope({
+        "medicine_type": medicine_type,
+        "taken_dates": [log.taken_date.isoformat() for log in logs],
+    })
+
+
+@router.patch("/anc-services/medicine/{medicine_type}/date/{taken_date}", summary="Toggle a specific date as taken/untaken")
+async def toggle_medicine_date(
+    medicine_type: str,
+    taken_date: date,
+    payload: MedicineDateToggleRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    if medicine_type not in MEDICINE_DEFAULTS:
+        raise ValidationException("Invalid medicine type. Use 'iron' or 'calcium'")
+    b = await get_beneficiary_or_404(user, db)
+
+    result = await db.execute(
+        select(MedicineIntakeLog)
+        .where(MedicineIntakeLog.beneficiary_id == b.id)
+        .where(MedicineIntakeLog.medicine_type == medicine_type)
+        .where(MedicineIntakeLog.taken_date == taken_date)
+    )
+    existing_log = result.scalar_one_or_none()
+
+    tracker_result = await db.execute(
+        select(MedicineTracker)
+        .where(MedicineTracker.beneficiary_id == b.id)
+        .where(MedicineTracker.medicine_type == medicine_type)
+    )
+    tracker = tracker_result.scalar_one_or_none()
+    if not tracker:
+        tracker = MedicineTracker(beneficiary_id=b.id, medicine_type=medicine_type, total_doses=MEDICINE_DEFAULTS[medicine_type])
+        db.add(tracker)
+        await db.flush()
+
+    if payload.taken and not existing_log:
+        db.add(MedicineIntakeLog(beneficiary_id=b.id, medicine_type=medicine_type, taken_date=taken_date))
+        tracker.doses_taken = min(tracker.doses_taken + 1, tracker.total_doses)
+        tracker.last_taken_date = max(taken_date, tracker.last_taken_date) if tracker.last_taken_date else taken_date
+    elif not payload.taken and existing_log:
+        await db.delete(existing_log)
+        tracker.doses_taken = max(tracker.doses_taken - 1, 0)
+
+    await db.commit()
+    await db.refresh(tracker)
+
+    return success_envelope({
+        "medicine_type": medicine_type,
+        "date": taken_date.isoformat(),
+        "taken": payload.taken,
+        "doses_taken": tracker.doses_taken,
+        "total_doses": tracker.total_doses,
+    })
+
 # ── Appointments ───────────────────────────────────────────────────────────────
 
 @router.get("/appointments", summary="List upcoming appointments")

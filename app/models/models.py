@@ -208,6 +208,7 @@ class PregnancyRegistration(Base):
     is_registered = Column(Boolean, default=False)
     registered_date = Column(Date)
     rch_id = Column(Text)
+    rch_id_generated = Column(Boolean, default=False)
     mcp_card_received = Column(Boolean, default=False)
     mcp_card_received_date = Column(Date)
     created_at = Column(DateTime(timezone=True), default=now_utc)
@@ -233,6 +234,18 @@ class MedicineTracker(Base):
     __table_args__ = (UniqueConstraint("beneficiary_id", "medicine_type", name="uq_medicine_tracker"),)
     beneficiary = relationship("Beneficiary")
 
+class MedicineIntakeLog(Base):
+    """One row per date a dose was marked taken — powers the calendar view."""
+    __tablename__ = "medicine_intake_logs"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), nullable=False)
+    medicine_type = Column(Text, nullable=False)
+    taken_date = Column(Date, nullable=False)
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+
+    __table_args__ = (UniqueConstraint("beneficiary_id", "medicine_type", "taken_date", name="uq_medicine_intake_date"),)
+    beneficiary = relationship("Beneficiary")
 
 class Immunization(Base):
     """One row per (beneficiary, dose_type) — 'dose_1' | 'dose_2' | 'booster'."""
