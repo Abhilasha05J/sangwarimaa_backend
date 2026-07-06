@@ -50,7 +50,7 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, desc
+from sqlalchemy import func, select, desc
 from sqlalchemy.orm import selectinload
 
 from app.core.database import get_db
@@ -205,6 +205,13 @@ def get_trimester(lmp: date) -> int:
     weeks = (date.today() - lmp).days // 7
     return 1 if weeks < 14 else (2 if weeks < 28 else 3)
 
+async def get_intake_counts(beneficiary_id: UUID, db: AsyncSession) -> dict[str, int]:
+    result = await db.execute(
+        select(MedicineIntakeLog.medicine_type, func.count(MedicineIntakeLog.id))
+        .where(MedicineIntakeLog.beneficiary_id == beneficiary_id)
+        .group_by(MedicineIntakeLog.medicine_type)
+    )
+    return {med_type: count for med_type, count in result.all()}
 # ── Registration ───────────────────────────────────────────────────────────────
 
 @router.post("/register", summary="Self-register as a pregnant woman")
@@ -541,6 +548,9 @@ async def get_anc_services(
 
     reg = await get_or_create_registration(b.id, db)
     trackers = await get_or_create_medicine_trackers(b.id, db)
+    intake_counts = await get_intake_counts(b.id, db)
+    for med_type, t in trackers.items():
+        t.doses_taken = min(intake_counts.get(med_type, 0), t.total_doses)
     immunizations = await get_or_create_immunizations(b.id, db)
     scans = await get_or_create_ultrasounds(b.id, db)
 
@@ -587,46 +597,46 @@ async def get_anc_services(
     })
 
 
-@router.post("/anc-services/medicine/{medicine_type}/mark-taken", summary="Mark today's dose as taken")
-async def mark_medicine_taken(
-    medicine_type: str,
-    user: User = Depends(get_current_woman),
-    db: AsyncSession = Depends(get_db),
-):
-    if medicine_type not in MEDICINE_DEFAULTS:
-        raise ValidationException("Invalid medicine type. Use 'iron' or 'calcium'")
-    b = await get_beneficiary_or_404(user, db)
+# @router.post("/anc-services/medicine/{medicine_type}/mark-taken", summary="Mark today's dose as taken")
+# async def mark_medicine_taken(
+#     medicine_type: str,
+#     user: User = Depends(get_current_woman),
+#     db: AsyncSession = Depends(get_db),
+# ):
+#     if medicine_type not in MEDICINE_DEFAULTS:
+#         raise ValidationException("Invalid medicine type. Use 'iron' or 'calcium'")
+#     b = await get_beneficiary_or_404(user, db)
 
-    result = await db.execute(
-        select(MedicineTracker)
-        .where(MedicineTracker.beneficiary_id == b.id)
-        .where(MedicineTracker.medicine_type == medicine_type)
-    )
-    tracker = result.scalar_one_or_none()
-    if not tracker:
-        tracker = MedicineTracker(beneficiary_id=b.id, medicine_type=medicine_type, total_doses=MEDICINE_DEFAULTS[medicine_type])
-        db.add(tracker)
+#     result = await db.execute(
+#         select(MedicineTracker)
+#         .where(MedicineTracker.beneficiary_id == b.id)
+#         .where(MedicineTracker.medicine_type == medicine_type)
+#     )
+#     tracker = result.scalar_one_or_none()
+#     if not tracker:
+#         tracker = MedicineTracker(beneficiary_id=b.id, medicine_type=medicine_type, total_doses=MEDICINE_DEFAULTS[medicine_type])
+#         db.add(tracker)
 
-    today = date.today()
-    if tracker.last_taken_date == today:
-        return success_envelope({
-            "message": "Already marked for today",
-            "medicine_type": medicine_type,
-            "doses_taken": tracker.doses_taken,
-            "total_doses": tracker.total_doses,
-        })
+#     today = date.today()
+#     if tracker.last_taken_date == today:
+#         return success_envelope({
+#             "message": "Already marked for today",
+#             "medicine_type": medicine_type,
+#             "doses_taken": tracker.doses_taken,
+#             "total_doses": tracker.total_doses,
+#         })
 
-    tracker.doses_taken = min(tracker.doses_taken + 1, tracker.total_doses)
-    tracker.last_taken_date = today
-    await db.commit()
-    await db.refresh(tracker)
+#     tracker.doses_taken = min(tracker.doses_taken + 1, tracker.total_doses)
+#     tracker.last_taken_date = today
+#     await db.commit()
+#     await db.refresh(tracker)
 
-    return success_envelope({
-        "message": "Dose marked as taken",
-        "medicine_type": medicine_type,
-        "doses_taken": tracker.doses_taken,
-        "total_doses": tracker.total_doses,
-    })
+#     return success_envelope({
+#         "message": "Dose marked as taken",
+#         "medicine_type": medicine_type,
+#         "doses_taken": tracker.doses_taken,
+#         "total_doses": tracker.total_doses,
+#     })
 
 
 @router.patch("/anc-services/immunization/{dose_type}", summary="Update immunization dose status")
@@ -794,7 +804,6 @@ async def get_medicine_calendar(
         "taken_dates": [log.taken_date.isoformat() for log in logs],
     })
 
-
 @router.patch("/anc-services/medicine/{medicine_type}/date/{taken_date}", summary="Toggle a specific date as taken/untaken")
 async def toggle_medicine_date(
     medicine_type: str,
@@ -815,6 +824,14 @@ async def toggle_medicine_date(
     )
     existing_log = result.scalar_one_or_none()
 
+    if payload.taken and not existing_log:
+        db.add(MedicineIntakeLog(beneficiary_id=b.id, medicine_type=medicine_type, taken_date=taken_date))
+        await db.commit()
+    elif not payload.taken and existing_log:
+        await db.delete(existing_log)
+        await db.commit()
+    # else: no-op — already in the requested state (idempotent, safe under retries/races)
+
     tracker_result = await db.execute(
         select(MedicineTracker)
         .where(MedicineTracker.beneficiary_id == b.id)
@@ -824,18 +841,14 @@ async def toggle_medicine_date(
     if not tracker:
         tracker = MedicineTracker(beneficiary_id=b.id, medicine_type=medicine_type, total_doses=MEDICINE_DEFAULTS[medicine_type])
         db.add(tracker)
-        await db.flush()
+        await db.commit()
+        await db.refresh(tracker)
 
-    if payload.taken and not existing_log:
-        db.add(MedicineIntakeLog(beneficiary_id=b.id, medicine_type=medicine_type, taken_date=taken_date))
-        tracker.doses_taken = min(tracker.doses_taken + 1, tracker.total_doses)
-        tracker.last_taken_date = max(taken_date, tracker.last_taken_date) if tracker.last_taken_date else taken_date
-    elif not payload.taken and existing_log:
-        await db.delete(existing_log)
-        tracker.doses_taken = max(tracker.doses_taken - 1, 0)
-
+    # Recompute from the log table — never trust a mutated counter.
+    counts = await get_intake_counts(b.id, db)
+    actual_count = counts.get(medicine_type, 0)
+    tracker.doses_taken = min(actual_count, tracker.total_doses)
     await db.commit()
-    await db.refresh(tracker)
 
     return success_envelope({
         "medicine_type": medicine_type,
@@ -844,7 +857,6 @@ async def toggle_medicine_date(
         "doses_taken": tracker.doses_taken,
         "total_doses": tracker.total_doses,
     })
-
 # ── Appointments ───────────────────────────────────────────────────────────────
 
 @router.get("/appointments", summary="List upcoming appointments")
