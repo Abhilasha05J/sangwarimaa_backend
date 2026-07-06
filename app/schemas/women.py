@@ -320,6 +320,9 @@ class UltrasoundUpdateRequest(BaseModel):
     scan_date: Optional[date] = None
     facility_name: Optional[str] = None
 
+class ChecklistUpdateRequest(BaseModel):
+    item_key: str
+    checked: bool
 # ── Appointments ──────────────────────────────────────────────────────────────
 
 class AppointmentCreate(BaseModel):

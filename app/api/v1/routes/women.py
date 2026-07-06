@@ -88,7 +88,7 @@ from app.schemas.women import (
     SchemeEligibilityResponse,
     FAQOut,
     ANC_VISIT_TEMPLATE, MEDICINE_DEFAULTS, IMMUNIZATION_DOSE_TYPES, ULTRASOUND_SCAN_TYPES,   # NEW
-    ImmunizationUpdateRequest, UltrasoundUpdateRequest,
+    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest
 )
 from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
@@ -696,6 +696,55 @@ async def update_ultrasound(
         "scan_date": scan.scan_date.isoformat() if scan.scan_date else None,
     })
 
+@router.patch("/anc-services/visit/{visit_number}/checklist", summary="Update a single ANC visit checklist item (self-reported by the woman)")
+async def update_visit_checklist_item(
+    visit_number: int,
+    payload: ChecklistUpdateRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    if visit_number not in ANC_VISIT_TEMPLATE:
+        raise ValidationException("Invalid visit number. Must be 1-4")
+    valid_keys = {key for key, _, _ in ANC_VISIT_TEMPLATE[visit_number]["items"]}
+    if payload.item_key not in valid_keys:
+        raise ValidationException(f"Invalid item_key for visit {visit_number}")
+
+    b = await get_beneficiary_or_404(user, db)
+
+    result = await db.execute(
+        select(ANCVisit)
+        .where(ANCVisit.beneficiary_id == b.id)
+        .where(ANCVisit.visit_number == visit_number)
+        .order_by(desc(ANCVisit.visit_date))
+    )
+    visit = result.scalars().first()
+    if not visit:
+        # Woman is self-reporting before any formal visit row exists — create one.
+        visit = ANCVisit(
+            beneficiary_id=b.id,
+            visit_number=visit_number,
+            visit_date=date.today(),
+            checklist={},
+        )
+        db.add(visit)
+        await db.flush()
+
+    checklist = dict(visit.checklist or {})
+    checklist[payload.item_key] = payload.checked
+    visit.checklist = checklist  # reassignment, not mutation — SQLAlchemy tracks this
+    await db.commit()
+
+    template_items = ANC_VISIT_TEMPLATE[visit_number]["items"]
+    checked_count = sum(1 for key, _, _ in template_items if checklist.get(key, False))
+
+    return success_envelope({
+        "visit_number": visit_number,
+        "item_key": payload.item_key,
+        "checked": payload.checked,
+        "tests_completed": checked_count,
+        "tests_total": len(template_items),
+        "status": "completed" if checked_count == len(template_items) else "due",
+    })
 # ── Appointments ───────────────────────────────────────────────────────────────
 
 @router.get("/appointments", summary="List upcoming appointments")
