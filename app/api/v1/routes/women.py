@@ -88,7 +88,7 @@ from app.schemas.women import (
     SchemeEligibilityResponse,
     FAQOut,
     ANC_VISIT_TEMPLATE, MEDICINE_DEFAULTS, IMMUNIZATION_DOSE_TYPES, ULTRASOUND_SCAN_TYPES,   # NEW
-    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest
+    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest,RegistrationFieldUpdateRequest
 )
 from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
