@@ -64,7 +64,7 @@ from app.models.models import (
     User, Beneficiary, BPCRAssessment, ANCVisit,
     Appointment, Reminder, Alert, AlertType, RiskLevel,
     EducationalContent, ChatbotConversation,FAQ,
-    PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,
+    PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,MedicineIntakeLog
 )
 from app.schemas.women import (
     WomenRegisterRequest,
@@ -88,7 +88,7 @@ from app.schemas.women import (
     SchemeEligibilityResponse,
     FAQOut,
     ANC_VISIT_TEMPLATE, MEDICINE_DEFAULTS, IMMUNIZATION_DOSE_TYPES, ULTRASOUND_SCAN_TYPES,   # NEW
-    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest,RegistrationFieldUpdateRequest, MedicineDateToggleRequest
+    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest,RegistrationFieldUpdateRequest, MedicineDateToggleRequest, 
 )
 from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
