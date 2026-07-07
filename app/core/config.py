@@ -38,6 +38,7 @@ class Settings(BaseSettings):
 
     # AI / Chatbot
     OPENAI_API_KEY: str = ""
+    GEMINI_API_KEY: str = "" 
 
     # AWS S3
     AWS_S3_BUCKET: str = "sangwari-maa-media"
