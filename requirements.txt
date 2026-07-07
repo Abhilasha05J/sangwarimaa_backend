@@ -22,7 +22,8 @@ pydantic-settings==2.5.2 #read env variables
 httpx==0.27.2 #call external apis(OpenAI APIs, GoogleAPIs, Payment gateways)
 
 # AI
-openai==1.51.2 #connect to openaimodels(chatbot, textgeneration, ai assistants, summaries)
+openai==1.51.2 
+google-generativeai==0.8.3
 
 # Rate Limiting
 slowapi==0.1.9 #prevent user from sending too many requests (ex-5req/minute)
