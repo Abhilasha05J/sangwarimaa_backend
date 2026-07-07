@@ -1049,6 +1049,7 @@ async def send_chatbot_message(
         user_message=payload.message,
         language=payload.language,
         history=messages,
+        db=db,
     )
 
     # Append to history
