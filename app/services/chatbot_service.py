@@ -248,7 +248,7 @@ def _make_model(system_instruction: str) -> genai.GenerativeModel:
     Called per-request so FAQ context can be baked into system_instruction.
     """
     return genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
+        model_name="gemini-2.5-flash",
         system_instruction=system_instruction,
         generation_config=genai.types.GenerationConfig(
             max_output_tokens=300,
