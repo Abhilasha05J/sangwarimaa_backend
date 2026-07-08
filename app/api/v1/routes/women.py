@@ -52,6 +52,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import func, select, desc
 from sqlalchemy.orm import selectinload
+from sqlalchemy.orm.attributes import flag_modified 
 
 from app.core.database import get_db
 from app.core.exceptions import (
@@ -1058,6 +1059,7 @@ async def send_chatbot_message(
 
     if conversation:
         conversation.messages = messages
+        flag_modified(conversation, "messages") 
         conversation.updated_at = datetime.now(timezone.utc)
     else:
         conversation = ChatbotConversation(user_id=user.id, messages=messages)
