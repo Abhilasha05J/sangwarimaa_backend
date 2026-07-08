@@ -216,6 +216,19 @@ class PregnancyRegistration(Base):
 
     beneficiary = relationship("Beneficiary")
 
+class MaternalNutrition(Base):
+    """1:1 with Beneficiary — distinct from PregnancyRegistration, self-reported by the woman."""
+    __tablename__ = "maternal_nutrition"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), unique=True, nullable=False)
+    nutrition_counselling_received = Column(Boolean, default=False)
+    weight_monitored = Column(Boolean, default=False)
+    supplementary_nutrition_received = Column(Boolean, default=False)
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+
+    beneficiary = relationship("Beneficiary")
 
 class MedicineTracker(Base):
     """One row per (beneficiary, medicine_type) — 'iron' | 'calcium' adherence counter."""

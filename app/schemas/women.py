@@ -325,6 +325,19 @@ class ChecklistUpdateRequest(BaseModel):
 
 REGISTRATION_SELF_REPORT_FIELDS = ["is_registered", "rch_id_generated", "mcp_card_received"]
 
+MATERNAL_NUTRITION_FIELDS = ["nutrition_counselling_received", "weight_monitored", "supplementary_nutrition_received"]
+
+class MaternalNutritionFieldUpdateRequest(BaseModel):
+    field: str
+    checked: bool
+
+    @field_validator("field")
+    @classmethod
+    def valid_field(cls, v: str) -> str:
+        if v not in MATERNAL_NUTRITION_FIELDS:
+            raise ValueError(f"Invalid field. Must be one of: {MATERNAL_NUTRITION_FIELDS}")
+        return v
+
 class RegistrationFieldUpdateRequest(BaseModel):
     field: str = Field(..., description="One of: is_registered, rch_id_generated, mcp_card_received")
     checked: bool

@@ -65,7 +65,7 @@ from app.models.models import (
     User, Beneficiary, BPCRAssessment, ANCVisit,
     Appointment, Reminder, Alert, AlertType, RiskLevel,
     EducationalContent, ChatbotConversation,FAQ,
-    PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,MedicineIntakeLog
+    PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,MedicineIntakeLog, MaternalNutrition
 )
 from app.schemas.women import (
     WomenRegisterRequest,
@@ -89,7 +89,7 @@ from app.schemas.women import (
     SchemeEligibilityResponse,
     FAQOut,
     ANC_VISIT_TEMPLATE, MEDICINE_DEFAULTS, IMMUNIZATION_DOSE_TYPES, ULTRASOUND_SCAN_TYPES,   # NEW
-    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest,RegistrationFieldUpdateRequest, MedicineDateToggleRequest, 
+    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest,RegistrationFieldUpdateRequest, MedicineDateToggleRequest, MaternalNutritionFieldUpdateRequest
 )
 from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
@@ -148,6 +148,17 @@ async def get_or_create_registration(beneficiary_id: UUID, db: AsyncSession) -> 
         await db.refresh(reg)
     return reg
 
+async def get_or_create_maternal_nutrition(beneficiary_id: UUID, db: AsyncSession) -> MaternalNutrition:
+    result = await db.execute(
+        select(MaternalNutrition).where(MaternalNutrition.beneficiary_id == beneficiary_id)
+    )
+    record = result.scalar_one_or_none()
+    if not record:
+        record = MaternalNutrition(beneficiary_id=beneficiary_id)
+        db.add(record)
+        await db.commit()
+        await db.refresh(record)
+    return record
 
 async def get_or_create_medicine_trackers(beneficiary_id: UUID, db: AsyncSession) -> dict[str, MedicineTracker]:
     result = await db.execute(select(MedicineTracker).where(MedicineTracker.beneficiary_id == beneficiary_id))
@@ -165,7 +176,6 @@ async def get_or_create_medicine_trackers(beneficiary_id: UUID, db: AsyncSession
             await db.refresh(t)
     return existing
 
-
 async def get_or_create_immunizations(beneficiary_id: UUID, db: AsyncSession) -> dict[str, Immunization]:
     result = await db.execute(select(Immunization).where(Immunization.beneficiary_id == beneficiary_id))
     existing = {i.dose_type: i for i in result.scalars().all()}
@@ -181,7 +191,6 @@ async def get_or_create_immunizations(beneficiary_id: UUID, db: AsyncSession) ->
         for i in existing.values():
             await db.refresh(i)
     return existing
-
 
 async def get_or_create_ultrasounds(beneficiary_id: UUID, db: AsyncSession) -> dict[str, UltrasoundScan]:
     result = await db.execute(select(UltrasoundScan).where(UltrasoundScan.beneficiary_id == beneficiary_id))
@@ -548,6 +557,7 @@ async def get_anc_services(
     bpcr_score_percent = round(sum(a.score or 0 for a in seen_bpcr.values()) / 10 * 100, 0) if seen_bpcr else None
 
     reg = await get_or_create_registration(b.id, db)
+    nutrition = await get_or_create_maternal_nutrition(b.id, db)
     trackers = await get_or_create_medicine_trackers(b.id, db)
     intake_counts = await get_intake_counts(b.id, db)
     for med_type, t in trackers.items():
@@ -573,6 +583,11 @@ async def get_anc_services(
             "rch_id": reg.rch_id,
             "mcp_card_received": reg.mcp_card_received,
             "asha_assigned": b.asha_id is not None,
+        },
+         "maternal_nutrition": {
+            "nutrition_counselling_received": nutrition.nutrition_counselling_received,
+            "weight_monitored": nutrition.weight_monitored,
+            "supplementary_nutrition_received": nutrition.supplementary_nutrition_received,
         },
         "anc_visit_timeline": timeline,
         "medicine_tracker": {
@@ -781,6 +796,26 @@ async def update_registration_field(
         "mcp_card_received": reg.mcp_card_received,
     })
 
+@router.patch("/anc-services/maternal-nutrition", summary="Update a maternal nutrition field (self-reported)")
+async def update_maternal_nutrition_field(
+    payload: MaternalNutritionFieldUpdateRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    nutrition = await get_or_create_maternal_nutrition(b.id, db)
+
+    setattr(nutrition, payload.field, payload.checked)
+    await db.commit()
+    await db.refresh(nutrition)
+
+    return success_envelope({
+        "field": payload.field,
+        "checked": payload.checked,
+        "nutrition_counselling_received": nutrition.nutrition_counselling_received,
+        "weight_monitored": nutrition.weight_monitored,
+        "supplementary_nutrition_received": nutrition.supplementary_nutrition_received,
+    })
 
 @router.get("/anc-services/medicine/{medicine_type}/calendar", summary="Get taken-dates for a medicine (for the calendar view)")
 async def get_medicine_calendar(
