@@ -226,6 +226,9 @@ async def get_ai_reply(
 
         chat = model.start_chat(history=gemini_history)
         response = await chat.send_message_async(user_message)
+        print(f"[Gemini] finish_reason: {response.candidates[0].finish_reason}")
+        print(f"[Gemini] safety_ratings: {response.candidates[0].safety_ratings}")
+        print(f"[Gemini] full reply: {response.text}")
         reply = response.text.strip()
 
         return reply, [], suggestions
