@@ -88,8 +88,8 @@ from app.schemas.women import (
     ChatbotFeedbackRequest,
     SchemeEligibilityResponse,
     FAQOut,
-    ANC_VISIT_TEMPLATE, MEDICINE_DEFAULTS, IMMUNIZATION_DOSE_TYPES, ULTRASOUND_SCAN_TYPES,   # NEW
-    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest,RegistrationFieldUpdateRequest, MedicineDateToggleRequest, MaternalNutritionFieldUpdateRequest
+    ANC_VISIT_TEMPLATE, MEDICINE_DEFAULTS, IMMUNIZATION_DOSE_TYPES, ULTRASOUND_SCAN_TYPES,  REGISTRATION_SELF_REPORT_FIELDS , MATERNAL_NUTRITION_FIELDS, 
+    ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest,RegistrationFieldUpdateRequest, MedicineDateToggleRequest, MaternalNutritionFieldUpdateRequest, AncServicesBatchUpdateRequest, ChecklistBatchItem,
 )
 from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
@@ -893,6 +893,63 @@ async def toggle_medicine_date(
         "doses_taken": tracker.doses_taken,
         "total_doses": tracker.total_doses,
     })
+
+@router.patch("/anc-services/batch-update", summary="Save all pending ANC Services checkbox changes in one request")
+async def batch_update_anc_services(
+    payload: AncServicesBatchUpdateRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+
+    if payload.registration_fields:
+        reg = await get_or_create_registration(b.id, db)
+        for field, checked in payload.registration_fields.items():
+            if field not in REGISTRATION_SELF_REPORT_FIELDS:
+                raise ValidationException(f"Invalid registration field: {field}")
+            setattr(reg, field, checked)
+            if field == "is_registered" and checked and not reg.registered_date:
+                reg.registered_date = date.today()
+
+    if payload.nutrition_fields:
+        nutrition = await get_or_create_maternal_nutrition(b.id, db)
+        for field, checked in payload.nutrition_fields.items():
+            if field not in MATERNAL_NUTRITION_FIELDS:
+                raise ValidationException(f"Invalid nutrition field: {field}")
+            setattr(nutrition, field, checked)
+
+    if payload.checklist_items:
+        by_visit: dict[int, list[ChecklistBatchItem]] = {}
+        for item in payload.checklist_items:
+            by_visit.setdefault(item.visit_number, []).append(item)
+
+        for visit_number, items in by_visit.items():
+            if visit_number not in ANC_VISIT_TEMPLATE:
+                raise ValidationException(f"Invalid visit number: {visit_number}")
+            valid_keys = {key for key, _, _ in ANC_VISIT_TEMPLATE[visit_number]["items"]}
+            for item in items:
+                if item.item_key not in valid_keys:
+                    raise ValidationException(f"Invalid item_key '{item.item_key}' for visit {visit_number}")
+
+            result = await db.execute(
+                select(ANCVisit)
+                .where(ANCVisit.beneficiary_id == b.id)
+                .where(ANCVisit.visit_number == visit_number)
+                .order_by(desc(ANCVisit.visit_date))
+            )
+            visit = result.scalars().first()
+            if not visit:
+                visit = ANCVisit(beneficiary_id=b.id, visit_number=visit_number, visit_date=date.today(), checklist={})
+                db.add(visit)
+                await db.flush()
+
+            checklist = dict(visit.checklist or {})
+            for item in items:
+                checklist[item.item_key] = item.checked
+            visit.checklist = checklist
+
+    await db.commit()
+    return success_envelope({"message": "ANC Services updated successfully"})
 # ── Appointments ───────────────────────────────────────────────────────────────
 
 @router.get("/appointments", summary="List upcoming appointments")

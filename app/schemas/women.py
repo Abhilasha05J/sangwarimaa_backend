@@ -352,6 +352,15 @@ class RegistrationFieldUpdateRequest(BaseModel):
 class MedicineDateToggleRequest(BaseModel):
     taken: bool
 
+class ChecklistBatchItem(BaseModel):
+    visit_number: int
+    item_key: str
+    checked: bool
+
+class AncServicesBatchUpdateRequest(BaseModel):
+    registration_fields: dict[str, bool] = Field(default_factory=dict)
+    nutrition_fields: dict[str, bool] = Field(default_factory=dict)
+    checklist_items: list[ChecklistBatchItem] = Field(default_factory=list)
 # ── Appointments ──────────────────────────────────────────────────────────────
 
 class AppointmentCreate(BaseModel):
