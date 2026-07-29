@@ -75,7 +75,9 @@ async def send_otp(payload: SendOTPRequest, db: AsyncSession = Depends(get_db)):
     await db.commit()
 
     # Send SMS (fire-and-forget in production; awaited here for simplicity)
-    await send_otp_sms(mobile=payload.mobile, otp=otp)
+    sms_sent = await send_otp_sms(mobile=payload.mobile, otp=otp)
+    if not sms_sent:
+        raise OTPException("Failed to send OTP. Please try again in a moment.")
 
     return success_envelope({
         "message": "OTP sent successfully",

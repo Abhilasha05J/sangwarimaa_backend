@@ -4,6 +4,29 @@ import httpx
 from app.core.config import settings
 
 
+# async def send_otp_sms(mobile: str, otp: str) -> bool:
+#     """Send OTP via MSG91. Returns True on success."""
+#     if settings.DEBUG:
+#         print(f"[DEBUG] OTP for {mobile}: {otp}")
+#         return True
+
+#     try:
+#         async with httpx.AsyncClient() as client:
+#             response = await client.post(
+#                 "https://api.msg91.com/api/v5/otp",
+#                 json={
+#                     "authkey": settings.MSG91_API_KEY,
+#                     "mobile": f"91{mobile}",
+#                     "template_id": settings.MSG91_TEMPLATE_ID,
+#                     "otp": otp,
+#                 },
+#                 timeout=10.0,
+#             )
+#             return response.status_code == 200
+#     except Exception as e:
+#         print(f"SMS send failed: {e}")
+#         return False
+
 async def send_otp_sms(mobile: str, otp: str) -> bool:
     """Send OTP via MSG91. Returns True on success."""
     if settings.DEBUG:
@@ -13,20 +36,27 @@ async def send_otp_sms(mobile: str, otp: str) -> bool:
     try:
         async with httpx.AsyncClient() as client:
             response = await client.post(
-                "https://api.msg91.com/api/v5/otp",
-                json={
-                    "authkey": settings.MSG91_API_KEY,
-                    "mobile": f"91{mobile}",
+                "https://control.msg91.com/api/v5/otp",
+                params={
                     "template_id": settings.MSG91_TEMPLATE_ID,
+                    "mobile": f"91{mobile}",
                     "otp": otp,
+                    "otp_expiry": settings.OTP_EXPIRE_MINUTES,
+                },
+                headers={
+                    "authkey": settings.MSG91_API_KEY,
+                    "Content-Type": "application/json",
                 },
                 timeout=10.0,
             )
-            return response.status_code == 200
+            data = response.json()
+            success = response.status_code == 200 and data.get("type") == "success"
+            if not success:
+                print(f"MSG91 send failed: {data}")
+            return success
     except Exception as e:
         print(f"SMS send failed: {e}")
         return False
-
 
 async def send_sms(mobile: str, message: str) -> bool:
     """Send a generic SMS message."""
