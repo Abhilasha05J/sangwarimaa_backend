@@ -35,6 +35,7 @@ class Settings(BaseSettings):
     # Firebase
     FCM_SERVER_KEY: str = ""
     FIREBASE_PROJECT_ID: str = ""
+    FIREBASE_CREDENTIALS_PATH: str = "/etc/secrets/firebase-service-account.json"  # Render secret file mount path
 
     # AI / Chatbot
     OPENAI_API_KEY: str = ""
