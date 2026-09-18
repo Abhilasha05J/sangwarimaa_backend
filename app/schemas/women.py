@@ -122,16 +122,48 @@ class WomenRegisterRequest(BaseModel):
         return v
 
 
+# class WomenProfileUpdate(BaseModel):
+#     name: Optional[str] = Field(None, min_length=2, max_length=100)
+#     husband_name: Optional[str] = None
+#     address: Optional[str] = None
+#     village: Optional[str] = None
+#     blood_group: Optional[str] = Field(None, pattern=r"^(A|B|AB|O)[+-]$")
+#     preferred_language: Optional[str] = Field(None, pattern=r"^(hi|en)$")
+#     fcm_token: Optional[str] = None
+#     latitude: Optional[str] = None
+#     longitude: Optional[str] = None
+
+# ── WomenProfileUpdate — fixed: add missing existing fields + 4 new fields ──
+_MOBILE_PATTERN = r"^(\+91)?[6-9]\d{9}$"  # matches your formatMobile() shapes; tell me if the primary mobile field uses a different regex and I'll align it
+
 class WomenProfileUpdate(BaseModel):
     name: Optional[str] = Field(None, min_length=2, max_length=100)
+    age: Optional[int] = Field(None, ge=14, le=55)
+    dob: Optional[date] = None
     husband_name: Optional[str] = None
+    husband_age: Optional[int] = None
     address: Optional[str] = None
     village: Optional[str] = None
+    block: Optional[str] = None
+    district: Optional[str] = None
+    lmp: Optional[date] = None
     blood_group: Optional[str] = Field(None, pattern=r"^(A|B|AB|O)[+-]$")
     preferred_language: Optional[str] = Field(None, pattern=r"^(hi|en)$")
     fcm_token: Optional[str] = None
     latitude: Optional[str] = None
     longitude: Optional[str] = None
+    # new fields
+    husband_contact_no: Optional[str] = Field(None, pattern=_MOBILE_PATTERN)
+    other_family_member_name: Optional[str] = Field(None, max_length=100)
+    other_family_member_relation: Optional[str] = Field(None, max_length=50)
+    family_contact_no: Optional[str] = Field(None, pattern=_MOBILE_PATTERN)
+
+    @field_validator("lmp")
+    @classmethod
+    def lmp_not_future(cls, v: Optional[date]) -> Optional[date]:
+        if v and v > date.today():
+            raise ValueError("LMP cannot be a future date")
+        return v
 
 
 class PregnancyInfo(BaseModel):
@@ -143,11 +175,38 @@ class PregnancyInfo(BaseModel):
     risk_level: str
 
 
+# class BeneficiaryOut(BaseModel):
+#     id: UUID
+#     name: str
+#     age: Optional[int] = None
+#     husband_name: Optional[str] = None
+#     village: Optional[str] = None
+#     block: Optional[str] = None
+#     district: Optional[str] = None
+#     lmp: date
+#     edd: Optional[date] = None
+#     blood_group: Optional[str] = None
+#     risk_level: str = "low"
+#     preferred_language: str = "hi"
+#     asha_name: Optional[str] = None
+#     anm_name: Optional[str] = None
+#     created_at: datetime
+
+#     class Config:
+#         from_attributes = True
+
+# ── BeneficiaryOut — add the 4 new fields (husband_age already missing too — add it) ──
 class BeneficiaryOut(BaseModel):
     id: UUID
     name: str
     age: Optional[int] = None
+    dob: Optional[date] = None
     husband_name: Optional[str] = None
+    husband_age: Optional[int] = None
+    husband_contact_no: Optional[str] = None
+    other_family_member_name: Optional[str] = None
+    other_family_member_relation: Optional[str] = None
+    family_contact_no: Optional[str] = None
     village: Optional[str] = None
     block: Optional[str] = None
     district: Optional[str] = None

@@ -285,22 +285,28 @@ async def get_profile(
 
     from datetime import timedelta
     profile_data = {
-        "id": str(b.id),
-        "name": b.name,
-        "age": b.age,
-        "husband_name": b.husband_name,
-        "village": b.village,
-        "block": b.block,
-        "district": b.district,
-        "lmp": b.lmp.isoformat() if b.lmp else None,
-        "edd": (b.lmp + timedelta(days=280)).isoformat() if b.lmp else None,
-        "blood_group": b.blood_group,
-        "risk_level": b.risk_level.value if b.risk_level else "low",
-        "preferred_language": user.preferred_language.value if user.preferred_language else "hi",
-        "asha_name": None,
-        "anm_name": None,
-        "created_at": b.created_at.isoformat() if b.created_at else None,
-    }
+    "id": str(b.id),
+    "name": b.name,
+    "age": b.age,
+    "dob": b.dob.isoformat() if b.dob else None,
+    "husband_name": b.husband_name,
+    "husband_age": b.husband_age,
+    "husband_contact_no": b.husband_contact_no,
+    "other_family_member_name": b.other_family_member_name,
+    "other_family_member_relation": b.other_family_member_relation,
+    "family_contact_no": b.family_contact_no,
+    "village": b.village,
+    "block": b.block,
+    "district": b.district,
+    "lmp": b.lmp.isoformat() if b.lmp else None,
+    "edd": (b.lmp + timedelta(days=280)).isoformat() if b.lmp else None,
+    "blood_group": b.blood_group,
+    "risk_level": b.risk_level.value if b.risk_level else "low",
+    "preferred_language": user.preferred_language.value if user.preferred_language else "hi",
+    "asha_name": None,
+    "anm_name": None,
+    "created_at": b.created_at.isoformat() if b.created_at else None,
+}
 
     return success_envelope({
         "user": {
