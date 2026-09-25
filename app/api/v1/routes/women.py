@@ -1975,14 +1975,28 @@ async def search_villages(
     limit: int = Query(50, le=200),
     db: AsyncSession = Depends(get_db),
 ):
-    stmt = select(Village, HealthFacility.name.label("shc_name")).join(
+    similarity = func.similarity(Village.name, q)
+    is_substring_match = Village.name.ilike(f"%{q}%")
+
+    stmt = select(Village, HealthFacility.name.label("shc_name"), similarity.label("sim")).join(
         HealthFacility, Village.shc_id == HealthFacility.id, isouter=True
     )
+
     if q:
-        stmt = stmt.where(Village.name.ilike(f"%{q}%"))
+        # Substring matches ("baro" in "Barauda") AND typo-tolerant matches
+        # (similarity above threshold catches "baroda" ~ "Barauda" even
+        # with no substring in common at all positions). 0.25 is a starting
+        # threshold — raise it if results feel too loose, lower it if
+        # legitimate typos are still getting missed.
+        stmt = stmt.where(or_(is_substring_match, similarity > 0.25))
+        # Exact/substring matches first, then best-similarity first.
+        stmt = stmt.order_by(sql_desc(is_substring_match), sql_desc(similarity), Village.name)
+    else:
+        stmt = stmt.order_by(Village.name)
+
     if block:
         stmt = stmt.where(Village.block == block.upper())
-    stmt = stmt.order_by(Village.name).limit(limit)
+    stmt = stmt.limit(limit)
 
     rows = (await db.execute(stmt)).all()
     return {
@@ -1992,9 +2006,9 @@ async def search_villages(
                 "name": v.name,
                 "code": v.code,
                 "block": v.block,
-                "shc_name": shc_name,          # shown under the village name to disambiguate duplicates
+                "shc_name": shc_name,
                 "has_facility_data": v.shc_id is not None,
             }
-            for v, shc_name in rows
+            for v, shc_name, _sim in rows
         ]
     }
