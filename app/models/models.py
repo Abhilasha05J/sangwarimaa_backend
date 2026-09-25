@@ -54,6 +54,19 @@ class LangPref(str, enum.Enum):
     hi = "hi"
     en = "en"
 
+class WorkerRole(str, enum.Enum):
+    cho = "CHO"
+    rho_female = "RHO_FEMALE"
+    rho_male = "RHO_MALE"
+    anm_2nd = "ANM_2ND"
+ 
+ 
+class WorkerStatus(str, enum.Enum):
+    active = "active"
+    vacant = "vacant"
+    not_sanctioned = "not_sanctioned"
+    data_issue = "data_issue"   # phone missing/malformed, name looks like junk, etc. 
+
 
 # ── Models ────────────────────────────────────────────────────────────────────
 
@@ -137,6 +150,8 @@ class Beneficiary(Base):
     longitude = Column(String(20))
     created_at = Column(DateTime(timezone=True), default=now_utc)
     updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+    village_id = Column(UUID(as_uuid=True), ForeignKey("villages.id"))
+    village_ref = relationship("Village")
 
     user = relationship("User", back_populates="beneficiary")
     asha_worker = relationship("FieldWorker", foreign_keys=[asha_id], back_populates="beneficiaries_as_asha")
@@ -416,6 +431,10 @@ class HealthFacility(Base):
     remarks = Column(Text)
     last_updated = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
     created_at = Column(DateTime(timezone=True), default=now_utc)
+    parent_facility_id = Column(UUID(as_uuid=True), ForeignKey("health_facilities.id"))
+
+    parent_facility = relationship("HealthFacility", remote_side="HealthFacility.id",backref="child_facilities")
+
 
 class FAQ(Base):
     """
@@ -451,3 +470,38 @@ class FAQ(Base):
 
     created_at = Column(DateTime(timezone=True), default=now_utc)
     updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+
+ 
+class Village(Base):
+    __tablename__ = "villages"
+ 
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    name = Column(Text, nullable=False)
+    code = Column(Text, unique=True)                 # roster village code, e.g. "13491"; NULL if none
+    block = Column(Text, nullable=False)              # health block: "ABHANPUR" | "DHARSEEVA"
+    district = Column(Text, nullable=False, default="Raipur")
+    shc_id = Column(UUID(as_uuid=True), ForeignKey("health_facilities.id"))
+    match_status = Column(Text, nullable=False, default="exact")   # exact | likely | unresolved
+    source = Column(Text, nullable=False, default="roster_2026_excel")
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+ 
+    shc = relationship("HealthFacility", foreign_keys=[shc_id])
+ 
+ 
+class HealthWorker(Base):
+    __tablename__ = "health_workers"
+ 
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    facility_id = Column(UUID(as_uuid=True), ForeignKey("health_facilities.id"), nullable=False)
+    role = Column(Enum(WorkerRole, native_enum=False), nullable=False)
+    name = Column(Text)                    # NULL when vacant/not_sanctioned/data_issue
+    mobile = Column(Text)
+    status = Column(Enum(WorkerStatus, native_enum=False), nullable=False, default=WorkerStatus.active)
+    source = Column(Text, nullable=False, default="roster_2026_excel")
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+ 
+    __table_args__ = (UniqueConstraint("facility_id", "role", name="uq_worker_facility_role"),)
+    facility = relationship("HealthFacility")
+ 

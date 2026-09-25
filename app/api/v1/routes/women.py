@@ -65,7 +65,8 @@ from app.models.models import (
     User, Beneficiary, BPCRAssessment, ANCVisit,
     Appointment, Reminder, Alert, AlertType, RiskLevel,
     EducationalContent, ChatbotConversation,FAQ,
-    PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,MedicineIntakeLog, MaternalNutrition
+    PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,MedicineIntakeLog, MaternalNutrition,
+    Village, HealthFacility
 )
 from app.schemas.women import (
     WomenRegisterRequest,
@@ -1924,3 +1925,34 @@ async def get_medicine_reminders(
             "en": "All medicines are available free from ASHA or ANM",
         },
     })
+
+@router.get("/villages", summary="Search villages for the registration dropdown")
+async def search_villages(
+    q: str = Query("", description="Search text, matched against village name"),
+    block: str | None = Query(None, description="Optional block filter: ABHANPUR | DHARSEEVA"),
+    limit: int = Query(50, le=200),
+    db: AsyncSession = Depends(get_db),
+):
+    stmt = select(Village, HealthFacility.name.label("shc_name")).join(
+        HealthFacility, Village.shc_id == HealthFacility.id, isouter=True
+    )
+    if q:
+        stmt = stmt.where(Village.name.ilike(f"%{q}%"))
+    if block:
+        stmt = stmt.where(Village.block == block.upper())
+    stmt = stmt.order_by(Village.name).limit(limit)
+
+    rows = (await db.execute(stmt)).all()
+    return {
+        "villages": [
+            {
+                "id": str(v.id),
+                "name": v.name,
+                "code": v.code,
+                "block": v.block,
+                "shc_name": shc_name,          # shown under the village name to disambiguate duplicates
+                "has_facility_data": v.shc_id is not None,
+            }
+            for v, shc_name in rows
+        ]
+    }

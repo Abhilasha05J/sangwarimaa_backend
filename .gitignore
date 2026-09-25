@@ -1,17 +1,38 @@
+# Environment / secrets
 .env
 .env.production
+
+# Python virtual environment
 venv/
+
+# Python cache / compiled files
 __pycache__/
 *.pyc
 *.pyo
+
+# Data / generated files
 *.xlsx
 *.csv
+
+# macOS
 .DS_Store
-seed_facilities.py
+
+# Seed / migration / export scripts
+# seed_facilities.py
+# seed_villages.py
+# seed_faq.py
+# run_migration.py
+# export_village_mapping.py
+
+# IDE
 .vscode/
-health_facility_model.py
-audit_log_model.py
-facilities_route_update.py
-admin_facilities_routes.py
+
+# Specific files
+# health_facility_model.py
+# audit_log_model.py
+# facilities_route_update.py
+# admin_facilities_routes.py
+
+# Development / temporary files
 *.http
-.vscode/
+
