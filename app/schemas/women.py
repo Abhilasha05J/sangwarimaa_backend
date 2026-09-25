@@ -95,6 +95,7 @@ class WomenRegisterRequest(BaseModel):
     husband_age: Optional[int] = None
     dob: Optional[date] = None
     address: Optional[str] = None
+    village_id: Optional[UUID] = None
     village: Optional[str] = None
     phc: Optional[str] = None
     block: Optional[str] = None
