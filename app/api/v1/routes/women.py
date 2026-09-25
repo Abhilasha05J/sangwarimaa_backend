@@ -116,14 +116,12 @@ def compute_pregnancy_info(lmp: date) -> dict:
         "days_until_edd": max(0, days_until_edd),
     }
 
-
 def compute_bpcr_risk(score: int) -> str:
     if score >= 8:
         return "Green"
     elif score >= 5:
         return "Yellow"
     return "Red"
-
 
 async def get_beneficiary_or_404(user: User, db: AsyncSession) -> Beneficiary:
     result = await db.execute(
@@ -134,6 +132,34 @@ async def get_beneficiary_or_404(user: User, db: AsyncSession) -> Beneficiary:
     if not b:
         raise NotFoundException("Beneficiary profile")
     return b
+
+async def resolve_village(village_id: UUID, db: AsyncSession) -> dict | None:
+    """
+    Returns {"village": str, "phc": str|None, "block": str, "district": str}
+    resolved from village_id -> SHC -> PHC (via parent_facility_id), or
+    None if the village_id doesn't exist or has no SHC linked yet
+    (match_status='unresolved' villages, e.g. Hasda/Tokaro right now).
+    """
+    result = await db.execute(select(Village).where(Village.id == village_id))
+    village = result.scalar_one_or_none()
+    if not village:
+        return None
+
+    phc_name = None
+    if village.shc_id:
+        shc_result = await db.execute(select(HealthFacility).where(HealthFacility.id == village.shc_id))
+        shc = shc_result.scalar_one_or_none()
+        if shc and shc.parent_facility_id:
+            phc_result = await db.execute(select(HealthFacility).where(HealthFacility.id == shc.parent_facility_id))
+            phc = phc_result.scalar_one_or_none()
+            phc_name = phc.name if phc else None
+
+    return {
+        "village": village.name,
+        "phc": phc_name,
+        "block": village.block,
+        "district": village.district,
+    }
 
 # ── Lazy-provisioning helpers (auto-create default rows on first access) ──────
 
@@ -242,6 +268,16 @@ async def register_woman(
     user.name = payload.name
     user.preferred_language = payload.preferred_language  # type: ignore
 
+    village_data = None
+    if payload.village_id:
+        village_data = await resolve_village(payload.village_id, db)
+        # village_id was sent but didn't resolve (bad id, or an
+        # 'unresolved' village with no SHC yet) — don't silently drop it,
+        # tell the client so the form doesn't save a village that quietly
+        # went nowhere.
+        if village_data is None:
+            raise NotFoundException("village_id not found or not yet linked to a health facility")
+
     beneficiary = Beneficiary(
         user_id=user.id,
         name=payload.name,
@@ -250,10 +286,16 @@ async def register_woman(
         husband_age=payload.husband_age,
         dob=payload.dob,
         address=payload.address,
-        village=payload.village,
-        phc=payload.phc,
-        block=payload.block,
-        district=payload.district,
+        village_id=payload.village_id,
+        # When a real village was picked, use the DB-resolved names —
+        # more reliable than anything the client could send. When it
+        # wasn't (village_id is None — the "not listed" path), fall back
+        # to whatever the client sent (free-text village/phc/block, and
+        # district from the form field).
+        village=village_data["village"] if village_data else payload.village,
+        phc=village_data["phc"] if village_data else payload.phc,
+        block=village_data["block"] if village_data else payload.block,
+        district=village_data["district"] if village_data else payload.district,
         lmp=payload.lmp,
         blood_group=payload.blood_group,
         consent=payload.consent,
