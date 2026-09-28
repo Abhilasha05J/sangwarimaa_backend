@@ -50,7 +50,8 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import func, select, desc
+from sqlalchemy import func, select, desc, or_
+from sqlalchemy import desc as sql_desc
 from sqlalchemy.orm import selectinload
 from sqlalchemy.orm.attributes import flag_modified 
 
