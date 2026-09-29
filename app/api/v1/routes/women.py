@@ -79,7 +79,7 @@ from app.models.models import (
     Appointment, Reminder, Alert, AlertType, RiskLevel,
     EducationalContent, ChatbotConversation,FAQ,
     PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,MedicineIntakeLog, MaternalNutrition,
-    Village, HealthFacility
+    Village, HealthFacility, BPCRAnswer, BPCRBloodDonor, BPCRSelectedFacility, 
 )
 from app.schemas.women import (
     WomenRegisterRequest,
@@ -109,9 +109,16 @@ from app.schemas.women import (
 from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
 from app.services.chatbot_service import get_ai_reply
+from app.services.bpcr_service import (
+    compute_score, facility_out, get_answers, get_asha_contact, get_catchment,
+    get_selected_facilities, is_selectable, sba_for_selected, search_facilities,
+)
+from app.api.v1.routes.women import get_beneficiary_or_404
 
 router = APIRouter(prefix="/women", tags=["Beneficiary (Pregnant Women)"])
 
+MAX_DONORS_PER_TYPE = 10
+MAX_ANSWERS_BYTES = 10_000
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -477,7 +484,6 @@ async def get_bpcr(
         ],
     ).model_dump())
 
-
 @router.post("/bpcr/respond", summary="Submit responses to BPCR components")
 async def respond_bpcr(
     payload: BPCRRespondRequest,
@@ -541,6 +547,212 @@ async def respond_bpcr(
         "alert_id": triggered_alert,
     })
 
+
+# ── Facilities ──────────────────────────────────────────────────────────────
+
+@router.get("/bpcr/facilities", summary="Her catchment facilities + search")
+async def list_facilities(
+    q: str = Query("", max_length=100),
+    limit: int = Query(50, le=200),
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    selected = await get_selected_facilities(b.id, db)
+    selected_ids = {f.id for f in selected}
+    catchment = await get_catchment(b, db)
+    catchment_ids = {f.id for f in catchment}
+    # Default view is the catchment only; results appear once she searches.
+    results = await search_facilities(q, limit, db) if q.strip() else []
+    return success_envelope({
+        "catchment": [facility_out(f, selected_ids, catchment_ids) for f in catchment],
+        "results": [facility_out(f, selected_ids, catchment_ids) for f in results],
+        "selected": [facility_out(f, selected_ids, catchment_ids) for f in selected],
+    })
+
+
+@router.put("/bpcr/facilities/selection", summary="Replace her selected facilities")
+async def save_facility_selection(
+    payload: FacilitySelectionRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    wanted = set(payload.facility_ids)
+
+    if wanted:
+        found = (await db.execute(select(HealthFacility).where(HealthFacility.id.in_(wanted)))).scalars().all()
+        if len(found) != len(wanted):
+            raise ValidationException("One or more facilities were not found")
+        catchment_ids = {f.id for f in await get_catchment(b, db)}
+        for f in found:
+            if f.id not in catchment_ids and not is_selectable(f):
+                raise ValidationException(f"Facility not available for selection: {f.name}")
+
+    rows = (await db.execute(
+        select(BPCRSelectedFacility).where(BPCRSelectedFacility.beneficiary_id == b.id)
+    )).scalars().all()
+    have = {r.facility_id for r in rows}
+    for r in rows:
+        if r.facility_id not in wanted:
+            await db.delete(r)
+    for fid in wanted - have:
+        db.add(BPCRSelectedFacility(beneficiary_id=b.id, facility_id=fid))
+    await db.commit()
+    return success_envelope({"selected_ids": [str(i) for i in wanted]})
+
+
+# ── SBA ─────────────────────────────────────────────────────────────────────
+
+@router.get("/bpcr/sba", summary="SBA staff for the facilities she selected")
+async def get_sba(
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    selected = await get_selected_facilities(b.id, db)
+    return success_envelope({
+        "facilities": await sba_for_selected(b, selected, db),
+        "asha": await get_asha_contact(b, db),   # null until ASHA data is loaded
+        "tba": [],                               # no TBA data source yet
+    })
+
+
+# ── Answers (transport, saved_money, community_financial_support, delivery_bag) ──
+
+def _check_component(component: str):
+    if component not in BPCR_ANSWER_COMPONENTS:
+        raise ValidationException(f"component must be one of {list(BPCR_ANSWER_COMPONENTS)}")
+
+
+@router.get("/bpcr/answers/{component}", summary="Saved answers for one BPCR component")
+async def get_component_answers(
+    component: str,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    _check_component(component)
+    b = await get_beneficiary_or_404(user, db)
+    answers = await get_answers(b.id, db)
+    return success_envelope({"component": component, "answers": answers.get(component, {})})
+
+
+@router.put("/bpcr/answers/{component}", summary="Save answers for one BPCR component")
+async def save_component_answers(
+    component: str,
+    payload: BPCRAnswersRequest,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    _check_component(component)
+    if len(json.dumps(payload.answers)) > MAX_ANSWERS_BYTES:
+        raise ValidationException("Answers payload too large")
+    b = await get_beneficiary_or_404(user, db)
+
+    row = (await db.execute(
+        select(BPCRAnswer).where(BPCRAnswer.beneficiary_id == b.id, BPCRAnswer.component == component)
+    )).scalar_one_or_none()
+    if row:
+        row.answers = payload.answers
+        row.updated_at = datetime.now(timezone.utc)
+    else:
+        db.add(BPCRAnswer(beneficiary_id=b.id, component=component, answers=payload.answers))
+    await db.commit()
+    return success_envelope({"component": component, "answers": payload.answers})
+
+
+# ── Blood donors ────────────────────────────────────────────────────────────
+
+def _donor_out(d: BPCRBloodDonor) -> dict:
+    return {"id": str(d.id), "donor_type": d.donor_type, "name": d.name, "blood_group": d.blood_group,
+            "relation": d.relation, "address": d.address, "phone": d.phone}
+
+
+@router.get("/bpcr/blood-donors", summary="Her blood group + family and community donors")
+async def list_blood_donors(
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    donors = (await db.execute(
+        select(BPCRBloodDonor).where(BPCRBloodDonor.beneficiary_id == b.id).order_by(BPCRBloodDonor.created_at)
+    )).scalars().all()
+    return success_envelope({
+        "self_blood_group": b.blood_group,
+        "family": [_donor_out(d) for d in donors if d.donor_type == "family"],
+        "community": [_donor_out(d) for d in donors if d.donor_type == "community"],
+    })
+
+
+@router.post("/bpcr/blood-donors", summary="Add a blood donor")
+async def add_blood_donor(
+    payload: BloodDonorCreate,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    count = (await db.execute(
+        select(func.count(BPCRBloodDonor.id)).where(
+            BPCRBloodDonor.beneficiary_id == b.id, BPCRBloodDonor.donor_type == payload.donor_type)
+    )).scalar() or 0
+    if count >= MAX_DONORS_PER_TYPE:
+        raise ValidationException(f"You can add up to {MAX_DONORS_PER_TYPE} {payload.donor_type} donors")
+
+    donor = BPCRBloodDonor(beneficiary_id=b.id, **payload.model_dump())
+    db.add(donor)
+    await db.commit()
+    await db.refresh(donor)
+    return success_envelope(_donor_out(donor))
+
+
+@router.delete("/bpcr/blood-donors/{donor_id}", summary="Remove a blood donor")
+async def delete_blood_donor(
+    donor_id: UUID,
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    donor = (await db.execute(
+        select(BPCRBloodDonor).where(BPCRBloodDonor.id == donor_id, BPCRBloodDonor.beneficiary_id == b.id)
+    )).scalar_one_or_none()
+    if not donor:
+        raise NotFoundException("Blood donor")
+    await db.delete(donor)
+    await db.commit()
+    return success_envelope({"deleted": str(donor_id)})
+
+
+# ── Score + emergency hub ───────────────────────────────────────────────────
+
+@router.get("/bpcr/score", summary="BPCR readiness score (100-point, 14 domains)")
+async def get_bpcr_score(
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    return success_envelope(await compute_score(b, db))
+
+
+@router.get("/bpcr/emergency-hub", summary="Emergency preparedness hub contacts")
+async def get_emergency_hub(
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    first_donor = (await db.execute(
+        select(BPCRBloodDonor).where(BPCRBloodDonor.beneficiary_id == b.id).order_by(BPCRBloodDonor.created_at).limit(1)
+    )).scalar_one_or_none()
+    return success_envelope({
+        "ambulance_numbers": ["108", "102"],
+        "husband": {"name": b.husband_name, "phone": b.husband_contact_no} if b.husband_contact_no else None,
+        "family_contact": {
+            "name": b.other_family_member_name,
+            "relation": b.other_family_member_relation,
+            "phone": b.family_contact_no,
+        } if b.family_contact_no else None,
+        "asha": await get_asha_contact(b, db),
+        "blood_donor": _donor_out(first_donor) if first_donor else None,
+    })
 
 # ── ANC Services ───────────────────────────────────────────────────────────────
 @router.get("/anc-services", summary="Full ANC Services screen data")
@@ -675,7 +887,6 @@ async def get_anc_services(
         "overdue_days": overdue_days,
     })
 
-
 # @router.post("/anc-services/medicine/{medicine_type}/mark-taken", summary="Mark today's dose as taken")
 # async def mark_medicine_taken(
 #     medicine_type: str,
@@ -717,7 +928,6 @@ async def get_anc_services(
 #         "total_doses": tracker.total_doses,
 #     })
 
-
 @router.patch("/anc-services/immunization/{dose_type}", summary="Update immunization dose status")
 async def update_immunization(
     dose_type: str,
@@ -749,7 +959,6 @@ async def update_immunization(
         "status": dose.status,
         "date": dose.received_date.isoformat() if dose.received_date else None,
     })
-
 
 @router.patch("/anc-services/ultrasound/{scan_type}", summary="Update ultrasound scan status")
 async def update_ultrasound(
@@ -1030,7 +1239,6 @@ async def get_appointments(
     )
     appointments = result.scalars().all()
     return success_envelope([AppointmentOut.model_validate(a).model_dump() for a in appointments])
-
 
 @router.post("/appointments", summary="Book a new appointment")
 async def create_appointment(
