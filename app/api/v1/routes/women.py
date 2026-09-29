@@ -29,6 +29,18 @@ DELETE /api/v1/women/chatbot/history        → Clear conversation
 POST   /api/v1/women/danger-sign            → Report danger sign → alert
 POST   /api/v1/women/emergency              → Full emergency: alert + notify ASHA + 102/108
 GET    /api/v1/women/emergency/contacts     → Emergency contact list
+app/api/v1/routes/bpcr.py
+ 
+GET  /api/v1/women/bpcr/facilities?q=        → her catchment (SHC/PHC/CHC) + search of the 2 blocks
+PUT  /api/v1/women/bpcr/facilities/selection → replace her selected facilities
+GET  /api/v1/women/bpcr/sba                  → staff for the facilities she selected (+ ASHA, TBA placeholder)
+GET  /api/v1/women/bpcr/answers/{component}  → saved answers for one component
+PUT  /api/v1/women/bpcr/answers/{component}  → save answers (whole set, replaces previous)
+GET  /api/v1/women/bpcr/blood-donors
+POST /api/v1/women/bpcr/blood-donors
+DELETE /api/v1/women/bpcr/blood-donors/{id}
+GET  /api/v1/women/bpcr/score                 → 100-point score, per-domain breakdown
+GET  /api/v1/women/bpcr/emergency-hub         → ambulance, husband, family contact, ASHA, first donor
 
 Additional Routes for women health
 =====================================================

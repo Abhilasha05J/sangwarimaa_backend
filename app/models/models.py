@@ -176,6 +176,40 @@ class BPCRAssessment(Base):
 
     beneficiary = relationship("Beneficiary", back_populates="bpcr_assessments")
 
+class BPCRSelectedFacility(Base):
+    __tablename__ = "bpcr_selected_facilities"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), nullable=False)
+    facility_id = Column(UUID(as_uuid=True), ForeignKey("health_facilities.id"), nullable=False)
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+
+    __table_args__ = (UniqueConstraint("beneficiary_id", "facility_id", name="uq_bpcr_selected_facility"),)
+
+class BPCRAnswer(Base):
+    __tablename__ = "bpcr_answers"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), nullable=False)
+    component = Column(Text, nullable=False)
+    answers = Column(JSONB, nullable=False, default=dict)
+    created_at = Column(DateTime(timezone=True), default=now_utc)
+    updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
+
+    __table_args__ = (UniqueConstraint("beneficiary_id", "component", name="uq_bpcr_answer_component"),)
+
+class BPCRBloodDonor(Base):
+    __tablename__ = "bpcr_blood_donors"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), nullable=False)
+    donor_type = Column(Text, nullable=False)          # 'family' | 'community'
+    name = Column(Text, nullable=False)
+    blood_group = Column(Text, nullable=False)
+    relation = Column(Text)
+    address = Column(Text)
+    phone = Column(Text, nullable=False)
+    created_at = Column(DateTime(timezone=True), default=now_utc)
 
 class Alert(Base):
     __tablename__ = "alerts"
@@ -195,7 +229,6 @@ class Alert(Base):
 
     beneficiary = relationship("Beneficiary", back_populates="alerts")
     assigned_worker = relationship("FieldWorker", back_populates="alerts_assigned")
-
 
 class ANCVisit(Base):
     __tablename__ = "anc_visits"
@@ -294,7 +327,6 @@ class Immunization(Base):
     __table_args__ = (UniqueConstraint("beneficiary_id", "dose_type", name="uq_immunization_dose"),)
     beneficiary = relationship("Beneficiary")
 
-
 class UltrasoundScan(Base):
     """One row per (beneficiary, scan_type)."""
     __tablename__ = "ultrasound_scans"
@@ -325,7 +357,6 @@ class Appointment(Base):
 
     beneficiary = relationship("Beneficiary", back_populates="appointments")
 
-
 class Reminder(Base):
     __tablename__ = "reminders"
 
@@ -341,7 +372,6 @@ class Reminder(Base):
 
     beneficiary = relationship("Beneficiary", back_populates="reminders")
 
-
 class OTPToken(Base):
     __tablename__ = "otp_tokens"
 
@@ -350,7 +380,6 @@ class OTPToken(Base):
     attempts = Column(SmallInteger, default=0)
     expires_at = Column(DateTime(timezone=True), nullable=False)
     used = Column(Boolean, default=False)
-
 
 # class EducationalContent(Base):
 #     __tablename__ = "educational_content"
@@ -365,7 +394,6 @@ class OTPToken(Base):
 #     tags = Column(JSONB)
 #     is_active = Column(Boolean, default=True)
 #     created_at = Column(DateTime(timezone=True), default=now_utc)
-
 class EducationalContent(Base):
     __tablename__ = "educational_content"
 
@@ -385,8 +413,7 @@ class EducationalContent(Base):
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime(timezone=True), default=now_utc)
     updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)  # NEW — you'll want this once Admin can edit rows
-
-    
+   
 class ChatbotConversation(Base):
     __tablename__ = "chatbot_conversations"
 
@@ -435,7 +462,6 @@ class HealthFacility(Base):
 
     parent_facility = relationship("HealthFacility", remote_side="HealthFacility.id",backref="child_facilities")
 
-
 class FAQ(Base):
     """
     Dedicated FAQ table — split out from EducationalContent because that
@@ -471,7 +497,6 @@ class FAQ(Base):
     created_at = Column(DateTime(timezone=True), default=now_utc)
     updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
 
- 
 class Village(Base):
     __tablename__ = "villages"
  
@@ -487,7 +512,6 @@ class Village(Base):
     updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
  
     shc = relationship("HealthFacility", foreign_keys=[shc_id])
- 
  
 class HealthWorker(Base):
     __tablename__ = "health_workers"
