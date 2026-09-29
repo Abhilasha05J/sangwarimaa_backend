@@ -59,6 +59,7 @@ GET  /api/v1/women/newborn-care                 → Newborn care guide
 from datetime import date, datetime, timezone, timedelta
 from typing import Optional
 from uuid import UUID
+import json
 
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -113,7 +114,7 @@ from app.services.bpcr_service import (
     compute_score, facility_out, get_answers, get_asha_contact, get_catchment,
     get_selected_facilities, is_selectable, sba_for_selected, search_facilities,
 )
-from app.api.v1.routes.women import get_beneficiary_or_404
+
 
 router = APIRouter(prefix="/women", tags=["Beneficiary (Pregnant Women)"])
 
