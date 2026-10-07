@@ -6,7 +6,7 @@ from sqlalchemy.dialects.postgresql import UUID, JSONB
 
 from sqlalchemy import (
     Boolean, Column, Date, DateTime, Enum, ForeignKey,
-    Integer, JSON, SmallInteger, String, Text, UniqueConstraint, func,
+    Integer, JSON, SmallInteger, String, Text, UniqueConstraint, func,Float
 )
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import relationship
@@ -459,6 +459,9 @@ class HealthFacility(Base):
     last_updated = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
     created_at = Column(DateTime(timezone=True), default=now_utc)
     parent_facility_id = Column(UUID(as_uuid=True), ForeignKey("health_facilities.id"))
+    geo_lat = Column(Float)
+    geo_lng = Column(Float)
+    geo_source = Column(Text)
 
     parent_facility = relationship("HealthFacility", remote_side="HealthFacility.id",backref="child_facilities")
 
@@ -508,6 +511,9 @@ class Village(Base):
     shc_id = Column(UUID(as_uuid=True), ForeignKey("health_facilities.id"))
     match_status = Column(Text, nullable=False, default="exact")   # exact | likely | unresolved
     source = Column(Text, nullable=False, default="roster_2026_excel")
+    geo_lat = Column(Float)
+    geo_lng = Column(Float)
+    geo_source = Column(Text)
     created_at = Column(DateTime(timezone=True), default=now_utc)
     updated_at = Column(DateTime(timezone=True), default=now_utc, onupdate=now_utc)
  

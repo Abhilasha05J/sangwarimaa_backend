@@ -225,7 +225,7 @@ class BeneficiaryOut(BaseModel):
 
 
 # ── BPCR ──────────────────────────────────────────────────────────────────────
-BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
+BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"] 
 BPCR_ANSWER_COMPONENTS = ("transport", "saved_money", "community_financial_support", "delivery_bag", "delivery_facility")
 
 def clean_phone(v: str) -> str:

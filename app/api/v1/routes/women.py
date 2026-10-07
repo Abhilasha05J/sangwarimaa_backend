@@ -60,10 +60,11 @@ from datetime import date, datetime, timezone, timedelta
 from typing import Optional
 from uuid import UUID
 import json
+import math
 
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import func, select, desc, or_
+from sqlalchemy import func, select, desc,literal_column, or_
 from sqlalchemy import desc as sql_desc
 from sqlalchemy.orm import selectinload
 from sqlalchemy.orm.attributes import flag_modified 
@@ -602,7 +603,35 @@ async def save_facility_selection(
     await db.commit()
     return success_envelope({"selected_ids": [str(i) for i in wanted]})
 
+@router.get("/bpcr/facilities/nearest", summary="Nearest facilities to her GPS position or her village")
+async def nearest_facilities_route(
+    source: Literal["gps", "village"] = Query("village"),
+    lat: Optional[float] = Query(None, ge=-90, le=90),
+    lng: Optional[float] = Query(None, ge=-180, le=180),
+    limit: int = Query(4, ge=1, le=10),   # max cards: one per type
+    types: str = Query("CHC,PHC,SHC,SDH", max_length=40),   # all four levels by default
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    if source == "gps" and (lat is None or lng is None):
+        raise ValidationException("lat and lng are required when source=gps")
+    b = await get_beneficiary_or_404(user, db)
 
+    wanted = [t for t in (x.strip().upper() for x in types.split(",")) if t in BPCR_FACILITY_TYPES] \
+        or list(BPCR_FACILITY_TYPES)
+
+    origin, reason = await resolve_origin(b, source, lat, lng, db)
+    if origin is None:
+        return success_envelope({"origin": None, "reason": reason, "facilities": []})
+
+    near = await nearest_facilities(origin["latitude"], origin["longitude"], limit, wanted, db)
+    selected_ids = {f.id for f in await get_selected_facilities(b.id, db)}
+    catchment_ids = {f.id for f in await get_catchment(b, db)}
+    return success_envelope({
+        "origin": origin,
+        "reason": None if near else "no_located_facilities",
+        "facilities": [nearby_facility_out(f, d, selected_ids, catchment_ids) for f, d in near],
+    })
 # ── SBA ─────────────────────────────────────────────────────────────────────
 
 @router.get("/bpcr/sba", summary="SBA staff for the facilities she selected")
