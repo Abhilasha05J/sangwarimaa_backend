@@ -61,6 +61,8 @@ from typing import Optional, Literal
 from uuid import UUID
 import json
 import math
+import asyncio, json, logging, time, urllib.request
+from app.core.config import settings
 
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -112,17 +114,68 @@ from app.api.v1.dependencies import get_current_woman, get_current_user
 from app.services.notification_service import send_fcm_push, send_alert_to_asha
 from app.services.chatbot_service import get_ai_reply
 from app.services.bpcr_service import (
-    compute_score, facility_out, get_answers, get_asha_contact, get_catchment,
-    get_selected_facilities, is_selectable, sba_for_selected, search_facilities,
+    BPCR_FACILITY_TYPES,compute_score, facility_out, get_answers, get_asha_contact, get_catchment,
+    get_selected_facilities, is_selectable, nearby_facility_out,  nearest_facilities, resolve_origin, sba_for_selected, search_facilities,
 )
 
 
 router = APIRouter(prefix="/women", tags=["Beneficiary (Pregnant Women)"])
+logger = logging.getLogger(__name__)
 
 MAX_DONORS_PER_TYPE = 10
 MAX_ANSWERS_BYTES = 10_000
 
+ROUTES_URL = "https://routes.googleapis.com/directions/v2:computeRoutes"
+_ROUTE_CACHE: dict = {}   # per worker process; villages and facilities don't move, so entries stay valid
+_ROUTE_CACHE_TTL_S = 7 * 24 * 3600
+_ROUTE_CACHE_MAX = 5000
+
 # ── Helpers ────────────────────────────────────────────────────────────────────
+def _compute_routes_sync(body: dict, api_key: str) -> dict:
+    req = urllib.request.Request(
+        ROUTES_URL, data=json.dumps(body).encode(), method="POST",
+        headers={
+            "Content-Type": "application/json",
+            "X-Goog-Api-Key": api_key,
+            "X-Goog-FieldMask": "routes.distanceMeters,routes.duration,routes.polyline.encodedPolyline",
+        })
+    with urllib.request.urlopen(req, timeout=8) as r:
+        return json.load(r)
+
+async def fetch_route(o_lat: float, o_lng: float, d_lat: float, d_lng: float) -> Optional[dict]:
+    """{'distance_m', 'duration_s', 'polyline'}, or None if Google has no route / the call failed."""
+    api_key = getattr(settings, "GOOGLE_ROUTES_API_KEY", "")
+    if not api_key:
+        logger.warning("GOOGLE_ROUTES_API_KEY is not set")
+        return None
+    key = (round(o_lat, 3), round(o_lng, 3), round(d_lat, 5), round(d_lng, 5))
+    hit = _ROUTE_CACHE.get(key)
+    if hit and hit[0] > time.time():
+        return hit[1]
+    body = {
+        "origin": {"location": {"latLng": {"latitude": o_lat, "longitude": o_lng}}},
+        "destination": {"location": {"latLng": {"latitude": d_lat, "longitude": d_lng}}},
+        "travelMode": "DRIVE",
+        "routingPreference": "TRAFFIC_UNAWARE",
+    }
+    try:
+        data = await asyncio.to_thread(_compute_routes_sync, body, api_key)
+    except Exception as e:
+        logger.warning("Routes API call failed: %s", e)
+        return None
+    routes = data.get("routes") or []
+    if not routes or not (routes[0].get("polyline") or {}).get("encodedPolyline"):
+        return None
+    r = routes[0]
+    result = {
+        "distance_m": int(r.get("distanceMeters", 0)),
+        "duration_s": int(float(str(r.get("duration", "0s")).rstrip("s") or 0)),
+        "polyline": r["polyline"]["encodedPolyline"],
+    }
+    if len(_ROUTE_CACHE) >= _ROUTE_CACHE_MAX:
+        _ROUTE_CACHE.pop(next(iter(_ROUTE_CACHE)))
+    _ROUTE_CACHE[key] = (time.time() + _ROUTE_CACHE_TTL_S, result)
+    return result
 
 def compute_pregnancy_info(lmp: date) -> dict:
     today = date.today()
@@ -632,6 +685,29 @@ async def nearest_facilities_route(
         "reason": None if near else "no_located_facilities",
         "facilities": [nearby_facility_out(f, d, selected_ids, catchment_ids) for f, d in near],
     })
+
+@router.get("/bpcr/facilities/{facility_id}/route", summary="Road route from her origin to one facility")
+async def facility_route(
+    facility_id: UUID,
+    source: Literal["gps", "village"] = Query("village"),
+    lat: Optional[float] = Query(None, ge=-90, le=90),
+    lng: Optional[float] = Query(None, ge=-180, le=180),
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    if source == "gps" and (lat is None or lng is None):
+        raise ValidationException("lat and lng are required when source=gps")
+    b = await get_beneficiary_or_404(user, db)
+    f = (await db.execute(select(HealthFacility).where(HealthFacility.id == facility_id))).scalar_one_or_none()
+    if not f or f.geo_lat is None or f.geo_lng is None or not is_selectable(f):
+        raise NotFoundException("Facility")
+    origin, reason = await resolve_origin(b, source, lat, lng, db)
+    if origin is None:
+        return success_envelope({"available": False, "reason": reason})
+    route = await fetch_route(origin["latitude"], origin["longitude"], f.geo_lat, f.geo_lng)
+    if route is None:
+        return success_envelope({"available": False, "reason": "route_unavailable"})
+    return success_envelope({"available": True, **route})
 # ── SBA ─────────────────────────────────────────────────────────────────────
 
 @router.get("/bpcr/sba", summary="SBA staff for the facilities she selected")

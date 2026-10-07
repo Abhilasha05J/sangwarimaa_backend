@@ -41,6 +41,9 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str = ""
     GEMINI_API_KEY: str = "" 
 
+    #maps
+    GOOGLE_ROUTES_API_KEY: str = ""
+
     # AWS S3
     AWS_S3_BUCKET: str = "sangwari-maa-media"
     AWS_REGION: str = "ap-south-1"

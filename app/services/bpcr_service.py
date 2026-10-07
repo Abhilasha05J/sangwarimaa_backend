@@ -1,6 +1,7 @@
 from uuid import UUID
+import math
 
-from sqlalchemy import desc, func,or_, select
+from sqlalchemy import desc, func,literal_column, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.models import (
@@ -208,3 +209,68 @@ async def compute_score(b: Beneficiary, db: AsyncSession) -> dict:
         "delivery_bag": delivery_bag_done(answers.get("delivery_bag")),
     }
     return build_result(flags)
+
+
+def _distance_km(lat: float, lng: float):
+    """SQL expression: great-circle km from (lat, lng) to each facility's geo point.
+    Plain trig, so it works with or without PostGIS."""
+    lat_r, lng_r = math.radians(lat), math.radians(lng)
+    f_lat, f_lng = func.radians(HealthFacility.geo_lat), func.radians(HealthFacility.geo_lng)
+    cos_angle = (
+        math.cos(lat_r) * func.cos(f_lat) * func.cos(f_lng - lng_r)
+        + math.sin(lat_r) * func.sin(f_lat)
+    )
+    clamped = func.least(literal_column("1.0"), func.greatest(literal_column("-1.0"), cos_angle))
+    return literal_column("6371.0") * func.acos(clamped)
+ 
+ 
+async def nearest_facilities(lat: float, lng: float, limit: int, types: list, db: AsyncSession) -> list:
+    """The single nearest facility of EACH type (CHC / PHC / SDH / SHC), nearest first.
+    [(HealthFacility, distance_km)], at most one row per type. Facilities without real
+    coordinates are skipped, so a type with none located simply doesn't appear."""
+    dist = _distance_km(lat, lng)
+    per_type_rank = func.row_number().over(
+        partition_by=HealthFacility.facility_type,
+        order_by=(dist, HealthFacility.name),
+    )
+    ranked = (
+        select(
+            HealthFacility.id.label("fid"),
+            dist.label("distance_km"),
+            per_type_rank.label("rn"),
+        )
+        .where(
+            HealthFacility.geo_lat.is_not(None),
+            HealthFacility.geo_lng.is_not(None),
+            func.lower(HealthFacility.sub_district).in_(BPCR_SUB_DISTRICTS),
+            HealthFacility.facility_type.in_(types),
+            HealthFacility.is_functional.is_not(False),
+        )
+        .subquery()
+    )
+    stmt = (
+        select(HealthFacility, ranked.c.distance_km)
+        .join(ranked, ranked.c.fid == HealthFacility.id)
+        .where(ranked.c.rn == 1)
+        .order_by(ranked.c.distance_km, HealthFacility.name)
+        .limit(limit)
+    )
+    return [(f, float(d)) for f, d in (await db.execute(stmt)).all()]
+ 
+ 
+async def resolve_origin(b: Beneficiary, source: str, lat, lng, db: AsyncSession):
+    """-> (origin dict | None, reason | None)"""
+    if source == "gps":
+        return {"source": "gps", "latitude": lat, "longitude": lng, "village_name": None}, None
+    if not b.village_id:
+        return None, "no_village"
+    v = (await db.execute(select(Village).where(Village.id == b.village_id))).scalar_one_or_none()
+    if not v or v.geo_lat is None or v.geo_lng is None:
+        return None, "village_location_unavailable"
+    return {"source": "village", "latitude": v.geo_lat, "longitude": v.geo_lng, "village_name": v.name}, None
+ 
+ 
+def nearby_facility_out(f: HealthFacility, distance_km: float, selected_ids: set, catchment_ids: set) -> dict:
+    out = facility_out(f, selected_ids, catchment_ids)
+    out.update({"latitude": f.geo_lat, "longitude": f.geo_lng, "distance_km": round(distance_km, 1)})
+    return out
