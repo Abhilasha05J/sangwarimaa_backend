@@ -57,7 +57,7 @@ GET  /api/v1/women/newborn-care                 → Newborn care guide
 """
 
 from datetime import date, datetime, timezone, timedelta
-from typing import Optional
+from typing import Optional, Literal
 from uuid import UUID
 import json
 import math
