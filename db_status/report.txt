@@ -1,0 +1,128 @@
+=== Server ===
+PostgreSQL 18.6 (c021049) on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+extensions: ['plpgsql', 'uuid-ossp', 'pgcrypto', 'pg_trgm']  (pg_trgm present: True)
+
+=== All tables (row counts) ===
+  admin_credentials                   2
+  alerts                              0
+  anc_visits                          9
+  appointments                        0
+  audit_logs                          0
+  beneficiaries                       7
+  bpcr_answers                        10
+  bpcr_assessments                    0
+  bpcr_blood_donors                   2
+  bpcr_selected_facilities            10
+  chatbot_conversations               4
+  educational_content                 0
+  faqs                                865
+  field_workers                       1
+  health_facilities                   202
+  health_workers                      140
+  immunizations                       15
+  maternal_nutrition                  5
+  medicine_intake_logs                2
+  medicine_trackers                   10
+  otp_tokens                          48
+  pregnancy_registrations             5
+  reminders                           0
+  ultrasound_scans                    20
+  users                               13
+  villages                            98
+
+=== health_facilities ===
+  columns: ['id', 'name', 'facility_type', 'district', 'sub_district', 'block', 'rural_urban', 'is_fru', 'is_24x7', 'has_labour_room', 'has_blood_bank', 'is_functional', 'phone', 'anc_registrations', 'category', 'latitude', 'longitude', 'remarks', 'last_updated', 'created_at', 'parent_facility_id', 'geo_lat', 'geo_lng', 'geo_source']
+  total: 202
+  by facility_type:
+    'SHC'                                         153
+    'PHC'                                         34
+    'CHC'                                         11
+    'SDH'                                         2
+    'DH'                                          1
+    'MC'                                          1
+  by district:
+    'Raipur'                                      202
+  by sub_district:
+    'Arang'                                       54
+    'Abhanpur'                                    46
+    'Tilda'                                       40
+    'Dharsiwa'                                    33
+    'Raipur'                                      23
+    'Birgaon'                                     6
+  by block:
+    'Arang'                                       55
+    'Abhanpur'                                    46
+    'Tilda'                                       40
+    'Dharsiwa'                                    34
+    'Raipur'                                      19
+    'Birgaon'                                     6
+    None                                          2
+  by category:
+    'AAM-SHC (R)'                                 142
+    None                                          15
+    'Non functional as AAM'                       11
+    '24X7 AAM-PHC (R)'                            11
+    '24X7 UPHC-AAM'                               10
+    'UPHC-AAM'                                    7
+    'PHC-AAM (R)'                                 6
+  parent_facility_id is NULL: 158
+
+=== villages ===
+  columns: ['id', 'name', 'code', 'block', 'district', 'shc_id', 'match_status', 'source', 'created_at', 'updated_at', 'geo_lat', 'geo_lng', 'geo_source']
+  total: 98
+  by block:
+    'ABHANPUR'                                    53
+    'DHARSEEVA'                                   45
+  by district:
+    'Raipur'                                      98
+  by match_status:
+    'exact'                                       65
+    'likely'                                      31
+    'unresolved'                                  2
+  shc_id is NULL: 2
+  code is NULL: 4
+  duplicate codes: 0
+  villages per SHC (top 10):
+    'SHC Dandekala'                               4
+    'SHC Belar'                                   4
+    'SHC Barbanda'                                4
+    'SHC Chandi'                                  4
+    'SHC Manabasti'                               4
+    'SHC Khola'                                   4
+    'SHC Tekari N'                                4
+    'SHC Pipraud'                                 4
+    'SHC Serikhedi'                               3
+    'SHC Urkurra'                                 3
+
+=== health_workers (CHO/RHO/2nd ANM roster) ===
+  columns: ['id', 'facility_id', 'role', 'name', 'mobile', 'status', 'source', 'created_at', 'updated_at']
+  total: 140
+  by role:
+    'rho_male'                                    35
+    'cho'                                         35
+    'anm_2nd'                                     35
+    'rho_female'                                  35
+
+=== field_workers (ASHA/ANM, login-capable) ===
+  columns: ['id', 'user_id', 'worker_role', 'subcentre', 'village', 'block', 'district', 'unique_id', 'latitude', 'longitude']
+  total: 1
+  by worker_role:
+    'asha'                                        1
+  by block:
+    'Bemetara'                                    1
+  by district:
+    'Bemetara'                                    1
+  user_id is NULL: 0
+
+=== users (counts only) ===
+  total: 13
+  by role:
+    'pregnant_woman'                              11
+    'super_admin'                                 1
+    'asha'                                        1
+
+=== beneficiaries (counts only) ===
+  table: beneficiaries, total: 7
+  asha_id populated: 1
+  anm_id populated: 0
+  village_id populated: 4
