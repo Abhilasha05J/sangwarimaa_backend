@@ -8,10 +8,10 @@ Run 001_asha_directory.sql first.
     export DATABASE_URL="postgresql://user:pass@host:5432/db?sslmode=require"
 
     # dry run (default): does everything in one transaction, prints counts, ROLLS BACK
-    python seed_asha.py --mitanin Mitanin_list_of_Raipur_District.xlsx
+    python seed_asha.py --mitanin Mitanin list of Raipur District.xlsx
 
     # real run
-    python seed_asha.py --mitanin Mitanin_list_of_Raipur_District.xlsx --apply
+    python seed_asha.py --mitanin Mitanin list of Raipur District.xlsx --apply
 
 Safe to re-run: every step is an upsert. Nothing is deleted. No users / field_workers are created.
 Reports are written to ./seed_reports/.
@@ -28,7 +28,8 @@ import pandas as pd
 import psycopg2
 import psycopg2.extras
 
-BLOCK_DB = {"Abhanpur": "ABHANPUR", "Dharsiwa": "DHARSEEVA"}  # villages.block spelling
+# BLOCK_DB = {"Abhanpur": "ABHANPUR", "Dharsiwa": "DHARSEEVA"}  # villages.block spelling
+BLOCK_DB = {"Abhanpur": "Abhanpur", "Dharsiwa": "Dharsiwa"}
 SHC_PREFIX = re.compile(r"^.*?(?:केन्द्र|केंद्र)\s*")
 
 
@@ -113,7 +114,7 @@ def load_mitanin(path: str) -> pd.DataFrame:
 # ───────────────────────────── main ─────────────────────────────
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mitanin", required=True, help="Mitanin_list_of_Raipur_District.xlsx")
+    ap.add_argument("--mitanin", required=True, help="Mitanin list of Raipur District.xlsx")
     ap.add_argument("--villages", default="Villages_Final_for_Seed.xlsx")
     ap.add_argument("--data-dir", default="seed_data")
     ap.add_argument("--report-dir", default="seed_reports")

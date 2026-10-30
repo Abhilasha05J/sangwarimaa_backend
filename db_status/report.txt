@@ -1,5 +1,5 @@
 === Server ===
-PostgreSQL 18.6 (c021049) on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+PostgreSQL 18.6 (4e5fd08) on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
 extensions: ['plpgsql', 'uuid-ossp', 'pgcrypto', 'pg_trgm']  (pg_trgm present: True)
 
 === All tables (row counts) ===
@@ -8,30 +8,31 @@ extensions: ['plpgsql', 'uuid-ossp', 'pgcrypto', 'pg_trgm']  (pg_trgm present: T
   anc_visits                          9
   appointments                        0
   audit_logs                          0
-  beneficiaries                       7
+  beneficiaries                       9
   bpcr_answers                        10
   bpcr_assessments                    0
   bpcr_blood_donors                   2
   bpcr_selected_facilities            10
-  chatbot_conversations               4
+  chatbot_conversations               5
   educational_content                 0
   faqs                                865
   field_workers                       1
   health_facilities                   202
   health_workers                      140
-  immunizations                       15
-  maternal_nutrition                  5
+  immunizations                       21
+  maternal_nutrition                  7
   medicine_intake_logs                2
-  medicine_trackers                   10
-  otp_tokens                          48
-  pregnancy_registrations             5
+  medicine_trackers                   14
+  mitanin_directory                   907
+  otp_tokens                          50
+  pregnancy_registrations             7
   reminders                           0
-  ultrasound_scans                    20
-  users                               13
-  villages                            98
+  ultrasound_scans                    28
+  users                               15
+  villages                            189
 
 === health_facilities ===
-  columns: ['id', 'name', 'facility_type', 'district', 'sub_district', 'block', 'rural_urban', 'is_fru', 'is_24x7', 'has_labour_room', 'has_blood_bank', 'is_functional', 'phone', 'anc_registrations', 'category', 'latitude', 'longitude', 'remarks', 'last_updated', 'created_at', 'parent_facility_id', 'geo_lat', 'geo_lng', 'geo_source']
+  columns: ['id', 'name', 'facility_type', 'district', 'sub_district', 'block', 'rural_urban', 'is_fru', 'is_24x7', 'has_labour_room', 'has_blood_bank', 'is_functional', 'phone', 'anc_registrations', 'category', 'latitude', 'longitude', 'remarks', 'last_updated', 'created_at', 'parent_facility_id', 'geo_lat', 'geo_lng', 'geo_source', 'name_hi', 'name_en']
   total: 202
   by facility_type:
     'SHC'                                         153
@@ -65,34 +66,34 @@ extensions: ['plpgsql', 'uuid-ossp', 'pgcrypto', 'pg_trgm']  (pg_trgm present: T
     '24X7 UPHC-AAM'                               10
     'UPHC-AAM'                                    7
     'PHC-AAM (R)'                                 6
-  parent_facility_id is NULL: 158
+  parent_facility_id is NULL: 126
 
 === villages ===
-  columns: ['id', 'name', 'code', 'block', 'district', 'shc_id', 'match_status', 'source', 'created_at', 'updated_at', 'geo_lat', 'geo_lng', 'geo_source']
-  total: 98
+  columns: ['id', 'name', 'code', 'block', 'district', 'shc_id', 'match_status', 'source', 'created_at', 'updated_at', 'geo_lat', 'geo_lng', 'geo_source', 'name_hi', 'name_en']
+  total: 189
   by block:
-    'ABHANPUR'                                    53
-    'DHARSEEVA'                                   45
+    'ABHANPUR'                                    108
+    'DHARSEEVA'                                   81
   by district:
-    'Raipur'                                      98
+    'Raipur'                                      189
   by match_status:
-    'exact'                                       65
+    'exact'                                       156
     'likely'                                      31
     'unresolved'                                  2
   shc_id is NULL: 2
-  code is NULL: 4
+  code is NULL: 95
   duplicate codes: 0
   villages per SHC (top 10):
-    'SHC Dandekala'                               4
-    'SHC Belar'                                   4
-    'SHC Barbanda'                                4
+    'SHC Kukera'                                  5
+    'SHC Devri RPR'                               5
+    'SHC Pacheda Raipur'                          5
+    'SHC Sondara'                                 5
+    'SHC Belar'                                   5
+    'SHC Kathiya'                                 5
     'SHC Chandi'                                  4
-    'SHC Manabasti'                               4
     'SHC Khola'                                   4
-    'SHC Tekari N'                                4
-    'SHC Pipraud'                                 4
-    'SHC Serikhedi'                               3
-    'SHC Urkurra'                                 3
+    'SHC Tamasivni'                               4
+    'SHC Paragaon'                                4
 
 === health_workers (CHO/RHO/2nd ANM roster) ===
   columns: ['id', 'facility_id', 'role', 'name', 'mobile', 'status', 'source', 'created_at', 'updated_at']
@@ -115,14 +116,14 @@ extensions: ['plpgsql', 'uuid-ossp', 'pgcrypto', 'pg_trgm']  (pg_trgm present: T
   user_id is NULL: 0
 
 === users (counts only) ===
-  total: 13
+  total: 15
   by role:
-    'pregnant_woman'                              11
+    'pregnant_woman'                              13
     'super_admin'                                 1
     'asha'                                        1
 
 === beneficiaries (counts only) ===
-  table: beneficiaries, total: 7
+  table: beneficiaries, total: 9
   asha_id populated: 1
   anm_id populated: 0
-  village_id populated: 4
+  village_id populated: 6

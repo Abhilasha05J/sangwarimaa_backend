@@ -34,6 +34,7 @@ ROSTER_FILE = os.path.join(
     os.path.dirname(__file__),
     "list of health centres of 2 blocks of Raipur district with name of health care providers.xlsx",
 )
+BLOCK_NORM = {"ABHANPUR": "Abhanpur", "DHARSEEVA": "Dharsiwa"}
 
 # Each sheet is one PHC, titled "CHC <chc> PHC <phc>" (e.g.
 # "CHC Abhanpur PHC Khorpa "  — note some titles have trailing whitespace).
@@ -128,7 +129,7 @@ def parse_roster(filepath: str):
             # Columns per earlier inspection:
             # 0 idx, 1 block, 2 phc, 3 shc, 4 village(+code), 5 cho, 6 cho_mobile,
             # 7 rho_f, 8 rho_f_mobile, 9 rho_m, 10 rho_m_mobile, 11 anm2, 12 anm2_mobile
-            block = (row[1] or "").strip()
+            block = BLOCK_NORM.get((row[1] or "").strip().upper(), (row[1] or "").strip())
             phc_name = (row[2] or "").strip()
             shc_name = (row[3] or "").strip()
             village_raw = (row[4] or "").strip()

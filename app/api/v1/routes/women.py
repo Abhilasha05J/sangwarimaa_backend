@@ -2295,10 +2295,11 @@ async def get_medicine_reminders(
         },
     })
 
+_BLOCK_ALIASES = {"ABHANPUR": "ABHANPUR", "DHARSEEVA": "DHARSIWA", "DHARSIWA": "DHARSIWA"}
 @router.get("/villages", summary="Search villages for the registration dropdown")
 async def search_villages(
     q: str = Query("", description="Search text, matched against village name"),
-    block: str | None = Query(None, description="Optional block filter: ABHANPUR | DHARSEEVA"),
+    block: str | None = Query(None, description="Optional block filter: Abhanpur | Dharsiwa (case-insensitive)"),
     limit: int = Query(50, le=200),
     db: AsyncSession = Depends(get_db),
 ):
@@ -2322,7 +2323,8 @@ async def search_villages(
         stmt = stmt.order_by(Village.name)
 
     if block:
-        stmt = stmt.where(Village.block == block.upper())
+        key = _BLOCK_ALIASES.get(block.strip().upper(), block.strip().upper())
+        stmt = stmt.where(func.upper(Village.block) == key)
     stmt = stmt.limit(limit)
 
     rows = (await db.execute(stmt)).all()

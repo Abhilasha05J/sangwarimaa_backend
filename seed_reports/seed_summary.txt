@@ -1,0 +1,11 @@
+Mitanin rows read: 907 (Abhanpur 469, Dharsiwa 438)
+[1] facility names set: 79 facilities
+[2] parent links set: 33  | skipped, waiting for client: ['SHC Guma', 'SHC Manabasti', 'SHC Nakti']
+[3] villages updated: 98, inserted: 91
+[4] mitanin_directory rows written: 907 | by status: {'exact': 746, 'likely': 57, 'unresolved': 104}
+    inactive: 2
+[5] review file: 163 rows -> seed_reports/mitanin_review.csv
+    SHCs in the two blocks still without a PHC/CHC parent: 1
+    villages still without an SHC: 2
+
+COMMITTED.
