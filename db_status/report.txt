@@ -66,14 +66,14 @@ extensions: ['plpgsql', 'uuid-ossp', 'pgcrypto', 'pg_trgm']  (pg_trgm present: T
     '24X7 UPHC-AAM'                               10
     'UPHC-AAM'                                    7
     'PHC-AAM (R)'                                 6
-  parent_facility_id is NULL: 126
+  parent_facility_id is NULL: 124
 
 === villages ===
   columns: ['id', 'name', 'code', 'block', 'district', 'shc_id', 'match_status', 'source', 'created_at', 'updated_at', 'geo_lat', 'geo_lng', 'geo_source', 'name_hi', 'name_en']
   total: 189
   by block:
-    'ABHANPUR'                                    108
-    'DHARSEEVA'                                   81
+    'Abhanpur'                                    108
+    'Dharsiwa'                                    81
   by district:
     'Raipur'                                      189
   by match_status:
