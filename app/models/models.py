@@ -144,7 +144,7 @@ class Beneficiary(Base):
     consent = Column(Boolean, default=False)
     consent_at = Column(DateTime(timezone=True))
     mitanin_id = Column(UUID(as_uuid=True), ForeignKey("mitanin_directory.id", ondelete="SET NULL"), nullable=True, index=True)
-    # asha_id = Column(UUID(as_uuid=True), ForeignKey("field_workers.id"))
+    asha_id = Column(UUID(as_uuid=True), ForeignKey("field_workers.id"))
     anm_id = Column(UUID(as_uuid=True), ForeignKey("field_workers.id"))
     risk_level = Column(Enum(RiskLevel), default=RiskLevel.low)
     latitude = Column(String(20))

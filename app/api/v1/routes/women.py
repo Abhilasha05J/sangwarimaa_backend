@@ -234,7 +234,7 @@ async def resolve_village(village_id: UUID, db: AsyncSession) -> dict | None:
             phc_name = phc.name if phc else None
 
     return {
-        "village": village.name,
+        "village": village.name_en or village.name,
         "phc": phc_name,
         "block": village.block,
         "district": village.district,
@@ -438,6 +438,7 @@ async def get_profile(
 ):
     b = await get_beneficiary_or_404(user, db)
     pregnancy = compute_pregnancy_info(b.lmp)
+    asha = await asha_contact_for(b, db)
 
     from datetime import timedelta
     profile_data = {
@@ -459,7 +460,8 @@ async def get_profile(
     "blood_group": b.blood_group,
     "risk_level": b.risk_level.value if b.risk_level else "low",
     "preferred_language": user.preferred_language.value if user.preferred_language else "hi",
-    "asha_name": None,
+    "asha_name": asha["name"] if asha else None,
+    "asha_selected": asha is not None,
     "anm_name": None,
     "created_at": b.created_at.isoformat() if b.created_at else None,
 }
@@ -1000,7 +1002,7 @@ async def get_anc_services(
             "rch_id_generated": bool(reg.rch_id),
             "rch_id": reg.rch_id,
             "mcp_card_received": reg.mcp_card_received,
-            "asha_assigned": b.asha_id is not None,
+            "asha_assigned": b.asha_id is not None or b.mitanin_id is not None,
         },
          "maternal_nutrition": {
             "nutrition_counselling_received": nutrition.nutrition_counselling_received,
@@ -1677,23 +1679,25 @@ async def emergency_sos(
     if payload.notify_asha:
         await send_alert_to_asha(alert=alert, beneficiary=b, db=db)
 
-    asha_name = None
-    asha_mobile = None
-    if b.asha_id and b.asha_worker:
-        asha_user = b.asha_worker.user
-        asha_name = asha_user.name
-        asha_mobile = asha_user.mobile
+    asha = await asha_contact_for(b, db)
+    asha_name = asha["name"] if asha else None
+    asha_mobile = asha["mobile"] if asha else None
+
+    # A push only reaches ASHAs who have a real app account (asha_id).
+    asha_notified = bool(payload.notify_asha and b.asha_id is not None)
 
     return success_envelope(EmergencyResponse(
         alert_id=alert.id,
         alert_severity="red",
         ambulance_number="102",
         alternate_ambulance="108",
-        asha_notified=payload.notify_asha and b.asha_id is not None,
+        asha_notified=asha_notified,
         asha_name=asha_name,
         asha_mobile=asha_mobile,
-        message_hi="घबराएं नहीं। एम्बुलेंस के लिए 102 या 108 डायल करें। आशा कार्यकर्ता को सूचित कर दिया गया है।",
-        message_en="Stay calm. Dial 102 or 108 for ambulance. Your ASHA worker has been notified.",
+        message_hi="घबराएं नहीं। एम्बुलेंस के लिए 102 या 108 डायल करें। "
+                   + ("आशा कार्यकर्ता को सूचित कर दिया गया है।" if asha_notified else "अपनी आशा कार्यकर्ता को फोन करें।"),
+        message_en="Stay calm. Dial 102 or 108 for ambulance. "
+                   + ("Your ASHA worker has been notified." if asha_notified else "Please call your ASHA worker."),
         nearby_facilities=[],  # Populated by GIS query in production
     ).model_dump())
 
@@ -1709,12 +1713,9 @@ async def get_emergency_contacts(
         {"name": "Ambulance (108)", "number": "108", "type": "ambulance"},
         {"name": "Women Helpline", "number": "181", "type": "helpline"},
     ]
-    if b.asha_id and b.asha_worker:
-        contacts.insert(0, {
-            "name": f"ASHA - {b.asha_worker.user.name}",
-            "number": b.asha_worker.user.mobile,
-            "type": "asha",
-        })
+    asha = await asha_contact_for(b, db)
+    if asha:
+        contacts.insert(0, {"name": f"ASHA - {asha['name']}", "number": asha["mobile"], "type": "asha"})
     return success_envelope(contacts)
 
 # ── Symptom Checker ────────────────────────────────────────────────────────────
