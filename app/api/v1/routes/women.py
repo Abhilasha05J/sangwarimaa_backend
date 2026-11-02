@@ -118,7 +118,7 @@ from app.services.bpcr_service import (
     get_selected_facilities, is_selectable, nearby_facility_out,  nearest_facilities, resolve_origin, sba_for_selected, search_facilities,
 )
 from app.services.asha_service import (
-    asha_options, select_asha, asha_contact_for, current_asha, search_villages_bilingual,
+    asha_options, select_asha, asha_contact_for, current_asha, search_villages_bilingual, select_care_team,
 )
 
 
@@ -426,7 +426,7 @@ async def save_asha_selection(
     db: AsyncSession = Depends(get_db),
 ):
     b = await get_beneficiary_or_404(user, db)
-    await select_asha(b, payload.mitanin_id, db)
+    await select_care_team(b, payload.mitanin_id, payload.backup_mitanin_ids, db)
     return success_envelope(await current_asha(b, lang, db))
 
 # ── Profile ────────────────────────────────────────────────────────────────────

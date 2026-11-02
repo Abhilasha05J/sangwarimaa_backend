@@ -14,6 +14,7 @@ from app.services.bpcr_rules import (
     birth_companion_done, build_result, delivery_bag_done, financial_done,
     transport_options_complete,
 )
+from app.services.asha_service import asha_contact_for
 
 # The 2 pilot blocks. Facility master stores these title-case in sub_district.
 BPCR_SUB_DISTRICTS = ("abhanpur", "dharsiwa")
@@ -88,17 +89,21 @@ async def _children(parent_ids: list, db: AsyncSession) -> list:
     return list(res.scalars().all())
 
 
-async def get_asha_contact(b: Beneficiary, db: AsyncSession):
-    """Explicit query, not b.asha_worker: lazy-loading relationships fails in async sessions."""
-    if not b.asha_id:
-        return None
-    row = (await db.execute(
-        select(User.name, User.mobile)
-        .join(FieldWorker, FieldWorker.user_id == User.id)
-        .where(FieldWorker.id == b.asha_id)
-    )).first()
-    return {"name": row.name, "mobile": row.mobile} if row else None
+# async def get_asha_contact(b: Beneficiary, db: AsyncSession):
+#     """Explicit query, not b.asha_worker: lazy-loading relationships fails in async sessions."""
+#     if not b.asha_id:
+#         return None
+#     row = (await db.execute(
+#         select(User.name, User.mobile)
+#         .join(FieldWorker, FieldWorker.user_id == User.id)
+#         .where(FieldWorker.id == b.asha_id)
+#     )).first()
+#     return {"name": row.name, "mobile": row.mobile} if row else None
 
+async def get_asha_contact(b: Beneficiary, db: AsyncSession):
+    """Her ASHA: the directory ASHA she picked, or an app-account ASHA. Same shape as before."""
+    c = await asha_contact_for(b, db)
+    return {"name": c["name"], "mobile": c["mobile"]} if c else None
 
 async def sba_for_selected(b: Beneficiary, selected: list, db: AsyncSession) -> list:
     """

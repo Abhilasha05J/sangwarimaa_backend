@@ -223,8 +223,10 @@ class BeneficiaryOut(BaseModel):
     class Config:
         from_attributes = True
 
+
 class AshaSelectionRequest(BaseModel):
-    mitanin_id: Optional[UUID] = None 
+     mitanin_id: Optional[UUID] = None                  # primary ASHA; null clears the whole care team
+     backup_mitanin_ids: Optional[List[UUID]] = None    # up to 2; null = leave backups unchanged; [] = clear them
 
 
 # ── BPCR ──────────────────────────────────────────────────────────────────────

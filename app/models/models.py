@@ -545,6 +545,7 @@ class MitaninDirectory(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, server_default=text("gen_random_uuid()"))
     name = Column(Text, nullable=False)
+    name_hi = Column(Text)
     name_raw = Column(Text, nullable=False)
     father_husband_name = Column(Text)
     dob = Column(Date)
@@ -563,4 +564,11 @@ class MitaninDirectory(Base):
     source = Column(Text, nullable=False, server_default="mitanin_list_2026")
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now())
+
+class BeneficiaryBackupAsha(Base):
+    __tablename__ = "beneficiary_backup_ashas"
  
+    beneficiary_id = Column(UUID(as_uuid=True), ForeignKey("beneficiaries.id", ondelete="CASCADE"), primary_key=True)
+    mitanin_id = Column(UUID(as_uuid=True), ForeignKey("mitanin_directory.id", ondelete="CASCADE"), primary_key=True)
+    position = Column(SmallInteger, nullable=False, server_default="1")
+    created_at = Column(DateTime(timezone=True), server_default=func.now()) 
