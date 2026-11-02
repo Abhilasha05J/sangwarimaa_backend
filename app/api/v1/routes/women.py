@@ -82,7 +82,7 @@ from app.models.models import (
     Appointment, Reminder, Alert, AlertType, RiskLevel,
     EducationalContent, ChatbotConversation,FAQ,
     PregnancyRegistration, MedicineTracker, Immunization, UltrasoundScan,MedicineIntakeLog, MaternalNutrition,
-    Village, HealthFacility, BPCRAnswer, BPCRBloodDonor, BPCRSelectedFacility, 
+    Village, HealthFacility, BPCRAnswer, BPCRBloodDonor, BPCRSelectedFacility, MitaninDirectory
 )
 from app.schemas.women import (
     WomenRegisterRequest,
@@ -106,6 +106,7 @@ from app.schemas.women import (
     ChatbotFeedbackRequest,
     SchemeEligibilityResponse,
     FAQOut,
+    AshaSelectionRequest,
     ANC_VISIT_TEMPLATE, MEDICINE_DEFAULTS, IMMUNIZATION_DOSE_TYPES, ULTRASOUND_SCAN_TYPES,  REGISTRATION_SELF_REPORT_FIELDS , MATERNAL_NUTRITION_FIELDS, 
     ImmunizationUpdateRequest, UltrasoundUpdateRequest,ChecklistUpdateRequest,RegistrationFieldUpdateRequest, MedicineDateToggleRequest, MaternalNutritionFieldUpdateRequest, AncServicesBatchUpdateRequest, ChecklistBatchItem,
 )
@@ -115,6 +116,9 @@ from app.services.chatbot_service import get_ai_reply
 from app.services.bpcr_service import (
     BPCR_FACILITY_TYPES,compute_score, facility_out, get_answers, get_asha_contact, get_catchment,
     get_selected_facilities, is_selectable, nearby_facility_out,  nearest_facilities, resolve_origin, sba_for_selected, search_facilities,
+)
+from app.services.asha_service import (
+    asha_options, select_asha, asha_contact_for, current_asha, search_villages_bilingual,
 )
 
 
@@ -390,6 +394,40 @@ async def register_woman(
         "pregnancy": pregnancy,
     })
 
+
+# ── Asha selction for registration ─────────────────────────────────────────────────────────
+@router.get("/asha/options", summary="ASHAs to choose from: her village, then her SHC, then name search")
+async def get_asha_options(
+    q: str = Query("", max_length=100),
+    lang: str = Query("hi", pattern=r"^(hi|en)$"),
+    limit: int = Query(30, ge=1, le=100),
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    return success_envelope(await asha_options(b, q, lang, limit, db))
+
+
+@router.get("/asha", summary="Her currently selected ASHA")
+async def get_my_asha(
+    lang: str = Query("hi", pattern=r"^(hi|en)$"),
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    return success_envelope(await current_asha(b, lang, db))
+
+
+@router.put("/asha/selection", summary="Choose (or clear, with null) her ASHA")
+async def save_asha_selection(
+    payload: AshaSelectionRequest,
+    lang: str = Query("hi", pattern=r"^(hi|en)$"),
+    user: User = Depends(get_current_woman),
+    db: AsyncSession = Depends(get_db),
+):
+    b = await get_beneficiary_or_404(user, db)
+    await select_asha(b, payload.mitanin_id, db)
+    return success_envelope(await current_asha(b, lang, db))
 
 # ── Profile ────────────────────────────────────────────────────────────────────
 
@@ -2295,49 +2333,62 @@ async def get_medicine_reminders(
         },
     })
 
-_BLOCK_ALIASES = {"ABHANPUR": "ABHANPUR", "DHARSEEVA": "DHARSIWA", "DHARSIWA": "DHARSIWA"}
+
+# ── Village selction for registration ─────────────────────────────────────────────────────────
+ 
+# _BLOCK_ALIASES = {"ABHANPUR": "ABHANPUR", "DHARSEEVA": "DHARSIWA", "DHARSIWA": "DHARSIWA"}
+# @router.get("/villages", summary="Search villages for the registration dropdown")
+# async def search_villages(
+#     q: str = Query("", description="Search text, matched against village name"),
+#     block: str | None = Query(None, description="Optional block filter: Abhanpur | Dharsiwa (case-insensitive)"),
+#     limit: int = Query(50, le=200),
+#     db: AsyncSession = Depends(get_db),
+# ):
+#     similarity = func.similarity(Village.name, q)
+#     is_substring_match = Village.name.ilike(f"%{q}%")
+
+#     stmt = select(Village, HealthFacility.name.label("shc_name"), similarity.label("sim")).join(
+#         HealthFacility, Village.shc_id == HealthFacility.id, isouter=True
+#     )
+
+#     if q:
+#         # Substring matches ("baro" in "Barauda") AND typo-tolerant matches
+#         # (similarity above threshold catches "baroda" ~ "Barauda" even
+#         # with no substring in common at all positions). 0.25 is a starting
+#         # threshold — raise it if results feel too loose, lower it if
+#         # legitimate typos are still getting missed.
+#         stmt = stmt.where(or_(is_substring_match, similarity > 0.25))
+#         # Exact/substring matches first, then best-similarity first.
+#         stmt = stmt.order_by(sql_desc(is_substring_match), sql_desc(similarity), Village.name)
+#     else:
+#         stmt = stmt.order_by(Village.name)
+
+#     if block:
+#         key = _BLOCK_ALIASES.get(block.strip().upper(), block.strip().upper())
+#         stmt = stmt.where(func.upper(Village.block) == key)
+#     stmt = stmt.limit(limit)
+
+#     rows = (await db.execute(stmt)).all()
+#     return {
+#         "villages": [
+#             {
+#                 "id": str(v.id),
+#                 "name": v.name,
+#                 "code": v.code,
+#                 "block": v.block,
+#                 "shc_name": shc_name,
+#                 "has_facility_data": v.shc_id is not None,
+#             }
+#             for v, shc_name, _sim in rows
+#         ]
+#     }
+
 @router.get("/villages", summary="Search villages for the registration dropdown")
 async def search_villages(
-    q: str = Query("", description="Search text, matched against village name"),
-    block: str | None = Query(None, description="Optional block filter: Abhanpur | Dharsiwa (case-insensitive)"),
+    q: str = Query("", description="Search text (Hindi or English)"),
+    block: str | None = Query(None, description="Optional block filter: Abhanpur | Dharsiwa"),
+    lang: str = Query("hi", pattern=r"^(hi|en)$"),
     limit: int = Query(50, le=200),
     db: AsyncSession = Depends(get_db),
 ):
-    similarity = func.similarity(Village.name, q)
-    is_substring_match = Village.name.ilike(f"%{q}%")
-
-    stmt = select(Village, HealthFacility.name.label("shc_name"), similarity.label("sim")).join(
-        HealthFacility, Village.shc_id == HealthFacility.id, isouter=True
-    )
-
-    if q:
-        # Substring matches ("baro" in "Barauda") AND typo-tolerant matches
-        # (similarity above threshold catches "baroda" ~ "Barauda" even
-        # with no substring in common at all positions). 0.25 is a starting
-        # threshold — raise it if results feel too loose, lower it if
-        # legitimate typos are still getting missed.
-        stmt = stmt.where(or_(is_substring_match, similarity > 0.25))
-        # Exact/substring matches first, then best-similarity first.
-        stmt = stmt.order_by(sql_desc(is_substring_match), sql_desc(similarity), Village.name)
-    else:
-        stmt = stmt.order_by(Village.name)
-
-    if block:
-        key = _BLOCK_ALIASES.get(block.strip().upper(), block.strip().upper())
-        stmt = stmt.where(func.upper(Village.block) == key)
-    stmt = stmt.limit(limit)
-
-    rows = (await db.execute(stmt)).all()
-    return {
-        "villages": [
-            {
-                "id": str(v.id),
-                "name": v.name,
-                "code": v.code,
-                "block": v.block,
-                "shc_name": shc_name,
-                "has_facility_data": v.shc_id is not None,
-            }
-            for v, shc_name, _sim in rows
-        ]
-    }
+    return {"villages": await search_villages_bilingual(q, block, lang, limit, db)}

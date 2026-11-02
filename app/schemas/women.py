@@ -223,6 +223,9 @@ class BeneficiaryOut(BaseModel):
     class Config:
         from_attributes = True
 
+class AshaSelectionRequest(BaseModel):
+    mitanin_id: Optional[UUID] = None 
+
 
 # ── BPCR ──────────────────────────────────────────────────────────────────────
 BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"] 

@@ -6,7 +6,7 @@ from sqlalchemy.dialects.postgresql import UUID, JSONB
 
 from sqlalchemy import (
     Boolean, Column, Date, DateTime, Enum, ForeignKey,
-    Integer, JSON, SmallInteger, String, Text, UniqueConstraint, func,Float
+    Integer, JSON, SmallInteger, String, Text, UniqueConstraint, func,Float, text
 )
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import relationship
@@ -143,7 +143,8 @@ class Beneficiary(Base):
     blood_group = Column(String(5))
     consent = Column(Boolean, default=False)
     consent_at = Column(DateTime(timezone=True))
-    asha_id = Column(UUID(as_uuid=True), ForeignKey("field_workers.id"))
+    mitanin_id = Column(UUID(as_uuid=True), ForeignKey("mitanin_directory.id", ondelete="SET NULL"), nullable=True, index=True)
+    # asha_id = Column(UUID(as_uuid=True), ForeignKey("field_workers.id"))
     anm_id = Column(UUID(as_uuid=True), ForeignKey("field_workers.id"))
     risk_level = Column(Enum(RiskLevel), default=RiskLevel.low)
     latitude = Column(String(20))
@@ -440,6 +441,8 @@ class HealthFacility(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = Column(Text, nullable=False)
+    name_hi = Column(Text, nullable=True)
+    name_en = Column(Text, nullable=True)
     facility_type = Column(String(10), nullable=False)   # MC|DH|SDH|CHC|PHC|SHC
     district = Column(Text, nullable=False)
     sub_district = Column(Text)
@@ -505,6 +508,8 @@ class Village(Base):
  
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = Column(Text, nullable=False)
+    name_hi = Column(Text, nullable=True)
+    name_en = Column(Text, nullable=True)
     code = Column(Text, unique=True)                 # roster village code, e.g. "13491"; NULL if none
     block = Column(Text, nullable=False)              # health block: "ABHANPUR" | "DHARSEEVA"
     district = Column(Text, nullable=False, default="Raipur")
@@ -534,4 +539,28 @@ class HealthWorker(Base):
  
     __table_args__ = (UniqueConstraint("facility_id", "role", name="uq_worker_facility_role"),)
     facility = relationship("HealthFacility")
+
+class MitaninDirectory(Base):
+    __tablename__ = "mitanin_directory"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, server_default=text("gen_random_uuid()"))
+    name = Column(Text, nullable=False)
+    name_raw = Column(Text, nullable=False)
+    father_husband_name = Column(Text)
+    dob = Column(Date)
+    mobile = Column(String(15), nullable=False, unique=True)
+    blood_group = Column(String(10))
+    block = Column(Text, nullable=False)
+    shc_id = Column(UUID(as_uuid=True), ForeignKey("health_facilities.id", ondelete="SET NULL"), index=True)
+    village_id = Column(UUID(as_uuid=True), ForeignKey("villages.id", ondelete="SET NULL"), index=True)
+    shc_text_raw = Column(Text)
+    village_text_raw = Column(Text)
+    phc_text_raw = Column(Text)
+    match_status = Column(Text, nullable=False, server_default="unresolved")
+    is_active = Column(Boolean, nullable=False, server_default=text("true"))
+    note = Column(Text)
+    field_worker_id = Column(UUID(as_uuid=True), ForeignKey("field_workers.id", ondelete="SET NULL"))
+    source = Column(Text, nullable=False, server_default="mitanin_list_2026")
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now())
  
